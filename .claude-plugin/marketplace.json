@@ -1,0 +1,15 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "skill-interview",
+  "description": "A bilingual problem-interview skill for Claude Code: asks one question at a time until nothing about a problem is ambiguous, then synthesizes it into a single HTML file.",
+  "owner": {
+    "name": "Vicky Huynh",
+    "url": "https://github.com/vicky-tiq"
+  },
+  "plugins": [
+    {
+      "name": "interview",
+      "source": "./"
+    }
+  ]
+}
