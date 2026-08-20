@@ -1,4 +1,4 @@
-# Bộ câu hỏi mồi — 7 tầng (Tiếng Việt)
+# Bộ câu hỏi mồi — 8 tầng (Tiếng Việt)
 
 Đây là **mồi, không phải phiếu điền**. Câu hỏi thật phải sinh ra từ câu trả lời liền trước, dùng đúng từ ngữ người dùng đã dùng. Vẫn giữ luật: một câu một lượt.
 
@@ -46,7 +46,39 @@ Nếu chẻ tới bậc 7 vẫn không ra: ghi vào Sổ mơ hồ là **VÙNG CH
 - Nếu làm sai, hậu quả nặng nhất là gì — mất tiền, mất khách, mất dữ liệu, hay mất uy tín?
 - Có quy định/tuân thủ/pháp lý nào chi phối không?
 
-## Tầng 2 — Hiện trạng vs mong muốn
+## Tầng 2 — Nỗi sợ & cái đang đặt cược
+
+Hai sổ riêng, không trộn. Hỏi nỗi sợ của chính người dùng trước, xong mới chuyển sang nỗi sợ của người dùng cuối. Không bao giờ gộp hai thứ vào một câu.
+
+### Nỗi sợ của chính bạn
+
+- Bạn sợ nhất là làm sai chỗ nào?
+- Điều gì xảy ra thì bạn sẽ hối vì đã bắt đầu việc này?
+- Nếu việc này đổ, ai phát hiện đầu tiên, và họ nói gì với bạn?
+- Thất bại kiểu nào bạn thấy khó giải thích với người khác nhất?
+- Có kiểu "thành công" nào mà bạn vẫn thấy bất an không? Vì sao?
+- Bạn sợ sáu tháng nữa việc này biến thành cái gì?
+- Có phần nào bạn đang ngầm lo là mình chưa hiểu đủ không?
+- Có ai mà bạn đang chuẩn bị tinh thần đón phản ứng của họ? Họ sẽ nói gì?
+- Phần nào bạn cứ trì hoãn mãi? Vì sao nó khó chịu?
+- Nếu chỉ được bảo vệ đúng một thứ khỏi bị việc này làm hỏng, bạn chọn thứ gì?
+
+### Nỗi sợ của người dùng cuối
+
+("Người dùng cuối" = ai thực sự sống với kết quả: khách hàng, nhân viên, đối tác.)
+
+- Ai buộc phải thay đổi cách làm việc vì chuyện này?
+- Họ sợ mất gì — thời gian, quyền kiểm soát, vị thế, thu nhập, hay công việc?
+- Lý do họ nói ra để không dùng nó là gì?
+- Còn lý do họ không nói ra?
+- Lần trước có thay đổi, họ phàn nàn về cái gì?
+- Điều gì làm một người âm thầm quay về cách làm cũ?
+- Ai được lợi ít nhất từ việc này? Họ được gì khi hợp tác?
+- Điều tệ nhất có thể xảy ra với khách hàng vì chuyện này là gì?
+- Nếu họ chỉ tin đúng một phần của nó, thì là phần nào?
+- Tuần đầu tiên họ cần thấy gì để tin là nó tốt hơn?
+
+## Tầng 3 — Hiện trạng vs mong muốn
 
 - Hôm nay việc này diễn ra thế nào? Kể từng bước, bắt đầu từ khoảnh khắc nào?
 - Bước nào tốn nhiều thời gian nhất?
@@ -59,7 +91,7 @@ Nếu chẻ tới bậc 7 vẫn không ra: ghi vào Sổ mơ hồ là **VÙNG CH
 - Trong trạng thái mong muốn đó, việc gì **không còn phải làm nữa**?
 - Có ai đang làm được điều bạn muốn? Họ làm thế nào?
 
-## Tầng 3 — Thành phần (tư duy nguyên bản)
+## Tầng 4 — Thành phần (tư duy nguyên bản)
 
 Mục đích: bóc bài toán thành các "vật" nhỏ nhất mà vẫn còn có nghĩa.
 
@@ -80,7 +112,7 @@ Mục đích: bóc bài toán thành các "vật" nhỏ nhất mà vẫn còn c�
 - Thứ nào thực ra không phải một vật độc lập, mà chỉ là **thuộc tính** của vật khác?
 - Có thứ nào tồn tại trong đầu bạn nhưng chưa được gọi tên không?
 
-## Tầng 4 — Quan hệ giữa các thành phần
+## Tầng 5 — Quan hệ giữa các thành phần
 
 Hỏi theo từng **cặp** có khả năng liên quan, không hỏi chung.
 
@@ -96,7 +128,7 @@ Hỏi theo từng **cặp** có khả năng liên quan, không hỏi chung.
 - Đổi A thì phải đổi theo cái gì? (lan truyền thay đổi)
 - Có quan hệ nào hiện đang do **con người nhớ** thay vì hệ thống ghi không?
 
-## Tầng 5 — Logic nghiệp vụ theo cây quyết định
+## Tầng 6 — Logic nghiệp vụ theo cây quyết định
 
 Liệt kê các **điểm ra quyết định** trong luồng, rồi đi cạn từng điểm — hết mọi nhánh của điểm này mới sang điểm khác.
 
@@ -116,7 +148,7 @@ Với mỗi điểm quyết định:
 - Có bao giờ bước này bị **bỏ qua** không? Trong trường hợp nào, ai cho phép?
 - Bước này mất bao lâu? Nếu quá lâu thì sao?
 
-## Tầng 6 — Ngoại lệ & trường hợp biên
+## Tầng 7 — Ngoại lệ & trường hợp biên
 
 - Ở mỗi bước: cái gì có thể **sai**? (hỏi từng bước một)
 - Khi sai thì hệ thống/người làm gì — dừng, thử lại, hay đi tiếp?
@@ -133,3 +165,37 @@ Với mỗi điểm quyết định:
 - Trường hợp nào bạn đã từng gặp thật mà **không có trong quy trình**?
 - Nếu khối lượng tăng 10 lần, chỗ nào **vỡ trước**?
 - Nếu người đang gánh việc này nghỉ đột ngột, cái gì tắc lại?
+
+---
+
+## Ba nhiệm vụ thu thập xuyên suốt — mẫu câu hỏi
+
+Bắn những câu này ở bất kỳ tầng nào, ngay khi gặp dấu hiệu. Mỗi lần một câu, không gộp.
+
+### A. Ví dụ cụ thể — dấu hiệu: nói quy luật chung mà không có ca thật
+
+- "Cho tôi một ca thật. Lần gần nhất nó xảy ra là khi nào?"
+- "Kể tôi nghe đúng ca đó, từ đầu đến cuối."
+- "Ca đó con số thật là bao nhiêu?"
+- "Ca đó là điển hình, hay là bất thường? Điển hình thì trông thế nào?"
+- "Tháng vừa rồi chuyện đó xảy ra mấy lần?"
+- "Ai liên quan — tên cụ thể, hoặc chức danh nếu bạn không muốn nêu tên?"
+
+### B. Minh hoạ — dấu hiệu: có thứ khó diễn đạt bằng lời
+
+- "Có ảnh chụp, hình, hay file nào cho tôi thấy cái này không?"
+- "Có sản phẩm/công cụ nào đang làm đúng kiểu bạn muốn không? Phần nào của nó?"
+- "Cái này giống cái gì? Cho tôi một ẩn dụ, thô cũng được."
+- "Nếu vẽ lên bảng, bạn sẽ vẽ cái gì trước?"
+- "Hay dễ hơn: cho tôi xem ví dụ về cái bạn **không** muốn?"
+
+### C. Nguồn tham khảo — dấu hiệu: dẫn ra thứ gì ngoài cuộc trò chuyện
+
+- "Tài liệu đó nằm ở đâu, ai giữ?"
+- "Chỉ tôi chỗ đó được không — một link hay đường dẫn là đủ."
+- "Phần này ai biết rõ hơn bạn?"
+- "Cái đó có được viết ra ở đâu chưa, hay chỉ là lệ làm vậy?"
+- "Bạn đang nghĩ tới đối thủ/công ty nào?"
+- "Có quy định, hợp đồng, hay chính sách nào đứng sau chuyện đó? Ở đâu?"
+
+Ghi nhận nguồn — **không đi đọc nó**. Đọc là nghiên cứu, mà nghiên cứu trong lúc phỏng vấn là bị cấm.

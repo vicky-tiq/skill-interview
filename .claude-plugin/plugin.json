@@ -1,13 +1,13 @@
 {
   "name": "interview",
-  "version": "1.0.0",
-  "description": "Interview the user to understand a problem thoroughly before building anything. Bilingual (English / Tiếng Việt). Asks one question at a time across 7 layers, logs a transcript after every answer, then synthesizes a problem map, diagrams, risks and a proposed solution into one self-contained HTML file.",
+  "version": "1.1.0",
+  "description": "Interview the user to understand a problem thoroughly before building anything, so the whole picture can be drawn rather than guessed. Bilingual (English / Tiếng Việt). Asks one question at a time across 8 layers, collects concrete examples, illustrations and references as it goes, sketches the whole picture mid-interview for correction, then synthesizes an overview diagram, problem map, fears, examples, references, risks and a proposed solution into one self-contained HTML file.",
   "author": {
     "name": "Vicky Huynh",
     "url": "https://github.com/vicky-tiq"
   },
   "repository": "https://github.com/vicky-tiq/skill-interview",
   "license": "MIT",
-  "keywords": ["interview", "requirements", "discovery", "first-principles", "problem-definition", "bilingual", "vietnamese"],
+  "keywords": ["interview", "requirements", "discovery", "first-principles", "problem-definition", "diagram", "bilingual", "vietnamese"],
   "skills": "./skills/"
 }

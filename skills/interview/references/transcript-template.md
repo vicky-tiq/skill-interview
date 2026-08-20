@@ -42,6 +42,40 @@ The interview may not end while any row reads `OPEN`.
 | 0 | Root purpose & definition of success | Q9 | yes |
 | 1 | Context & constraints | | |
 
+## Confirmed whole-picture sketch
+
+The monospace sketch the user confirmed at the whole-picture checkpoint (Step 10). This becomes section 2 of the synthesis, so keep the confirmed version, not the drafts.
+
+```
+        [ GOAL: refunds settled in < 24h ]
+                      ^
+   Customer --> [Request] --> <over 50m?> --yes--> [Manual approval] --> [Payout]
+                                  |                      ^
+                                  no                  Ops lead
+                                  v
+                             [Auto approve] ------------------------> [Payout]
+```
+
+## Examples collected (duty A)
+
+Real cases with real numbers. Each notes which rule or branch it demonstrates.
+
+- (Q22) Order #4471, 12 Mar, 68m VND — went to manual approval, took 3 days. Demonstrates the over-threshold branch and the delay complaint.
+
+## Illustrations & analogies (duty B)
+
+The user's own metaphors, verbatim — they often carry structure the prose does not. Plus any screenshot, file, or product pointed at.
+
+- (Q18) "It's like a kitchen ticket rail — everything visible, oldest on the left."
+
+## References (duty C)
+
+**Recorded, not read.** Never open these during the interview.
+
+| # | What it is | Where it lives | Owner | Why it matters |
+|---|---|---|---|---|
+| R1 | Refund policy doc | Drive > Ops > Policies | Ha (Ops) | Holds the real approval thresholds |
+
 ## Parked ideas
 
 If a solution occurs to you mid-interview, write it here and **say nothing** — voicing it frames the user's thinking. Use it only at synthesis time.
@@ -75,3 +109,14 @@ If a solution occurs to you mid-interview, write it here and **say nothing** —
 1. Read `transcript.md`.
 2. Report back to the user: which layer, how many questions asked, how many items still OPEN.
 3. Resume from exactly where it stopped, **in the language recorded in the `Language:` field**. **Never re-ask** anything already in the log.
+
+## Duty checklist — verify before synthesizing
+
+The residual sweep (Step 11) must confirm all three collection duties actually fired:
+
+- [ ] Every general rule in the log has at least one real case under **Examples**.
+- [ ] Anything the user struggled to describe in words has an entry under **Illustrations**.
+- [ ] Every document, link, competitor, or person cited in the log appears under **References**.
+- [ ] The whole-picture sketch is present and marked confirmed.
+
+An empty section here is not "nothing to collect" — it usually means the duty never fired. Go back and ask.

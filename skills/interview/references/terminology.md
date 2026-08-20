@@ -1,6 +1,6 @@
 # Terminology map — English / Tiếng Việt
 
-Read this once, after the language is chosen in Step 0. Use **one column only** for the entire session — transcript, read-backs, and synthesis HTML. Never mix columns.
+Read once, after the language is chosen in Step 0. Use **one column only** for the entire session — transcript, read-backs, sketches, and synthesis HTML. Never mix columns.
 
 ## Content labels (the three-way separation)
 
@@ -28,21 +28,52 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 
 | English | Tiếng Việt |
 |---|---|
-| `**Q12 · Layer 4 (Relationships)**` | `**Câu 12 · Tầng 4 (Quan hệ)**` |
+| `**Q12 · Layer 5 (Relationships)**` | `**Câu 12 · Tầng 5 (Quan hệ)**` |
 | Layer | Tầng |
 | Question | Câu |
 
-## Layer names
+## Layer names (8 layers)
 
 | # | English | Tiếng Việt |
 |---|---|---|
 | 0 | Root purpose & definition of success | Mục đích gốc & định nghĩa thành công |
 | 1 | Context & constraints | Bối cảnh & ràng buộc |
-| 2 | Current vs desired state | Hiện trạng vs mong muốn |
-| 3 | Components | Thành phần |
-| 4 | Relationships | Quan hệ |
-| 5 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) |
-| 6 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
+| 2 | Fears & stakes | Nỗi sợ & cái đang đặt cược |
+| 3 | Current vs desired state | Hiện trạng vs mong muốn |
+| 4 | Components | Thành phần |
+| 5 | Relationships | Quan hệ |
+| 6 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) |
+| 7 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
+
+## The three collection duties
+
+| English | Tiếng Việt |
+|---|---|
+| Collection duties | Nhiệm vụ thu thập |
+| Concrete examples | Ví dụ cụ thể |
+| Illustrations | Minh hoạ |
+| References | Nguồn tham khảo |
+| Analogy | Ẩn dụ |
+| Real case / instance | Ca thật |
+
+## Whole-picture checkpoint
+
+| English | Tiếng Việt |
+|---|---|
+| Whole-picture checkpoint | Chốt bức tranh tổng thể |
+| Overview diagram | Sơ đồ tổng thể |
+| Confirmed sketch | Bản vẽ đã xác nhận |
+| "This is the picture I'm holding. What's wrong with it, and what's missing?" | "Đây là bức tranh tôi đang hình dung. Nó sai chỗ nào, và thiếu gì?" |
+
+## Fears — two registers, never merged
+
+| English | Tiếng Việt |
+|---|---|
+| Fears & stakes | Nỗi sợ & cái đang đặt cược |
+| The user's own fears | Nỗi sợ của chính bạn |
+| The end users' fears | Nỗi sợ của người dùng cuối |
+| What's at stake | Cái đang đặt cược |
+| Unspoken objection | Lý do không nói ra |
 
 ## Transcript field names
 
@@ -65,20 +96,25 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | # | English | Tiếng Việt |
 |---|---|---|
 | 1 | The problem in one sentence | Bài toán trong một câu |
-| 2 | Root purpose & definition of success | Mục đích gốc & định nghĩa thành công |
-| 3 | Context & constraints | Bối cảnh & ràng buộc |
-| 4 | Current → Desired | Hiện trạng → Mong muốn |
-| — | Already tried and ruled out | Đã thử và loại |
+| 2 | The whole picture | Bức tranh tổng thể |
+| 3 | Root purpose & definition of success | Mục đích gốc & định nghĩa thành công |
+| 4 | Context & constraints | Bối cảnh & ràng buộc |
 | — | Hard rules vs habits | Ràng buộc cứng vs thói quen |
-| 5 | Component map | Bản đồ thành phần |
-| 6 | Relationship diagram | Sơ đồ quan hệ |
-| 7 | Decision trees | Cây quyết định |
-| 8 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
-| 9 | Risks, contradictions & unknowns | Rủi ro, mâu thuẫn & vùng chưa biết |
+| 5 | Fears & stakes | Nỗi sợ & cái đang đặt cược |
+| 6 | Current → Desired | Hiện trạng → Mong muốn |
+| — | Already tried and ruled out | Đã thử và loại |
+| 7 | Component map | Bản đồ thành phần |
+| 8 | Relationship diagram | Sơ đồ quan hệ |
+| 9 | Decision trees | Cây quyết định |
+| 10 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
+| 11 | Worked examples | Ví dụ cụ thể |
+| 12 | Illustrations & analogies | Minh hoạ & ẩn dụ |
+| 13 | References | Nguồn tham khảo |
+| 14 | Risks, contradictions & unknowns | Rủi ro, mâu thuẫn & vùng chưa biết |
 | — | Contradictions | Mâu thuẫn |
 | — | Unverified assumptions | Giả định chưa kiểm chứng |
 | — | Genuine unknowns | Vùng chưa biết thật |
-| 10 | Proposed solution | Giải pháp đề xuất |
+| 15 | Proposed solution | Giải pháp đề xuất |
 | — | Appendix & interview stats | Phụ lục & số liệu buổi phỏng vấn |
 
 ## Recurring phrases
@@ -94,3 +130,4 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | source of truth | nguồn chân lý |
 | default branch | nhánh mặc định |
 | that's enough | đủ rồi |
+| recorded, not read | ghi nhận, không đọc |

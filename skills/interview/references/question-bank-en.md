@@ -1,4 +1,4 @@
-# Seed question bank — 7 layers
+# Seed question bank — 8 layers (English)
 
 These are **prompts, not a form**. Real questions must grow out of the previous answer, reusing the user's exact vocabulary. The one-question-per-turn rule still applies.
 
@@ -46,7 +46,39 @@ If rung 7 still yields nothing: log it in the Ambiguity Ledger as **GENUINELY UN
 - If this goes wrong, what's the worst consequence — money, customers, data, or reputation?
 - Any regulatory, compliance, or legal requirements governing this?
 
-## Layer 2 — Current vs desired state
+## Layer 2 — Fears & stakes
+
+Two registers, kept strictly separate. Ask the user's own fears first, then switch and ask about the end users'. Never blend them into one question.
+
+### The user's own fears
+
+- What are you most afraid of getting wrong here?
+- What would make you regret having started this at all?
+- If this goes badly, who notices first, and what do they say to you?
+- What's the failure you'd find hardest to explain to someone else?
+- Is there a version of "success" that you'd still be uneasy about? Why?
+- What are you afraid this will turn into six months from now?
+- What are you quietly worried you don't understand well enough yet?
+- Is there anyone whose reaction you're bracing for? What are they going to say?
+- What's the part you keep putting off? What makes it unappealing?
+- If you had to protect exactly one thing from being broken by this, what would it be?
+
+### The end users' fears
+
+("End users" = whoever actually lives with the result: customers, staff, partners.)
+
+- Who has to change how they work because of this?
+- What are they afraid of losing — time, control, status, income, their job?
+- What's the reason they'd give for not adopting it, out loud?
+- And the reason they wouldn't say out loud?
+- What did they complain about last time something changed for them?
+- What would make someone quietly go back to the old way?
+- Who benefits least from this? What do they get out of cooperating?
+- What's the worst thing that could happen to a customer because of this?
+- If they only trusted one part of this, which part would it be?
+- What would they need to see, in the first week, to believe it's better?
+
+## Layer 3 — Current vs desired state
 
 - How does this work today? Walk me through it step by step — starting from what moment?
 - Which step eats the most time?
@@ -59,7 +91,7 @@ If rung 7 still yields nothing: log it in the Ambiguity Ledger as **GENUINELY UN
 - In that desired state, what work **no longer needs to happen**?
 - Is anyone already doing what you want? How do they do it?
 
-## Layer 3 — Components (first principles)
+## Layer 4 — Components (first principles)
 
 Goal: decompose the problem into the smallest "things" that are still meaningful on their own.
 
@@ -80,7 +112,7 @@ Goal: decompose the problem into the smallest "things" that are still meaningful
 - Is anything here not an independent thing at all, but really an **attribute** of something else?
 - Is there anything that exists in your head but hasn't been named yet?
 
-## Layer 4 — Relationships between components
+## Layer 5 — Relationships between components
 
 Ask **pair by pair** for plausibly related pairs. Never ask in the abstract.
 
@@ -96,7 +128,7 @@ Ask **pair by pair** for plausibly related pairs. Never ask in the abstract.
 - If A changes, what has to change with it? (change propagation)
 - Is any of these relationships currently held **in someone's memory** rather than recorded in a system?
 
-## Layer 5 — Business logic as decision trees
+## Layer 6 — Business logic as decision trees
 
 List the **decision points** in the flow, then exhaust them one at a time — every branch of this one before moving to the next.
 
@@ -116,7 +148,7 @@ For each decision point:
 - Is this step ever **skipped**? Under what circumstances, and who authorizes that?
 - How long does this step take? What happens if it takes too long?
 
-## Layer 6 — Exceptions & edge cases
+## Layer 7 — Exceptions & edge cases
 
 - At each step: what can **go wrong**? (Ask one step at a time.)
 - When it goes wrong, what does the system or person do — halt, retry, or continue?
@@ -133,3 +165,37 @@ For each decision point:
 - What case have you actually hit in real life that the process doesn't cover?
 - If volume grew 10×, what **breaks first**?
 - If the person carrying this work quit tomorrow, what grinds to a halt?
+
+---
+
+## The three collection duties — question patterns
+
+Fire these in any layer, the moment the trigger appears. One question each, never bundled.
+
+### A. Concrete examples — trigger: a general pattern with no instance
+
+- "Give me one real case. When did it last happen?"
+- "Walk me through that specific one, start to finish."
+- "What were the actual numbers on that one?"
+- "Was that typical, or was it unusual? What would typical look like?"
+- "How many times has that happened in the last month?"
+- "Who was involved by name — or by role, if you'd rather?"
+
+### B. Illustrations — trigger: something hard to say in words
+
+- "Is there a screenshot, a photo, or a file that shows this?"
+- "Is there a product or tool that already does this the way you want? Which part of it?"
+- "What is this like? Give me an analogy, even a rough one."
+- "If you were drawing this on a whiteboard, what would you draw first?"
+- "Would it be easier to show me an example of what you *don't* want?"
+
+### C. References — trigger: anything cited from outside this conversation
+
+- "Where does that document live, and who owns it?"
+- "Can you point me at it — a link or a path is enough?"
+- "Who knows more about this part than you do?"
+- "Is that written down anywhere, or is it just how it's done?"
+- "Which competitor or company are you thinking of there?"
+- "Is there a rule, contract, or policy behind that? Where?"
+
+Record references — do not go read them. Reading is research, and research during the interview is forbidden.

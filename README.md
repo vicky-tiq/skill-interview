@@ -8,30 +8,58 @@ A Claude Code skill that interviews you about your problem before anything gets 
 
 A bilingual (**English / Tiếng Việt**) interview skill. Instead of guessing at your
 intent from a one-line request, Claude interviews you: **one question at a time**,
-across seven layers, until nothing about the problem is ambiguous. Then it writes a
-single self-contained HTML file you can read, correct, and share.
+across eight layers, until the whole picture can be *drawn* rather than guessed. Then it
+writes a single self-contained HTML file — overview diagram first — that you can read,
+correct, and share.
 
 The point is not documentation. The point is catching the misunderstanding *before*
 it becomes a week of wrong code.
 
-### The seven layers
+### The eight layers
 
 | # | Layer | What it establishes |
 |---|---|---|
 | 0 | Root purpose & definition of success | That you're solving the right problem, and what "done" looks like |
 | 1 | Context & constraints | Who's involved; which limits are real rules vs just habits |
-| 2 | Current vs desired state | Where it hurts today; what was tried and why it failed |
-| 3 | Components | First-principles decomposition into the smallest meaningful things |
-| 4 | Relationships | How those things bind together; what flows between them |
-| 5 | Business logic | Every decision point, every branch, exact conditions and thresholds |
-| 6 | Exceptions & edge cases | Failure branches, concurrency, zero/one/many, who may break the rules |
+| 2 | Fears & stakes | What *you* dread, and separately what your *end users* dread |
+| 3 | Current vs desired state | Where it hurts today; what was tried and why it failed |
+| 4 | Components | First-principles decomposition into the smallest meaningful things |
+| 5 | Relationships | How those things bind together; what flows between them |
+| 6 | Business logic | Every decision point, every branch, exact conditions and thresholds |
+| 7 | Exceptions & edge cases | Failure branches, concurrency, zero/one/many, who may break the rules |
+
+The two fear registers never get merged. Your fear of being blamed and a customer's fear
+of losing money are different inputs: the first shapes what *not* to build, the second
+shapes what to build.
+
+### Collected throughout, not in a layer
+
+- **Concrete examples** — the moment you describe a general pattern ("big orders usually…"),
+  it asks for one real case with real numbers. A rule with no instance behind it is a rule
+  you *believe*, not one that *operates*.
+- **Illustrations** — when something is hard to put in words, it stops asking for prose and
+  asks for a screenshot, a product that already does it, or an analogy. Your own metaphor
+  gets quoted verbatim, because it carries structure your prose doesn't.
+- **References** — every document, link, competitor or person you cite gets captured: what
+  it is, where it lives, why it matters. **Recorded, not read** — see below.
+
+### The whole-picture checkpoint
+
+Midway through — after relationships, before business logic — Claude stops asking and
+*draws*. It sketches the entire problem as a box-and-arrow diagram in the chat and asks
+one question: what's wrong with it, and what's missing?
+
+This is the highest-yield moment in the interview. A wrong drawing gets corrected in
+seconds; the same error buried in prose survives to the end. Whatever had to be invented
+to make the drawing work is a gap, and gets marked as one.
 
 ### How it behaves
 
 - **One question per turn.** No compound questions, no bulk questionnaires.
 - **It does not research.** No reading your code, no web search, no guessing from
-  existing files. It assumes it knows nothing, so it can't confuse its assumptions
-  for your requirements.
+  existing files. It assumes it knows nothing, so it can't confuse its assumptions for
+  your requirements. References you hand it are *recorded, not opened* — so nothing in
+  the output is ever presented as verified when it wasn't.
 - **"I don't know" is a valid answer.** It slices the question smaller instead of
   moving on — down a seven-rung ladder from general to one concrete instance to a
   forced binary.
@@ -98,7 +126,7 @@ Optionally with the problem inline: `/interview our refund process is a mess`
 The first question is which language to use — English or Tiếng Việt. Everything after
 that stays in that language: questions, transcript, and the HTML.
 
-A full interview runs 30–60 questions. Output:
+A full interview runs 40–70 questions. Output:
 
 ```
 interview/<problem-slug>/transcript.md     # the full Q&A log, verbatim
@@ -120,9 +148,23 @@ Sau đó xuất một file HTML tự chứa để bạn đọc, soát lỗi và 
 Mục đích không phải là tài liệu. Mục đích là bắt được chỗ hiểu sai **trước khi** nó
 biến thành một tuần code sai hướng.
 
-**Bảy tầng:** mục đích gốc & định nghĩa thành công → bối cảnh & ràng buộc → hiện trạng
-vs mong muốn → thành phần → quan hệ → logic nghiệp vụ (cây quyết định) → ngoại lệ &
-trường hợp biên.
+**Tám tầng:** mục đích gốc & định nghĩa thành công → bối cảnh & ràng buộc → **nỗi sợ &
+cái đang đặt cược** → hiện trạng vs mong muốn → thành phần → quan hệ → logic nghiệp vụ
+(cây quyết định) → ngoại lệ & trường hợp biên.
+
+Nỗi sợ được tách làm hai sổ riêng, không trộn: nỗi sợ của **bạn** (sợ làm sai hướng, sợ
+ai phản ứng) và nỗi sợ của **người dùng cuối** (sợ mất gì, ngại gì, lý do không nói ra).
+Hai thứ đó dẫn tới hai loại quyết định khác nhau.
+
+**Thu thập xuyên suốt, không thuộc tầng nào:** ví dụ cụ thể (ca thật, số thật — quy luật
+không có ca thật là quy luật bạn *tin*, không phải quy luật đang *chạy*), minh hoạ (ảnh,
+sản phẩm mẫu, ẩn dụ của chính bạn — trích nguyên văn), và nguồn tham khảo (**ghi nhận,
+không đọc**).
+
+**Chốt bức tranh tổng thể:** giữa buổi, Claude dừng hỏi và **vẽ** — sơ đồ hộp-và-mũi-tên
+cả bài toán, rồi hỏi đúng một câu: nó sai chỗ nào, thiếu gì? Đây là thời điểm bắt lỗi
+hiệu quả nhất: vẽ sai thì sửa trong vài giây, còn cùng lỗi đó nằm trong văn xuôi thì sống
+đến cuối buổi.
 
 **Cách nó hoạt động:**
 
@@ -136,7 +178,8 @@ trường hợp biên.
   đúng câu, đúng ngôn ngữ.
 
 **Đọc bản đúc kết:** mỗi mệnh đề có nhãn `[BẠN NÓI]` / `[TÔI SUY RA]` / `[TÔI ĐỀ XUẤT]`.
-Đọc `[TÔI SUY RA]` trước — chỗ hiểu sai gần như luôn nằm ở đó.
+Đọc `[TÔI SUY RA]` trước — chỗ hiểu sai gần như luôn nằm ở đó. File HTML mở đầu bằng
+**sơ đồ tổng thể**: nhìn riêng phần đó là kể lại được cả bài toán.
 
 Cài đặt: xem phần **Install** ở trên. Gõ `/interview` để bắt đầu; câu đầu tiên là chọn
 ngôn ngữ.
@@ -149,11 +192,11 @@ ngôn ngữ.
 skills/interview/
 ├── SKILL.md                       # the process and its rules
 └── references/
-    ├── question-bank-en.md        # ~110 seed questions, English
-    ├── question-bank-vi.md        # ~110 seed questions, Vietnamese
+    ├── question-bank-en.md        # ~140 seed questions, English
+    ├── question-bank-vi.md        # ~140 seed questions, Vietnamese
     ├── terminology.md             # EN↔VI map: labels, ledger, headings
-    ├── transcript-template.md     # transcript structure
-    └── html-template.md           # synthesis structure and styling
+    ├── transcript-template.md     # transcript structure + collection accumulators
+    └── html-template.md           # 15-section synthesis structure and styling
 ```
 
 Plain markdown, no code, no dependencies, no network access.
