@@ -86,6 +86,11 @@ if sane "$OUT1" "T1 language choice offered first"; then
   else
     bad "T1 language choice offered first" "no English/Tiếng Việt choice in first reply"
   fi
+  if printf '%s' "$OUT1" | grep -qiE 'nhanh|quick' && printf '%s' "$OUT1" | grep -qiE 's(â|a)u|deep'; then
+    ok "T1b depth choice offered alongside language"
+  else
+    bad "T1b depth choice offered alongside language" "Step 0 did not offer deep vs quick"
+  fi
   # Step 0 is bilingual on purpose: one question, printed in both languages.
   Q1="$(qmarks "$OUT1")"
   if [ "$Q1" -ge 1 ] && [ "$Q1" -le 2 ]; then
@@ -103,11 +108,24 @@ else
 fi
 
 echo; echo "T2b — second turn stays at one question"
-OUT2="$(run "Tiếng Việt" --resume "$SID")"
+OUT2="$(run "Tiếng Việt, sâu" --resume "$SID")"   # Step 0 wants both; answering half makes it re-ask
 if sane "$OUT2" "T2b exactly one question on turn 2"; then
   Q2="$(qmarks "$OUT2")"
   [ "$Q2" = 1 ] && ok "T2b exactly one question on turn 2 (monolingual)" \
                 || bad "T2b exactly one question on turn 2" "found $Q2 question marks, expected exactly 1"
+fi
+
+echo; echo "T2c — quick mode is recorded and honoured"
+OUTQ="$(run "phỏng vấn nhanh thôi: tôi muốn thêm nút xuất Excel cho trang báo cáo" --session-id "$(uuidgen | tr '[:upper:]' '[:lower:]')")"
+if sane "$OUTQ" "T2c quick mode honoured"; then
+  QQ="$(qmarks "$OUTQ")"
+  if printf '%s' "$OUTQ" | grep -qiE 'nhanh|quick'; then
+    ok "T2c quick request acknowledged (not silently upgraded)"
+  else
+    bad "T2c quick request acknowledged" "no sign the quick depth was registered"
+  fi
+  [ "$QQ" -le 2 ] && ok "T2d quick mode still one question per turn ($QQ marks)" \
+                  || bad "T2d quick mode still one question per turn" "found $QQ question marks"
 fi
 
 echo; echo "T3 — transcript written after every answer, not batched"

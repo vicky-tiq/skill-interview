@@ -199,3 +199,44 @@ Bắn những câu này ở bất kỳ tầng nào, ngay khi gặp dấu hiệu.
 - "Có quy định, hợp đồng, hay chính sách nào đứng sau chuyện đó? Ở đâu?"
 
 Ghi nhận nguồn — **không đi đọc nó**. Đọc là nghiên cứu, mà nghiên cứu trong lúc phỏng vấn là bị cấm.
+
+---
+
+## Bản nhanh — 15 câu
+
+Toàn bộ danh sách câu hỏi của chế độ nhanh. Hỏi đúng những câu này, theo thứ tự, mỗi lượt một câu. Câu mở đầu "bài toán là gì", checkpoint vẽ tranh, và câu xác nhận cuối nằm ngoài con số này.
+
+Mỗi câu được chọn vì độ sinh lời: nó là câu mà câu trả lời làm thay đổi nhiều quyết định phía sau nhất trong tầng đó.
+
+**Tầng 0 — mục đích & thành công (2)**
+1. Xong rồi thì bạn nhìn vào đâu để biết là xong? Có con số thì cho luôn con số.
+2. Vì sao là bây giờ — điều gì vừa thay đổi khiến nó thành việc phải làm?
+
+**Tầng 1 — bối cảnh & ràng buộc (2)**
+3. Ai là người quyết định cuối chuyện này?
+4. Cái gì không được phép thay đổi — và đó là luật cứng, hay chỉ là cách hiện đang làm?
+
+**Tầng 2 — nỗi sợ (2, không trộn)**
+5. Bạn sợ nhất là làm sai chỗ nào?
+6. Người phải sống với kết quả này — **họ** sợ mất gì?
+
+**Tầng 3 — thành phần (2)**
+7. Những **thứ** chính mà mọi thứ khác xoay quanh là gì? Chỉ cần kể tên.
+8. Trong những từ bạn vừa dùng, từ nào mà hai người trong team bạn sẽ định nghĩa khác nhau? Định nghĩa nó cho tôi.
+
+**Tầng 4 — quan hệ (2)**
+9. Lấy hai thứ quan trọng nhất trong đó: chúng liên quan thế nào — một câu có động từ?
+10. Khi hai thứ đó lệch nhau, cái nào là nguồn chân lý?
+
+**Tầng 5 — một điểm quyết định quan trọng nhất (3)**
+11. Trong luồng này, quyết định ở chỗ nào ảnh hưởng tới kết quả nhiều nhất — và ai quyết?
+12. Từ đó đi ra những nhánh nào, điều kiện chính xác của từng nhánh là gì — con số, ngưỡng, mốc thời gian?
+13. Nhánh nào là mặc định khi không xác định được, và quyết định này đảo lại được không?
+
+**Tầng 6 — ngoại lệ (2)**
+14. Bước nào hay sai nhất, và khi sai thì chuyện gì xảy ra?
+15. Ai được phép phá luật, và có ai ghi lại khi họ làm vậy không?
+
+**Rồi:** checkpoint vẽ bức tranh tổng thể (Bước 10), xác nhận cuối, rồi đúc kết.
+
+Câu trả lời mơ hồ thì chẻ tối đa hai lần (xem thang chẻ ở trên), rồi ghi `VÙNG CHƯA BIẾT THẬT` và sang số kế tiếp. Không thêm câu. Nếu thấy bài toán rõ ràng cần sâu hơn, cứ làm hết 15 câu rồi **đề nghị** nâng cấp — không được tự trôi.

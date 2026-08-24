@@ -199,3 +199,44 @@ Fire these in any layer, the moment the trigger appears. One question each, neve
 - "Is there a rule, contract, or policy behind that? Where?"
 
 Record references — do not go read them. Reading is research, and research during the interview is forbidden.
+
+---
+
+## Quick mode — the 15
+
+The entire question list for quick mode. Ask these and only these, in order, one per turn. The opening "what's the problem" question, the whole-picture checkpoint, and the final confirmation sit outside this count.
+
+Each one is chosen for yield: it is the question in that layer whose answer changes the most downstream decisions.
+
+**Layer 0 — purpose & success (2)**
+1. Once this is solved, what will you look at to know it's solved? A number if there is one.
+2. Why now — what changed that made this a must-do?
+
+**Layer 1 — context & constraints (2)**
+3. Who makes the final call on this?
+4. What is not allowed to change — and is that a hard rule or just how it's done today?
+
+**Layer 2 — fears (2, never merged)**
+5. What are you most afraid of getting wrong here?
+6. Whoever has to live with the result — what are *they* afraid of losing?
+
+**Layer 3 — components (2)**
+7. What are the main things everything else revolves around? Just name them.
+8. Of the words you've used so far, which one would two people on your team define differently? Define it for me.
+
+**Layer 4 — relationships (2)**
+9. Take the two most important of those things: how are they related — one sentence with a verb?
+10. When those two disagree, which one is the source of truth?
+
+**Layer 5 — the one decision point that matters most (3)**
+11. Where in this flow does the decision get made that most determines the outcome — and who makes it?
+12. What are the branches out of it, and the exact condition for each — numbers, thresholds, dates?
+13. Which branch is the default when nothing can be determined, and can the decision be reversed?
+
+**Layer 6 — exceptions (2)**
+14. Which step goes wrong most often, and what happens when it does?
+15. Who is allowed to break the rules, and does anyone record it when they do?
+
+**Then:** the whole-picture checkpoint (Step 10), then the final confirmation, then synthesis.
+
+If an answer is vague, slice at most twice (see the ladder above), then log it `GENUINELY UNKNOWN` and move to the next number. Do not add questions. If the problem clearly needs more, finish the 15 and *offer* to escalate — never drift.

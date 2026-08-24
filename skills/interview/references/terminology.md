@@ -45,6 +45,20 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | 6 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) |
 | 7 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
 
+## Depth modes
+
+| English | Tiếng Việt |
+|---|---|
+| Depth | Độ sâu |
+| Deep interview | Phỏng vấn sâu |
+| Quick interview | Phỏng vấn nhanh |
+| One pass | Một lượt quét |
+| Shallow pass | Lượt quét nông |
+| What to nail down before building | Cần chốt gì trước khi làm |
+| Suggested next step | Bước tiếp theo đề xuất |
+| "Quick interview — 15 questions. This is a shallow pass; section 8 lists what it did not establish." | "Phỏng vấn nhanh — 15 câu. Đây là một lượt quét nông; mục 8 liệt kê những gì chưa xác lập được." |
+| "N points are still open. Want to go deeper?" | "Còn N điểm chưa rõ. Đào sâu tiếp không?" |
+
 ## The three collection duties
 
 | English | Tiếng Việt |

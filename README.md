@@ -12,6 +12,33 @@ across eight layers, until the whole picture can be *drawn* rather than guessed.
 writes a single self-contained HTML file — overview diagram first — that you can read,
 correct, and share.
 
+### Two depths
+
+The first question settles language and depth together.
+
+| | **Deep** | **Quick** |
+|---|---|---|
+| Questions | 40–70 | ~15, one pass |
+| Per layer | Exhausted | The 1–2 highest-yield questions |
+| Whole-picture diagram | Yes | **Yes** — never cut |
+| Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
+| Synthesis | 15 sections | 9 sections |
+| Open questions | Must not exist | **Are the headline deliverable** |
+
+Both cover all eight layers — quick is shallower, not narrower. It never pretends to
+certainty it didn't earn: everything unresolved lands in a prominent *"what to nail down
+before building"* section, each line saying what breaks if it's guessed wrong. A quick
+interview that hides its gaps is worse than none, because it launders a guess into a
+document.
+
+Quick can become deep mid-interview without losing anything — same transcript format, so
+it resumes at whichever layer has the most open items rather than restarting. It will
+never escalate on its own: drifting from 15 questions to 45 would break the deal you made
+at the first question.
+
+Ask for it with `/interview` and pick at the prompt, or say *"phỏng vấn nhanh"* /
+*"quick interview"* to skip straight to it.
+
 The point is not documentation. The point is catching the misunderstanding *before*
 it becomes a week of wrong code.
 
@@ -130,7 +157,7 @@ Optionally with the problem inline: `/interview our refund process is a mess`
 The first question is which language to use — English or Tiếng Việt. Everything after
 that stays in that language: questions, transcript, and the HTML.
 
-A full interview runs 40–70 questions. Output:
+A deep interview runs 40–70 questions, a quick one about 15. Output:
 
 ```
 interview/<problem-slug>/transcript.md     # the full Q&A log, verbatim

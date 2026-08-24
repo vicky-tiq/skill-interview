@@ -23,7 +23,7 @@ Every claim in the file carries exactly one of three labels (Vietnamese equivale
 
 Never mix the three within a single statement. The user must be able to spot instantly which words are theirs and which Claude added — that separation is the error-detection mechanism.
 
-## 15 sections, in this order
+## Deep mode — 15 sections, in this order
 
 Heading wording per language: see the "Synthesis HTML section headings" table in `terminology.md`.
 
@@ -47,6 +47,24 @@ Heading wording per language: see the "Synthesis HTML section headings" table in
 15. **Proposed solution** — fully separated, with a visible divider and an opening line: *"Everything below this line is my proposal, not something you told me."* Covers: the approach, why it fits the stated constraints **and answers the fears in section 5**, implementation steps, and what it deliberately does **not** do.
 
 Closing appendix: a link to `transcript.md` plus interview stats (total questions, ambiguities resolved, unknowns remaining, examples collected, references captured).
+
+## Quick mode — 9 sections
+
+A quick interview must not produce a document that *looks* as authoritative as a deep one. Fewer sections, and the unknowns are promoted rather than buried.
+
+1. **The problem in one sentence**
+2. **The whole picture** — the confirmed overview diagram, same drawing standard as deep mode. Never cut this; it is the most information per pixel in the file.
+3. **Purpose & definition of success** — including the number, if there is one.
+4. **Constraints & who decides** — and which constraints are hard rules vs habits.
+5. **Fears** — the two registers, still separate, one or two items each.
+6. **Components & how they relate** — deep mode's sections 7 and 8 merged into one table plus one small diagram.
+7. **The decision point that matters most** — branches, exact conditions, default, reversible?
+8. **What to nail down before building** — *the headline section.* Every open ledger item, every unverified inference, every rule with no example behind it. Each line says what breaks if it is guessed wrong. Style it as the most prominent block on the page after the diagram.
+9. **Suggested next step** — labelled `[I PROPOSE]`, and explicitly scoped: what can safely start now, and what must wait for section 8.
+
+Add a banner at the top of the file, in the interview language: *"Quick interview — 15 questions. This is a shallow pass; section 8 lists what it did not establish."* / *"Phỏng vấn nhanh — 15 câu. Đây là một lượt quét nông; mục 8 liệt kê những gì chưa xác lập được."*
+
+No worked-examples, illustrations, or references sections unless a duty actually fired — an empty section implies nothing was there, which is a different claim from "we did not look".
 
 ## Drawing the overview diagram (section 2)
 

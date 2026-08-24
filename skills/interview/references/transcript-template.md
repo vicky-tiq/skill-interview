@@ -15,6 +15,7 @@ Append **immediately after each answer**, before asking the next question. Appen
 
 - Slug: <slug>
 - Language: English | Tiếng Việt   ← set in Step 0; never changes mid-interview
+- Depth: deep | quick             ← set in Step 0; only ever changes deep-ward, and only if the user agrees
 - Started: <YYYY-MM-DD>
 - Updated: <YYYY-MM-DD>
 - Position: Layer <n> (<layer name>) · Q<N>
@@ -109,7 +110,17 @@ If a solution occurs to you mid-interview, write it here and **say nothing** —
 
 1. Read `transcript.md`.
 2. Report back to the user: which layer, how many questions asked, how many items still OPEN.
-3. Resume from exactly where it stopped, **in the language recorded in the `Language:` field**. **Never re-ask** anything already in the log.
+3. Resume from exactly where it stopped, **in the language recorded in the `Language:` field and at the depth in `Depth:`**. **Never re-ask** anything already in the log.
+
+## Escalating quick → deep
+
+The format is identical at both depths, so escalation is a field edit, not a restart:
+
+1. Set `Depth: deep` and note the question number where it changed.
+2. Resume at the layer holding the most `OPEN` items, not at Layer 0.
+3. Everything already logged stays valid — quick mode's answers are shallow, not wrong.
+
+Only ever escalate with the user's agreement. Silently turning a 15-question interview into a 45-question one breaks the deal they made at Step 0.
 
 ## Duty checklist — verify before synthesizing
 
