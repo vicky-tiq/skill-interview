@@ -1,6 +1,6 @@
 ---
 name: interview
-description: Interview the user to understand a problem BEFORE building anything, so the whole picture can be drawn rather than guessed. Two depths — DEEP (40–70 questions, exhaustive) and QUICK (~15 questions, one pass) — both covering the same 8 layers. Bilingual (English / Tiếng Việt) — asks language and depth first, then asks one question at a time across 8 layers (root purpose → context/constraints → fears & stakes → current vs desired state → components → relationships → business logic decision trees → exceptions/edge cases), collecting concrete examples, illustrations and references as it goes, logging a transcript after every single answer. Sketches the whole picture mid-interview for correction, then synthesizes everything into one HTML file containing an overview diagram, problem map, goals, context, fears, examples, references, risks/contradictions, and a proposed solution. Triggers when the user types /interview, or says "interview me", "ask me questions until it's clear", "help me clarify this problem", "break down my problem", "draw the big picture of this", "make sure you understand what I mean", "get on the same page before we build", "phỏng vấn tôi", "hỏi tôi cho rõ", "làm rõ bài toán", "bóc tách bài toán", "vẽ bức tranh tổng thể". Quick depth is requested with "quick interview", "interview me quickly", "short version", "phỏng vấn nhanh", "hỏi nhanh thôi", "bản rút gọn". Works for any kind of problem: product/feature work, business process design, strategic decisions, or designing a new skill/agent.
+description: Interview the user to understand a problem BEFORE building anything, so the whole picture can be drawn rather than guessed. Two depths — DEEP (50–85 questions, exhaustive) and QUICK (~15 questions, one pass) — both covering the same 8 layers. Bilingual (English / Tiếng Việt) — asks language and depth first, then asks one question at a time across 8 layers (root purpose → context/constraints → fears & stakes → current vs desired state → components → relationships → business logic decision trees → exceptions/edge cases), collecting concrete examples, illustrations and references as it goes, logging a transcript after every single answer. Sketches the whole picture mid-interview for correction, then synthesizes everything into one HTML file containing an overview diagram, problem map, goals, context, fears, examples, references, risks/contradictions, and a proposed solution. Triggers when the user types /interview, or says "interview me", "ask me questions until it's clear", "help me clarify this problem", "break down my problem", "draw the big picture of this", "make sure you understand what I mean", "get on the same page before we build", "phỏng vấn tôi", "hỏi tôi cho rõ", "làm rõ bài toán", "bóc tách bài toán", "vẽ bức tranh tổng thể". Quick depth is requested with "quick interview", "interview me quickly", "short version", "phỏng vấn nhanh", "hỏi nhanh thôi", "bản rút gọn". Works for any kind of problem: product/feature work, business process design, strategic decisions, or designing a new skill/agent.
 ---
 
 # Problem Interview
@@ -25,7 +25,7 @@ Throughout the interview: do NOT read code, do NOT grep/glob the repo, do NOT We
 
 **3. KEEP ASKING UNTIL NOTHING IS AMBIGUOUS — *in deep mode*.**
 Always maintain an **Ambiguity Ledger** in the transcript. What it gates depends on depth:
-- **Deep:** no question limit, 40–70 is normal, and the interview ends only when the ledger has no open items.
+- **Deep:** no question limit, 50–85 is normal, and the interview ends only when the ledger has no open items.
 - **Quick:** one pass, ~15 questions, and the interview ends at the close of Layer 7 **even with items still open**. Open items are not failures there — they are the deliverable, reported as "what to nail down before building".
 
 The user may stop you at any time by saying "that's enough" / "đủ rồi".
@@ -92,7 +92,7 @@ Same 8 layers, same 6 rules, same three labels, same drawing checkpoint. Only th
 
 | | Deep | Quick |
 |---|---|---|
-| Questions | 40–70 | ~15 (one pass) |
+| Questions | 50–85 | ~15 (one pass) |
 | Per layer | Exhaust it | The 1–2 highest-yield questions |
 | Slicing on a vague answer | Until answerable | Two slices, then log unknown |
 | Collection duties | Every time triggered | Once each, for the most load-bearing case |
@@ -117,9 +117,9 @@ Same 8 layers, same 6 rules, same three labels, same drawing checkpoint. Only th
 - **question:** `Language and depth? / Ngôn ngữ và độ sâu?`
 - **header:** `Setup`
 - **options:**
-  - `Tiếng Việt · sâu` — `40–70 câu, hỏi đến khi không còn điểm mơ hồ. Cho bài toán bạn sẽ đầu tư thật.`
+  - `Tiếng Việt · sâu` — `50–85 câu, hỏi đến khi không còn điểm mơ hồ. Cho bài toán bạn sẽ đầu tư thật.`
   - `Tiếng Việt · nhanh` — `~15 câu, một lượt qua đủ 8 tầng. Vẫn vẽ bức tranh tổng thể, HTML gọn.`
-  - `English · deep` — `40–70 questions, until nothing is ambiguous. For something you will really build.`
+  - `English · deep` — `50–85 questions, until nothing is ambiguous. For something you will really build.`
   - `English · quick` — `~15 questions, one pass over all 8 layers. Still draws the picture, compact HTML.`
 
 Skip or narrow it when the user has already said what they want:
@@ -170,6 +170,18 @@ The seed questions are **prompts, not a form**. Real questions must grow out of 
 **Closing a layer — deep mode:** read back 3–6 bullets, then ask exactly one question — EN: *"Did I get this right, and what's missing?"* / VI: *"Tôi hiểu đúng chưa, và thiếu gì không?"* Wrong or incomplete → correct and keep asking in that layer. Confirmed → log the closure and advance.
 
 **Closing a layer — quick mode:** no per-layer read-back; it would cost 8 turns out of a 15-question budget. Log the closure and move on. The two read-backs quick mode does get are the whole-picture checkpoint and the final confirmation before synthesis — and the checkpoint is the load-bearing one, which is why it is never cut.
+
+**Layers 4, 5 and 6 carry completeness machinery — deep mode only.** Quick mode keeps its 15-question list and does none of this; running a pair matrix on a 15-question budget would defeat the point of quick.
+
+| Layer | Machinery | Purpose |
+|---|---|---|
+| 4 | Re-open the naming question until **two consecutive rounds add nothing new** | "All components", proven rather than assumed |
+| 4 | Two first-principles tests on every component: can it be split further and still mean something; does it exist by necessity or by convention | Makes "smallest meaningful thing" a checked claim, not a label |
+| 4 | Three facets always asked, six only when load-bearing, **skips recorded per component** | Every component covered, and thin coverage looks thin |
+| 5 | **Pair matrix**: every one of the N(N−1)/2 pairs logged as `ASKED` / `NOT RELATED` / `SKIPPED` — and `SKIPPED` must carry a reason | "Each component's relationships", with omissions visible instead of silent |
+| 6 | Enumerate decision points until two consecutive rounds add nothing new, logged before working through them | No decision point quietly missed |
+
+The shared principle: **an omission must be visible on paper.** These layers do not force more questions so much as they force every skip to be a recorded decision rather than a silent one. If `SKIPPED` pairs outnumber `ASKED` ones, say so at the layer read-back and let the user re-open any of them.
 
 **In Layer 6, go depth-first:** exhaust every branch of one decision point (including the default and the "none of the above" branch) before the next decision point. Never hop sideways.
 
@@ -232,4 +244,6 @@ Then send the file (`SendUserFile`) and ask whether to publish it as an Artifact
 - **Merging the two fear registers.** The user's fear of being blamed and the customer's fear of losing money are not the same input and must not land in the same block.
 - **Drifting language.** Once set, do not slip — not even for headings or labels in the output file.
 - **Drifting depth.** Quick means quick. If the problem deserves more, say so and ask — do not quietly turn 15 questions into 45.
+- **Silent omission.** Deciding a pair, a facet, or a decision point isn't worth asking about is legitimate. Not writing down that you decided it is not. An unrecorded skip reads as covered ground.
+- **Calling components "the main things".** That phrasing drops the small ones, and the small ones are where the exceptions live. Name everything, then judge.
 - **A quick synthesis that sounds certain.** Shallow is fine; shallow dressed as thorough is not. In quick mode the unknowns section is the most important one on the page, not a footnote.

@@ -70,6 +70,23 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | Analogy | Ẩn dụ |
 | Real case / instance | Ca thật |
 
+## Completeness machinery (deep mode)
+
+| English | Tiếng Việt |
+|---|---|
+| Naming, to exhaustion | Gọi tên tới khi cạn |
+| Two consecutive rounds add nothing new | Hai lượt liền không thêm được gì mới |
+| Split test / can it be split further | Phép thử chẻ nhỏ |
+| Necessity test / necessary or convention | Phép thử tất yếu hay quy ước |
+| Component coverage | Độ phủ thành phần |
+| Facets asked / skipped | Khía cạnh đã hỏi / đã bỏ |
+| Pair matrix | Ma trận cặp |
+| `ASKED` | `ĐÃ HỎI` |
+| `NOT RELATED` | `KHÔNG LIÊN QUAN` |
+| `SKIPPED` | `ĐÃ BỎ` |
+| Decision points | Điểm quyết định |
+| An omission must be visible on paper | Bỏ sót phải hiện ra trên giấy |
+
 ## Whole-picture checkpoint
 
 | English | Tiếng Việt |

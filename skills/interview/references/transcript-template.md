@@ -77,6 +77,45 @@ The user's own metaphors, verbatim — they often carry structure the prose does
 |---|---|---|---|---|
 | R1 | Refund policy doc | Drive > Ops > Policies | Ha (Ops) | Holds the real approval thresholds |
 
+## Component coverage (Layer 4, deep mode)
+
+One row per component. Facets 1–3 are always asked; record which of 4–9 were skipped so a thin component looks thin.
+
+| Component | Facets asked | Facets skipped | Split test | Necessity test |
+|---|---|---|---|---|
+| Refund request | 1,2,3,4,6 | 5,7,8,9 | irreducible | necessary |
+| Approval | 1,2,3 | 4-9 | split into request + decision | convention |
+
+Naming rounds: record each round and what it added. The layer closes only when two consecutive rounds add nothing.
+
+| Round | Added |
+|---|---|
+| 1 | refund request, customer, approval, payout |
+| 2 | dispute log |
+| 3 | — |
+| 4 | — |
+
+## Pair matrix (Layer 5, deep mode)
+
+Every one of the N(N−1)/2 pairs appears here before any relationship question is asked. `SKIPPED` without a reason is not allowed.
+
+| Pair | State | Note / reason |
+|---|---|---|
+| request ↔ customer | ASKED | one customer has many requests, mandatory |
+| request ↔ payout | ASKED | payout is created only after approval |
+| customer ↔ payout | SKIPPED | reaches each other only through request |
+| dispute log ↔ payout | NOT RELATED | user says the log never touches payouts |
+
+## Decision points (Layer 6, deep mode)
+
+Enumerated to exhaustion before any are worked through, same two-empty-rounds rule as component naming.
+
+| # | Decision point | State |
+|---|---|---|
+| D1 | approve or escalate a refund | covered Q41–Q54 |
+| D2 | whether to notify the customer | covered Q55–Q60 |
+| D3 | who absorbs the fee | not yet covered |
+
 ## Parked ideas
 
 If a solution occurs to you mid-interview, write it here and **say nothing** — voicing it frames the user's thinking. Use it only at synthesis time.
@@ -130,5 +169,8 @@ The residual sweep (Step 11) must confirm all three collection duties actually f
 - [ ] Anything the user struggled to describe in words has an entry under **Illustrations**.
 - [ ] Every document, link, competitor, or person cited in the log appears under **References**.
 - [ ] The whole-picture sketch is present and marked confirmed.
+- [ ] Deep mode only: component naming reached two empty rounds.
+- [ ] Deep mode only: every pair in the matrix has a state, and every `SKIPPED` has a reason.
+- [ ] Deep mode only: every decision point in the list is marked covered.
 
 An empty section here is not "nothing to collect" — it usually means the duty never fired. Go back and ask.

@@ -93,28 +93,71 @@ Two registers, kept strictly separate. Ask the user's own fears first, then swit
 
 ## Layer 4 — Components (first principles)
 
-Goal: decompose the problem into the smallest "things" that are still meaningful on their own.
+Goal: decompose the problem into the smallest things that are still meaningful on their own — and **prove the list is complete** instead of assuming it.
 
-- In what you've described, what are the main **things** everything else revolves around? Just name them; no explanation yet.
-- Then ask about **each one separately**, one facet per turn:
-  - Define it in one sentence, the way you'd explain it to a new hire.
-  - Where does it **come into existence**, and who or what creates it?
-  - When does it **end** — does it disappear, close, or live forever?
-  - What **states** can it be in? List them all, including the bad ones.
-  - What has to be true to move it from state A to state B?
-  - Which attributes are **mandatory** for it to count as existing at all?
-  - Who **owns** it — who can edit it, who can only view it?
-  - What **unit** is it measured in?
-  - Does it have an **identity** — what makes two of them different?
-- Term-definition question (ask one word at a time, never bundled): "When you say *<term>*, what exactly does it include, and what does it exclude?"
+### Naming, to exhaustion
+
+Open with:
+- In what you've described, what are the things everything else revolves around? Just name them; no explanation yet.
+
+Then keep re-opening the list, one question per turn, until **two consecutive rounds add nothing new**:
+- What else belongs on that list, even if it feels minor?
+- Is there anything that exists in your head but hasn't been named yet?
+- Anything that only shows up when something goes wrong?
+- Anything owned or held by someone outside your team?
+- Anything that used to be on the list and got dropped?
+
+Never call these the "main" or "key" things. That framing quietly drops the small ones, and the small ones are where the exceptions live.
+
+### The two first-principles tests
+
+Run both on **every** named component, one question per turn:
+- Can this be split further and still mean something on its own? If yes, split it and run this test again on each part.
+- Why does this exist at all — is it necessary, or is it just how it has been done? (Same test Layer 1 applies to constraints. The answer separates the structure from the convention built on top of it.)
+
+Without the first test, "smallest meaningful thing" is a claim rather than something checked.
+
+### Facets, per component
+
+**Three are always asked**, one per turn:
+1. Define it in one sentence, the way you'd explain it to a new hire.
+2. What states can it be in? List them all, including the bad ones.
+3. Who owns it — who can edit it, who can only view it?
+
+**The remaining six only when the component's role makes them load-bearing:**
+4. Where does it come into existence, and who or what creates it?
+5. When does it end — does it disappear, close, or live forever?
+6. What has to be true to move it from state A to state B?
+7. Which attributes are mandatory for it to count as existing at all?
+8. What unit is it measured in?
+9. Does it have an identity — what makes two of them different?
+
+Record which of 4–9 you skipped for each component. A thinly-covered component must look thin in the transcript rather than looking finished.
+
+### The confusion tests
+
+- Term definition, one word at a time, never bundled: "When you say *<term>*, what exactly does it include, and what does it exclude?"
 - Is anything on this list actually **two things fused** into one?
 - Are any two of these actually **one thing** under two names?
 - Is anything here not an independent thing at all, but really an **attribute** of something else?
-- Is there anything that exists in your head but hasn't been named yet?
 
 ## Layer 5 — Relationships between components
 
-Ask **pair by pair** for plausibly related pairs. Never ask in the abstract.
+### Build the pair matrix first
+
+With N components from Layer 4 there are N(N−1)/2 pairs. Write **every** pair into the transcript's pair matrix before asking anything, then work down the list. Each pair must end in exactly one of three states:
+
+| State | Meaning |
+|---|---|
+| `ASKED` | Asked, and the answer is logged |
+| `NOT RELATED` | The user said there is no relationship |
+| `SKIPPED` | You judged it not worth a turn — **must carry your reason** |
+
+Never leave a pair off the matrix, and never mark one `SKIPPED` without writing why. Skipping is a decision; the whole point of the matrix is that the decision is visible instead of silent. If `SKIPPED` rows outnumber `ASKED` ones, say so at the layer read-back and let the user re-open any of them.
+
+This replaces the old instruction to ask about "plausibly related" pairs. That phrasing let pairs disappear without trace, which is exactly the failure the matrix exists to prevent.
+
+### For every `ASKED` pair
 
 - Are A and B related? If so, describe it in one sentence with a verb in it.
 - How many B's per A, and how many A's per B?
@@ -124,15 +167,28 @@ Ask **pair by pair** for plausibly related pairs. Never ask in the abstract.
 - What **flows** between A and B: data, money, goods, permissions, or just information?
 - One direction or both? Who initiates the flow?
 - When A and B **disagree**, which one is the source of truth?
-- Are there any dependency cycles — A needs B, B needs C, C needs A?
 - If A changes, what has to change with it? (change propagation)
-- Is any of these relationships currently held **in someone's memory** rather than recorded in a system?
+- Is this relationship currently held **in someone's memory** rather than recorded in a system?
+
+### Across the whole matrix
+
+- Are there any dependency cycles — A needs B, B needs C, C needs A?
+- Is any component related to nothing at all? Either it belongs to a different problem, or a relationship was missed.
 
 ## Layer 6 — Business logic as decision trees
 
-List the **decision points** in the flow, then exhaust them one at a time — every branch of this one before moving to the next.
+### Enumerate the decision points to exhaustion
 
-For each decision point:
+Same discipline as naming components: keep asking until **two consecutive rounds add nothing new**, and log the list in the transcript before working through it, so a decision point that never got covered is visible.
+
+- Where in this flow does someone or something have to decide?
+- What else — including decisions that feel automatic or obvious?
+- Any decision that only happens when something goes wrong?
+- Any decision someone makes without being asked to?
+
+Then exhaust them one at a time — every branch of this one before moving to the next.
+
+### For each decision point
 - At this step, who or what makes the decision?
 - What does that person/system need to **know** in order to decide?
 - Where does that information come from? Is it always available?

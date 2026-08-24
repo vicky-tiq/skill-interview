@@ -15,7 +15,7 @@ Câu hỏi đầu tiên chốt luôn ngôn ngữ và độ sâu.
 
 | | **Sâu** | **Nhanh** |
 |---|---|---|
-| Số câu | 40–70 | ~15, một lượt |
+| Số câu | 50–85 | ~15, một lượt |
 | Mỗi tầng | Đào cạn | 1–2 câu sinh lời nhất |
 | Sơ đồ tổng thể | Có | **Có** — không bao giờ cắt |
 | Kết thúc khi | Không còn điểm mơ hồ | Hết tầng 7, còn mơ hồ cũng xong |
@@ -50,6 +50,18 @@ luôn chế độ nhanh.
 Hai sổ nỗi sợ không bao giờ bị trộn. Nỗi sợ bị quy trách nhiệm của bạn và nỗi sợ mất
 tiền của khách hàng là hai đầu vào khác nhau: cái thứ nhất định hình *không nên* làm gì,
 cái thứ hai định hình nên làm gì.
+
+### Chứng minh độ phủ, không cho là đã phủ
+
+Bản sâu có một bộ máy mà việc duy nhất của nó là **làm chỗ bỏ sót hiện ra**. "Tất cả thành phần" và "từng quan hệ" là lời tuyên bố, mà tuyên bố không được kiểm chính là cách một buổi phỏng vấn có cảm giác kỹ lưỡng nhưng vẫn để lỗ.
+
+- **Thành phần được gọi tên tới khi cạn** — câu gọi tên mở lại cho tới khi hai lượt liền không thêm được gì mới. Không bao giờ gọi chúng là những thứ "chính", vì cách nói đó loại các thứ nhỏ, mà các thứ nhỏ mới là nơi ngoại lệ ẩn.
+- **Hai phép thử nguyên bản chạy trên mọi thành phần** — chẻ nhỏ hơn nữa mà vẫn có nghĩa được không, và nó tồn tại vì tất yếu hay chỉ vì lâu nay vẫn làm vậy. Không có phép thử thứ nhất thì "nhỏ nhất mà vẫn có nghĩa" chỉ là cái nhãn.
+- **Khía cạnh có ngân sách và chỗ bỏ được ghi lại** — ba trong chín khía cạnh luôn hỏi, phần còn lại chỉ khi trọng yếu, và bỏ cái nào thì ghi lại theo từng thành phần. Thành phần phủ mỏng phải trông mỏng, không được trông như đã xong.
+- **Quan hệ dùng ma trận cặp** — cả N(N−1)/2 cặp được ghi vào biên bản trước khi hỏi câu nào, mỗi cặp kết thúc ở `ĐÃ HỎI`, `KHÔNG LIÊN QUAN`, hoặc `ĐÃ BỎ` kèm lý do. Bỏ một cặp vẫn hợp lệ; bỏ **mà không ai thấy** thì không.
+- **Điểm quyết định cũng liệt kê tới khi cạn**, và ghi danh sách trước khi đi vào từng điểm.
+
+Bản nhanh không chạy bộ máy này — dựng ma trận cặp trên ngân sách 15 câu là phá luôn ý nghĩa của chữ "nhanh".
 
 ### Thu thập xuyên suốt, không thuộc tầng nào
 
@@ -142,7 +154,7 @@ Kèm luôn bài toán cũng được: `/interview quy trình hoàn tiền của 
 Câu hỏi đầu tiên là chọn ngôn ngữ và độ sâu. Sau đó mọi thứ giữ nguyên ngôn ngữ đó:
 câu hỏi, biên bản, và file HTML.
 
-Bản sâu chạy 40–70 câu, bản nhanh tầm 15 câu. Kết quả:
+Bản sâu chạy 50–85 câu, bản nhanh tầm 15 câu. Kết quả:
 
 ```
 interview/<ten-bai-toan>/transcript.md     # toàn bộ hỏi–đáp, nguyên văn

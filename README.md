@@ -20,7 +20,7 @@ The first question settles language and depth together.
 
 | | **Deep** | **Quick** |
 |---|---|---|
-| Questions | 40–70 | ~15, one pass |
+| Questions | 50–85 | ~15, one pass |
 | Per layer | Exhausted | The 1–2 highest-yield questions |
 | Whole-picture diagram | Yes | **Yes** — never cut |
 | Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
@@ -60,6 +60,18 @@ it becomes a week of wrong code.
 The two fear registers never get merged. Your fear of being blamed and a customer's fear
 of losing money are different inputs: the first shapes what *not* to build, the second
 shapes what to build.
+
+### Proving coverage, not assuming it
+
+Deep mode carries machinery whose only job is to make omissions visible. "All the components" and "each relationship" are claims, and unchecked claims are how an interview ends up feeling thorough while leaving holes.
+
+- **Components are named to exhaustion** — the naming question re-opens until two consecutive rounds add nothing new. Nothing is ever called a "main" thing, because that framing drops the small ones, and the small ones are where the exceptions live.
+- **Two first-principles tests run on every component** — can it be split further and still mean something, and does it exist by necessity or just by convention. Without the first, "smallest meaningful thing" is a label rather than something checked.
+- **Facets are budgeted and skips are recorded** — three of the nine are always asked, the rest only when load-bearing, and what was skipped is written down per component. A thinly covered component looks thin instead of looking finished.
+- **Relationships use a pair matrix** — every one of the N(N−1)/2 pairs is logged before any question is asked, each ending as `ASKED`, `NOT RELATED`, or `SKIPPED` with a stated reason. Skipping stays legitimate; skipping *invisibly* does not.
+- **Decision points are enumerated to exhaustion too**, and logged before any is worked through.
+
+Quick mode runs none of this — a pair matrix on a fifteen-question budget would defeat the point.
 
 ### Collected throughout, not in a layer
 
@@ -159,7 +171,7 @@ Optionally with the problem inline: `/interview our refund process is a mess`
 The first question is which language to use — English or Tiếng Việt. Everything after
 that stays in that language: questions, transcript, and the HTML.
 
-A deep interview runs 40–70 questions, a quick one about 15. Output:
+A deep interview runs 50–85 questions, a quick one about 15. Output:
 
 ```
 interview/<problem-slug>/transcript.md     # the full Q&A log, verbatim

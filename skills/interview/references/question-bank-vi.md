@@ -93,30 +93,73 @@ Hai sổ riêng, không trộn. Hỏi nỗi sợ của chính người dùng tr�
 
 ## Tầng 4 — Thành phần (tư duy nguyên bản)
 
-Mục đích: bóc bài toán thành các "vật" nhỏ nhất mà vẫn còn có nghĩa.
+Mục đích: bóc bài toán thành các thứ nhỏ nhất mà vẫn còn có nghĩa — và **chứng minh danh sách đã đủ**, không phải cho là đủ.
 
-- Trong những gì bạn vừa kể, đâu là những **thứ** chính mà mọi thứ khác xoay quanh? Kể tên, chưa cần giải thích.
-- Rồi hỏi **từng thứ một**, mỗi câu một khía cạnh:
-  - Định nghĩa nó trong một câu, như giải thích cho người mới vào?
-  - Nó **sinh ra** từ đâu, do ai/cái gì tạo?
-  - Nó **kết thúc** khi nào — biến mất, đóng lại, hay tồn tại mãi?
-  - Nó có những **trạng thái** nào? Kể đủ, kể cả trạng thái xấu.
-  - Đi từ trạng thái A sang B cần điều kiện gì?
-  - Thuộc tính nào **bắt buộc phải có** mới coi là tồn tại?
-  - Ai **sở hữu** nó — ai được sửa, ai chỉ được xem?
-  - Nó được **đo** bằng đơn vị gì?
-  - Nó có **định danh** không — cái gì làm cho hai cái khác nhau?
-- Câu hỏi định nghĩa từ ngữ (hỏi riêng từng từ, không gộp): "Khi bạn nói *<từ>*, cụ thể nó gồm những gì và không gồm những gì?"
+### Gọi tên, tới khi cạn
+
+Mở đầu:
+- Trong những gì bạn vừa kể, những thứ mà mọi thứ khác xoay quanh là gì? Chỉ cần kể tên, chưa cần giải thích.
+
+Rồi cứ mở lại danh sách, mỗi lượt một câu, cho đến khi **hai lượt liền không thêm được gì mới**:
+- Còn thứ gì nữa nên có trong danh sách đó, dù bạn thấy nó nhỏ?
+- Có thứ nào tồn tại trong đầu bạn nhưng chưa được gọi tên không?
+- Có thứ nào chỉ xuất hiện khi có sự cố không?
+- Có thứ nào do người ngoài team bạn sở hữu hoặc giữ không?
+- Có thứ nào từng có trong danh sách rồi bị bỏ ra không?
+
+Không được gọi chúng là những thứ "chính" hay "quan trọng nhất". Cách nói đó âm thầm loại các thứ nhỏ, mà các thứ nhỏ mới là nơi ngoại lệ ẩn.
+
+### Hai phép thử nguyên bản
+
+Chạy cả hai trên **mọi** thành phần đã gọi tên, mỗi lượt một câu:
+- Cái này chẻ nhỏ hơn nữa mà vẫn có nghĩa riêng được không? Nếu được thì chẻ ra, rồi chạy lại phép thử này trên từng phần.
+- Vì sao nó tồn tại — nó tất yếu, hay chỉ là cách lâu nay vẫn làm? (Cùng phép thử Tầng 1 dùng cho ràng buộc. Câu trả lời tách phần cấu tạo thật ra khỏi phần quy ước đắp lên trên.)
+
+Không có phép thử thứ nhất thì "nhỏ nhất mà vẫn có nghĩa" chỉ là lời tuyên bố, không phải thứ được kiểm.
+
+### Các khía cạnh, cho từng thành phần
+
+**Ba khía cạnh luôn hỏi**, mỗi lượt một câu:
+1. Định nghĩa nó trong một câu, như giải thích cho người mới vào.
+2. Nó có những trạng thái nào? Kể đủ, kể cả trạng thái xấu.
+3. Ai sở hữu nó — ai được sửa, ai chỉ được xem?
+
+**Sáu khía cạnh còn lại chỉ hỏi khi vai trò của thành phần khiến nó thành trọng yếu:**
+4. Nó sinh ra từ đâu, do ai hoặc cái gì tạo?
+5. Nó kết thúc khi nào — biến mất, đóng lại, hay tồn tại mãi?
+6. Đi từ trạng thái A sang B cần điều kiện gì?
+7. Thuộc tính nào bắt buộc phải có mới coi là tồn tại?
+8. Nó được đo bằng đơn vị gì?
+9. Nó có định danh không — cái gì làm cho hai cái khác nhau?
+
+Ghi lại với mỗi thành phần bạn đã bỏ những khía cạnh nào trong 4–9. Một thành phần được phủ mỏng phải **trông mỏng** trong biên bản, chứ không được trông như đã xong.
+
+### Các phép thử chống lẫn
+
+- Định nghĩa từ ngữ, mỗi lượt một từ, không gộp: "Khi bạn nói *<từ>*, cụ thể nó gồm những gì và không gồm những gì?"
 - Có thứ nào trong danh sách này thực ra là **hai thứ bị gộp** làm một không?
 - Có hai thứ nào thực ra là **một thứ** gọi bằng hai tên không?
 - Thứ nào thực ra không phải một vật độc lập, mà chỉ là **thuộc tính** của vật khác?
-- Có thứ nào tồn tại trong đầu bạn nhưng chưa được gọi tên không?
 
 ## Tầng 5 — Quan hệ giữa các thành phần
 
-Hỏi theo từng **cặp** có khả năng liên quan, không hỏi chung.
+### Dựng ma trận cặp trước
 
-- A và B có liên quan tới nhau không? Nếu có, mô tả bằng một câu có động từ.
+Với N thành phần từ Tầng 4 thì có N(N−1)/2 cặp. Ghi **mọi** cặp vào ma trận cặp trong biên bản **trước khi hỏi câu nào**, rồi lần lượt đi hết danh sách. Mỗi cặp phải kết thúc ở đúng một trong ba trạng thái:
+
+| Trạng thái | Nghĩa |
+|---|---|
+| `ĐÃ HỎI` | Đã hỏi, câu trả lời đã ghi |
+| `KHÔNG LIÊN QUAN` | Người dùng nói không có quan hệ |
+| `ĐÃ BỎ` | Claude tự đánh giá không đáng một lượt — **buộc phải ghi lý do** |
+
+Không được để cặp nào ngoài ma trận, và không được đánh `ĐÃ BỎ` mà không ghi lý do. Bỏ một cặp là một quyết định; toàn bộ mục đích của ma trận là làm quyết định đó **hiện ra** thay vì im lặng. Nếu số dòng `ĐÃ BỎ` nhiều hơn `ĐÃ HỎI`, phải nói ra ở lượt chốt tầng và để người dùng mở lại bất cứ cặp nào.
+
+Phần này thay cho chỉ dẫn cũ là hỏi những cặp "có vẻ liên quan". Cách nói đó cho phép cặp biến mất không để lại dấu vết — đúng thất bại mà ma trận sinh ra để chặn.
+
+### Với mỗi cặp `ĐÃ HỎI`
+
+- A và B có liên quan không? Nếu có, mô tả bằng một câu có động từ.
 - Một A ứng với bao nhiêu B, và một B ứng với bao nhiêu A?
 - Quan hệ đó **bắt buộc** hay **tuỳ chọn** — có A mà không có B được không?
 - Cái nào phải tồn tại **trước**?
@@ -124,15 +167,28 @@ Hỏi theo từng **cặp** có khả năng liên quan, không hỏi chung.
 - Cái gì **chảy** giữa A và B: dữ liệu, tiền, hàng, quyền, hay chỉ thông tin?
 - Chảy một chiều hay hai chiều? Ai khởi động luồng đó?
 - Khi A và B **không khớp nhau**, cái nào là nguồn chân lý?
-- Có vòng phụ thuộc nào không — A cần B, B cần C, C lại cần A?
 - Đổi A thì phải đổi theo cái gì? (lan truyền thay đổi)
-- Có quan hệ nào hiện đang do **con người nhớ** thay vì hệ thống ghi không?
+- Quan hệ này hiện đang do **con người nhớ** thay vì hệ thống ghi không?
+
+### Xét trên toàn ma trận
+
+- Có vòng phụ thuộc nào không — A cần B, B cần C, C lại cần A?
+- Có thành phần nào không liên quan tới bất cứ thứ gì không? Hoặc nó thuộc một bài toán khác, hoặc có một quan hệ đã bị bỏ sót.
 
 ## Tầng 6 — Logic nghiệp vụ theo cây quyết định
 
-Liệt kê các **điểm ra quyết định** trong luồng, rồi đi cạn từng điểm — hết mọi nhánh của điểm này mới sang điểm khác.
+### Liệt kê điểm quyết định tới khi cạn
 
-Với mỗi điểm quyết định:
+Cùng kỷ luật như lúc gọi tên thành phần: hỏi cho tới khi **hai lượt liền không thêm được gì mới**, và ghi danh sách vào biên bản trước khi đi vào từng điểm, để một điểm quyết định bị bỏ qua là thấy được.
+
+- Trong luồng này, chỗ nào có người hoặc hệ thống phải ra quyết định?
+- Còn chỗ nào nữa — kể cả những quyết định bạn thấy là tự động hay hiển nhiên?
+- Có quyết định nào chỉ xảy ra khi có sự cố không?
+- Có quyết định nào ai đó tự làm mà không ai yêu cầu không?
+
+Rồi đi cạn từng điểm — hết mọi nhánh của điểm này mới sang điểm khác.
+
+### Với mỗi điểm quyết định
 - Ở bước này, ai hoặc cái gì ra quyết định?
 - Người/hệ thống đó cần **biết những gì** mới quyết được?
 - Thông tin đó lấy từ đâu? Có luôn có sẵn không?
