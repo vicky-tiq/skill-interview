@@ -63,6 +63,10 @@ to make the drawing work is a gap, and gets marked as one.
 - **"I don't know" is a valid answer.** It slices the question smaller instead of
   moving on — down a seven-rung ladder from general to one concrete instance to a
   forced binary.
+- **Only you answer.** It never writes, completes, or tidies up an answer for you. If a
+  reply arrives twice with different wording — a client-layer fault that happens — both
+  copies are voided and the question is simply asked again. A transcript containing one
+  sentence you didn't say is worse than one with a gap.
 - **It keeps an ambiguity ledger.** The interview only ends when the ledger is clear,
   or you say "that's enough".
 - **It logs after every single answer,** so quitting mid-interview loses nothing.
@@ -173,6 +177,10 @@ hiệu quả nhất: vẽ sai thì sửa trong vài giây, còn cùng lỗi đó
   để không nhầm giả định của nó thành yêu cầu của bạn.
 - **Trả lời "chưa biết" cũng được.** Nó chẻ câu hỏi nhỏ hơn theo thang 7 bậc thay vì
   bỏ qua.
+- **Chỉ bạn trả lời.** Nó không bao giờ viết hộ, viết thêm, hay "làm gọn" câu trả lời của
+  bạn. Nếu một câu trả lời hiện ra hai lần với nội dung khác nhau — lỗi tầng ứng dụng, có
+  xảy ra — cả hai bản bị huỷ và câu hỏi được hỏi lại. Một biên bản chứa một câu bạn không
+  nói còn tệ hơn một biên bản bị thiếu.
 - **Có sổ mơ hồ.** Chỉ kết thúc khi sổ trống, hoặc khi bạn nói "đủ rồi".
 - **Ghi biên bản sau từng câu**, nên nghỉ giữa buổi không mất gì. Chạy lại là nối tiếp
   đúng câu, đúng ngôn ngữ.

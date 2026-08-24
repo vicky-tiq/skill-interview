@@ -102,7 +102,8 @@ If a solution occurs to you mid-interview, write it here and **say nothing** —
 2. **"Learned" contains only what was said.** If it's your inference, prefix it `[inferred]`.
 3. **Every ambiguity gets an A-number.** Numbered items are the only ones that survive the residual sweep.
 4. **Update the "Position" line** on every write, so a later session resumes at the right place.
-5. **Never delete anything.** If the user changes their mind, log the new answer and mark the old one `[superseded by Q<n>]` — the history of changed minds is itself important evidence.
+5. **A doubled answer is void, not a choice.** If the same question came back twice with *different* wording, quote both under the question, mark the entry `KHÔNG HỢP LỆ — nhân đôi` / `VOID — doubled`, draw no conclusions from it, and re-ask the question. Never merge the versions, and never pick one. Identical duplicates are fine — log once.
+6. **Never delete anything.** If the user changes their mind, log the new answer and mark the old one `[superseded by Q<n>]` — the history of changed minds is itself important evidence.
 
 ## Resuming in a new session
 

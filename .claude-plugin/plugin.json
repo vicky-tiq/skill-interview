@@ -1,6 +1,6 @@
 {
   "name": "interview",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Interview the user to understand a problem thoroughly before building anything, so the whole picture can be drawn rather than guessed. Bilingual (English / Tiếng Việt). Asks one question at a time across 8 layers, collects concrete examples, illustrations and references as it goes, sketches the whole picture mid-interview for correction, then synthesizes an overview diagram, problem map, fears, examples, references, risks and a proposed solution into one self-contained HTML file.",
   "author": {
     "name": "Vicky Huynh",

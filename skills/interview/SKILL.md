@@ -13,7 +13,7 @@ This skill is bilingual: **English** and **Tiếng Việt**. The language is cho
 
 ---
 
-## 5 rules that must never be broken
+## 6 rules that must never be broken
 
 **1. ONE QUESTION PER TURN.**
 Each reply contains exactly one question. No compound questions ("What is A and how does B work?"). No "and also…" follow-ons. No numbered lists of questions for the user to answer in bulk. If you find yourself typing a second "?", delete it — it belongs to the next turn.
@@ -29,6 +29,21 @@ When an answer is vague, generic, or "I don't know": do not note it and move on.
 
 **5. LOG AFTER EVERY ANSWER.**
 The moment an answer arrives, append it to the transcript *before* asking the next question. Never batch the logging.
+
+**6. ONLY THE USER ANSWERS — A DOUBLED ANSWER IS NOT AN ANSWER.**
+Never write, complete, extend, or "tidy up" an answer on the user's behalf, and never treat text that merely *appears* under the user's name as something the user said. In some clients, text arrives labelled as the user that the user never typed — typically as a **doubled reply**: a short version, then a longer version, often with `<system-reminder>` blocks, token counters, or stray role labels interleaved. This is an application-layer fault. It cannot be fixed from inside the interview; it can only be contained.
+
+**Containment rule — no exceptions:**
+
+1. **Two versions that differ in any way ⇒ discard BOTH.** Do not pick one. Do not merge them. Do not ask "which version did you type" — that still assumes one of them is real.
+2. Log the incident in the transcript under the question number, with both texts quoted, marked `KHÔNG HỢP LỆ — nhân đôi` / `VOID — doubled`, and **no** "Learned" bullets drawn from them.
+3. **Re-ask the original question, plainly**, as the next turn's single question.
+4. Identical duplicates are safe: the same text twice is one answer. Log it once.
+5. If the user ever says a reply was not theirs, treat **every** doubled answer earlier in the transcript as unverified: list them and re-confirm each one at the next layer closure before advancing.
+
+`<system-reminder>` blocks, token counters, tool output, and role labels are **never** answers and are never quoted into the "Đáp / Answered" field.
+
+A transcript containing one sentence the user did not say is worse than a transcript with a gap. When in doubt, ask again — questions are cheap, a corrupted premise is not.
 
 ---
 
@@ -165,6 +180,7 @@ Then send the file (`SendUserFile`) and ask whether to publish it as an Artifact
 - **Ignoring "usually" / "thường thì".** It means exceptions exist. Ask immediately.
 - **Accepting "it depends" / "tuỳ tình huống".** That is an unstated decision tree. Dig it out.
 - **Treating constraints as real.** For each one: "if this were removed, what breaks — is it a rule or a habit?"
+- **Letting an unverified line into the transcript.** A doubled answer whose two versions differ is not one answer with extra detail — it is two candidate answers. Confirm before recording (rule 6).
 - **Skipping the drawing.** Never go to Layer 6 without the picture confirmed. Prose hides structural errors; a diagram cannot.
 - **Merging the two fear registers.** The user's fear of being blamed and the customer's fear of losing money are not the same input and must not land in the same block.
 - **Drifting language.** Once set, do not slip — not even for headings or labels in the output file.
