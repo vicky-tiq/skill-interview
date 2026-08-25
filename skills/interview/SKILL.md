@@ -1,6 +1,6 @@
 ---
 name: interview
-description: Interview the user to understand a problem BEFORE building anything, so the whole picture can be drawn rather than guessed. Two depths — DEEP (50–85 questions, exhaustive) and QUICK (~15 questions, one pass) — both covering the same 8 layers. Bilingual (English / Tiếng Việt) — asks language and depth first, then asks one question at a time across 8 layers (root purpose → context/constraints → fears & stakes → current vs desired state → components → relationships → business logic decision trees → exceptions/edge cases), collecting concrete examples, illustrations and references as it goes, logging a transcript after every single answer. Sketches the whole picture mid-interview for correction, then synthesizes everything into one HTML file containing an overview diagram, problem map, goals, context, fears, examples, references, risks/contradictions, and a proposed solution. Triggers when the user types /interview, or says "interview me", "ask me questions until it's clear", "help me clarify this problem", "break down my problem", "draw the big picture of this", "make sure you understand what I mean", "get on the same page before we build", "phỏng vấn tôi", "hỏi tôi cho rõ", "làm rõ bài toán", "bóc tách bài toán", "vẽ bức tranh tổng thể". Quick depth is requested with "quick interview", "interview me quickly", "short version", "phỏng vấn nhanh", "hỏi nhanh thôi", "bản rút gọn". Works for any kind of problem: product/feature work, business process design, strategic decisions, or designing a new skill/agent.
+description: Interview the user to understand a problem BEFORE building anything, so the whole picture can be drawn rather than guessed. Two depths — DEEP (65–100 questions, exhaustive) and QUICK (~15 questions, one pass) — both covering the same 9 layers. Bilingual (English / Tiếng Việt) — asks language and depth first, then asks one question at a time across 9 layers (root purpose → context/constraints → fears & stakes → current vs desired state → components → relationships → business logic decision trees → exceptions/edge cases → process contract), collecting concrete examples, illustrations and references as it goes, logging a transcript after every single answer. Sketches the whole picture mid-interview for correction, then synthesizes everything into one HTML file containing an overview diagram, problem map, goals, context, fears, examples, references, risks/contradictions, and a proposed solution. Triggers when the user types /interview, or says "interview me", "ask me questions until it's clear", "help me clarify this problem", "break down my problem", "draw the big picture of this", "make sure you understand what I mean", "get on the same page before we build", "phỏng vấn tôi", "hỏi tôi cho rõ", "làm rõ bài toán", "bóc tách bài toán", "vẽ bức tranh tổng thể". Quick depth is requested with "quick interview", "interview me quickly", "short version", "phỏng vấn nhanh", "hỏi nhanh thôi", "bản rút gọn". Works for any kind of problem: product/feature work, business process design, strategic decisions, or designing a new skill/agent.
 ---
 
 # Problem Interview
@@ -9,7 +9,7 @@ Single goal: **gather enough that the whole picture can be drawn, not guessed** 
 
 "Drawn" is literal. The interview is finished when there is enough to render the problem as a diagram, with its goals, context, fears, concrete examples, illustrations and references attached. Anything that cannot be drawn yet is a gap, and gaps are what the questions are for.
 
-Two depths, **same 8 layers, same rules** — they differ only in how far each layer is pushed. See "Depth modes" below.
+Two depths, **same 9 layers, same rules** — they differ only in how far each layer is pushed. See "Depth modes" below.
 
 This skill is bilingual: **English** and **Tiếng Việt**. The language is chosen by the user in Step 0 and stays fixed for the whole session, including the transcript and the synthesis file.
 
@@ -25,7 +25,7 @@ Throughout the interview: do NOT read code, do NOT grep/glob the repo, do NOT We
 
 **3. KEEP ASKING UNTIL NOTHING IS AMBIGUOUS — *in deep mode*.**
 Always maintain an **Ambiguity Ledger** in the transcript. What it gates depends on depth:
-- **Deep:** no question limit, 50–85 is normal, and the interview ends only when the ledger has no open items.
+- **Deep:** no question limit, 65–100 is normal, and the interview ends only when the ledger has no open items.
 - **Quick:** one pass, ~15 questions, and the interview ends at the close of Layer 7 **even with items still open**. Open items are not failures there — they are the deliverable, reported as "what to nail down before building".
 
 The user may stop you at any time by saying "that's enough" / "đủ rồi".
@@ -104,18 +104,18 @@ Open each turn with a position label — `**Q12 · Layer 5 (Relationships)**` or
 
 ## Depth modes
 
-Same 8 layers, same 6 rules, same three labels, same drawing checkpoint. Only the depth of each layer changes.
+Same 9 layers, same 7 rules, same three labels, same drawing checkpoint. Only the depth of each layer changes.
 
 | | Deep | Quick |
 |---|---|---|
-| Questions | 50–85 | ~15 (one pass) |
+| Questions | 65–100 | ~15 (one pass) |
 | Per layer | Exhaust it | The 1–2 highest-yield questions |
 | Slicing on a vague answer | Until answerable | Two slices, then log unknown |
 | Collection duties | Every time triggered | Once each, for the most load-bearing case |
 | Layer read-backs | After every layer | Two only: the drawing, and the final |
 | Whole-picture checkpoint | Yes | **Yes** — never skipped |
 | Ends when | Ambiguity Ledger is empty | Layer 7 closes, open items and all |
-| Synthesis | 15 sections | 9 sections |
+| Synthesis | 18 sections | 10 sections |
 | Open ambiguities | Must not exist | Are the headline deliverable |
 
 **What quick mode is not.** It is not a worse interview — it is a *shallower* one that is honest about its depth. It never pretends to certainty it did not earn: everything unresolved is named in the output as "what to nail down before building". A quick interview that hides its gaps is worse than no interview, because it launders a guess into a document.
@@ -133,10 +133,10 @@ Same 8 layers, same 6 rules, same three labels, same drawing checkpoint. Only th
 - **question:** `Language and depth? / Ngôn ngữ và độ sâu?`
 - **header:** `Setup`
 - **options:**
-  - `Tiếng Việt · sâu` — `50–85 câu, hỏi đến khi không còn điểm mơ hồ. Cho bài toán bạn sẽ đầu tư thật.`
-  - `Tiếng Việt · nhanh` — `~15 câu, một lượt qua đủ 8 tầng. Vẫn vẽ bức tranh tổng thể, HTML gọn.`
-  - `English · deep` — `50–85 questions, until nothing is ambiguous. For something you will really build.`
-  - `English · quick` — `~15 questions, one pass over all 8 layers. Still draws the picture, compact HTML.`
+  - `Tiếng Việt · sâu` — `65–100 câu, hỏi đến khi không còn điểm mơ hồ. Cho bài toán bạn sẽ đầu tư thật.`
+  - `Tiếng Việt · nhanh` — `~15 câu, một lượt qua đủ 9 tầng. Vẫn vẽ bức tranh tổng thể, HTML gọn.`
+  - `English · deep` — `65–100 questions, until nothing is ambiguous. For something you will really build.`
+  - `English · quick` — `~15 questions, one pass over all 9 layers. Still draws the picture, compact HTML.`
 
 Skip or narrow it when the user has already said what they want:
 - Language stated ("phỏng vấn tôi bằng tiếng Việt") → ask depth only.
@@ -164,7 +164,7 @@ Then read `references/terminology.md` once — it carries every label, status, h
 3. Create `interview/<slug>/transcript.md` per `references/transcript-template.md`, recording the chosen language **and depth**.
 4. If it already exists → read it, report the layer and question number, resume there in its recorded language. Never re-ask anything already logged.
 
-### Steps 2–9 — The eight layers
+### Steps 2–10 — The nine layers
 
 In order; exhaust one before the next.
 
@@ -178,6 +178,7 @@ In order; exhaust one before the next.
 | 5 | Relationships | Quan hệ | How components bind; what flows between them |
 | 6 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) | Every decision point, all branches, exact conditions |
 | 7 | Exceptions & edge cases | Ngoại lệ & trường hợp biên | Failure branches, concurrency, zero/one/many, who may break the rules |
+| 8 | Process contract | Cam kết quy trình | Steps with inputs, outputs, validation and acceptance — and whether they chain |
 
 **Layer 2 keeps two separate registers and never merges them:** the *user's* fears (wrong direction, wasted effort, who will object, what they'll be blamed for) and the *end users'* fears (what customers or staff dread, resist, or feel they might lose). They drive different decisions — the first shapes what to avoid building, the second shapes what to build.
 
@@ -203,7 +204,40 @@ The shared principle: **an omission must be visible on paper.** These layers do 
 
 In quick mode, cover **one** decision point — the one the user's goal most depends on — and cover it properly: its branches, its threshold numbers, and its default. One complete decision beats five half-mapped ones.
 
-### Step 10 — Whole-picture checkpoint
+#### Layer 8 — Process contract
+
+The interview's last layer turns everything above it into something buildable: an ordered list of steps, each with what it takes in, what it hands on, how it is checked, and how you know it is done.
+
+**Draft first, then ask only about the gaps.** Do **not** re-elicit the steps — Layer 3 already walked the current process and Layer 6 already mapped the decision points. Build the table from what is already in the transcript, mark every cell you had to infer, and then ask **one question per inferred cell**. The cost of this layer is therefore proportional to how much is missing, not to how many steps exist. Re-asking what is already logged would violate the resume discipline and waste the budget.
+
+Per step, three fields are mandatory and four are conditional:
+
+| Field | Status | The question, when it must be asked |
+|---|---|---|
+| Input | always | "What has to be in hand before this step can start?" |
+| Output | always | "When this step is done, what exists that didn't before?" |
+| Acceptance | always | "How does someone know this step was done *correctly*, not just done?" |
+| Precondition | if the step can start prematurely | "What must be true, beyond having the input?" |
+| Validation | if the input can arrive malformed | "What gets checked on the way in, and what happens when the check fails?" |
+| Owner | if not obvious from Layer 4 | "Who performs it — a person, a system, or either?" |
+| Timing | if delay has consequences | "How long does it take, and what happens if it runs over?" |
+
+**Then run the chain check — this is the point of the layer.** For every adjacent pair of steps, compare step N's output against step N+1's input. Log each junction as one of:
+
+| Verdict | Meaning |
+|---|---|
+| `MATCH` | The output is exactly what the next step needs |
+| `GAP` | The next step needs something no prior step produces |
+| `SURPLUS` | A step produces something nothing downstream consumes |
+| `MISMATCH` | Both exist but the shape, unit, or timing differs |
+
+`GAP`, `SURPLUS` and `MISMATCH` are **not** defects in the process — they are almost always gaps in the interview. Each one becomes an Ambiguity Ledger item and gets asked about. A surplus in particular usually means a consumer exists that was never named, which sends you back to Layer 4.
+
+A chain where every junction is `MATCH` on the first pass is a warning sign, not a success: it usually means the steps were described at too coarse a grain to disagree.
+
+**Quick mode** does one compact pass: input and output only, for the main path, plus the chain check. No preconditions, no validation, no timing. Mismatches go straight to the "what to nail down before building" section rather than being resolved.
+
+### Step 11 — Whole-picture checkpoint
 
 **After Layer 5 closes, before Layer 6.** This is where "can it be drawn?" gets tested rather than assumed.
 
@@ -214,9 +248,9 @@ Sketch the whole picture *in chat*, as a monospace box-and-arrow diagram — com
 
 A wrong drawing gets corrected in seconds, where the same error hidden in prose survives to the end. Every correction becomes an ambiguity item. Redraw and re-ask until the user confirms it, then continue to Layer 6. Log the confirmed sketch in the transcript — it becomes the overview diagram in the synthesis.
 
-### Step 11 — Residual ambiguity sweep (deep) / Ledger compile (quick)
+### Step 12 — Residual ambiguity sweep (deep) / Ledger compile (quick)
 
-**Quick mode:** do not sweep and do not ask more questions. Just compile the ledger — every open item, every unverified inference, every general rule with no example — into the "what to nail down before building" section. Then go to Step 12.
+**Quick mode:** do not sweep and do not ask more questions. Just compile the ledger — every open item, every unverified inference, every general rule with no example — into the "what to nail down before building" section. Then go to Step 13.
 
 **Deep mode:** re-read the whole transcript and hunt for:
 - Items still open in the Ambiguity Ledger
@@ -227,15 +261,17 @@ A wrong drawing gets corrected in seconds, where the same error hidden in prose 
 - General patterns with **no concrete example** behind them (duty A never fired)
 - References mentioned in passing but never captured (duty C never fired)
 - Places where you are **inferring** rather than having been **told**
+- Any junction in the chain check still marked `GAP`, `SURPLUS` or `MISMATCH`
+- Any step whose acceptance criterion is a restatement of its output rather than a test of it
 
 One question at a time until the ledger is clear. Most-skipped step, highest value.
 
-### Step 12 — Synthesize to HTML
+### Step 13 — Synthesize to HTML
 
 **Deep:** only when the ledger is clear, or the user says "that's enough" / "đủ rồi".
 **Quick:** as soon as Layer 7 closes, open items and all.
 
-Write `interview/<slug>/synthesis.html` per `references/html-template.md`, **in the chosen language**, using the section list for the depth in play — 15 sections deep, 9 quick. Required:
+Write `interview/<slug>/synthesis.html` per `references/html-template.md`, **in the chosen language**, using the section list for the depth in play — 18 sections deep, 10 quick. Required:
 - **Fully self-contained**: inline CSS, diagrams as **inline SVG** (no CDN, no mermaid — opens offline, publishable as an Artifact).
 - **The overview diagram comes first**, right after the one-sentence problem: the confirmed whole picture, drawn properly as SVG.
 - **Three content labels, visually distinct**: `[YOU SAID]` / `[I INFERRED]` / `[I PROPOSE]`, or `[BẠN NÓI]` / `[TÔI SUY RA]` / `[TÔI ĐỀ XUẤT]`. Never mixed in one statement.

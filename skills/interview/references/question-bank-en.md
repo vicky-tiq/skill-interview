@@ -250,6 +250,36 @@ Then exhaust them one at a time — every branch of this one before moving to th
 - If volume grew 10×, what **breaks first**?
 - If the person carrying this work quit tomorrow, what grinds to a halt?
 
+## Layer 8 — Process contract
+
+**Draft from the transcript first.** Layers 3 and 6 already gave you the steps. Build the table, mark inferred cells, then ask only about those. Never re-elicit a step that is already logged.
+
+### Per step — always
+
+- What has to be in hand before this step can start?
+- When this step is done, what exists that didn't exist before?
+- How does someone know this step was done **correctly**, not merely done?
+
+The third is the one people answer badly. "The refund is approved" restates the output; it is not a test. Push for something checkable: a field populated, a total that reconciles, a second person's sign-off, a number within a range.
+
+### Per step — only when the trigger applies
+
+- *If the step could start too early:* What must be true beyond having the input?
+- *If the input can arrive malformed:* What gets checked on the way in, and what happens when the check fails?
+- *If the owner isn't clear from Layer 4:* Who performs it — a person, a system, or either?
+- *If a delay has consequences:* How long does it take, and what happens if it runs over?
+
+### The chain check
+
+For each adjacent pair, compare step N's output with step N+1's input, and log the junction as `MATCH`, `GAP`, `SURPLUS`, or `MISMATCH`. Then ask about each non-match:
+
+- `GAP` — "Step N+1 needs <X>, but nothing before it produces <X>. Where does it come from?"
+- `SURPLUS` — "Step N produces <Y> and nothing after uses it. Who consumes <Y>?" (Usually reveals a component nobody named — go back to Layer 4.)
+- `MISMATCH` — "Step N hands over <Y as described>, step N+1 expects <X as described>. Which one is how it really is?"
+- Also: "Is there a step between these two that nobody mentioned because it always just happens?"
+
+A first pass where every junction is `MATCH` means the steps were described too coarsely to disagree. Re-cut them finer and run it again.
+
 ---
 
 ## The three collection duties — question patterns
@@ -321,6 +351,6 @@ Each one is chosen for yield: it is the question in that layer whose answer chan
 14. Which step goes wrong most often, and what happens when it does?
 15. Who is allowed to break the rules, and does anyone record it when they do?
 
-**Then:** the whole-picture checkpoint (Step 10), then the final confirmation, then synthesis.
+**Then:** the whole-picture checkpoint (Step 11), then the final confirmation, then synthesis.
 
 If an answer is vague, slice at most twice (see the ladder above), then log it `GENUINELY UNKNOWN` and move to the next number. Do not add questions. If the problem clearly needs more, finish the 15 and *offer* to escalate — never drift.

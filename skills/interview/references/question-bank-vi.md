@@ -250,6 +250,36 @@ Rồi đi cạn từng điểm — hết mọi nhánh của điểm này mới s
 - Nếu khối lượng tăng 10 lần, chỗ nào **vỡ trước**?
 - Nếu người đang gánh việc này nghỉ đột ngột, cái gì tắc lại?
 
+## Tầng 8 — Cam kết quy trình
+
+**Dựng bảng từ biên bản trước.** Tầng 3 và Tầng 6 đã cho bạn các bước. Dựng bảng, đánh dấu ô nào phải suy ra, rồi chỉ hỏi vào những ô đó. Không bao giờ hỏi lại một bước đã có trong biên bản.
+
+### Mỗi bước — luôn hỏi
+
+- Phải có gì trong tay thì bước này mới bắt đầu được?
+- Bước này xong thì có gì tồn tại mà trước đó chưa có?
+- Làm sao biết bước này được làm **đúng**, chứ không chỉ là đã làm?
+
+Câu thứ ba là câu người ta hay trả lời sai. "Đơn đã được duyệt" chỉ là nhắc lại output, không phải một phép kiểm. Phải đẩy tới thứ kiểm được: một trường đã có dữ liệu, một tổng khớp nhau, chữ ký của người thứ hai, một con số nằm trong khoảng.
+
+### Mỗi bước — chỉ khi có dấu hiệu
+
+- *Nếu bước có thể bắt đầu quá sớm:* Ngoài việc có input, còn điều gì phải đúng?
+- *Nếu input có thể vào sai định dạng:* Cái gì được kiểm ở đầu vào, và kiểm không đạt thì sao?
+- *Nếu chủ sở hữu chưa rõ từ Tầng 4:* Ai làm bước này — người, hệ thống, hay cả hai đều được?
+- *Nếu chậm có hậu quả:* Bước này mất bao lâu, và quá lâu thì sao?
+
+### Phép kiểm khớp nối
+
+Với mỗi cặp bước liền nhau, so output bước N với input bước N+1, ghi mối nối là `KHỚP`, `THIẾU`, `THỪA`, hoặc `LỆCH`. Rồi hỏi về từng mối không khớp:
+
+- `THIẾU` — "Bước N+1 cần <X>, nhưng không bước nào trước đó tạo ra <X>. Nó từ đâu ra?"
+- `THỪA` — "Bước N tạo ra <Y> mà không bước nào sau dùng. Ai tiêu thụ <Y>?" (Thường lộ ra một thành phần chưa ai gọi tên — quay lại Tầng 4.)
+- `LỆCH` — "Bước N trao ra <Y như đã mô tả>, bước N+1 chờ <X như đã mô tả>. Cái nào mới là thực tế?"
+- Và: "Giữa hai bước này có bước nào không ai nhắc tới vì nó luôn tự xảy ra không?"
+
+Lượt đầu mà mọi mối nối đều `KHỚP` nghĩa là các bước được mô tả quá thô nên không thể lệch nhau. Chẻ lại mịn hơn rồi chạy lại.
+
 ---
 
 ## Ba nhiệm vụ thu thập xuyên suốt — mẫu câu hỏi
@@ -321,6 +351,6 @@ Mỗi câu được chọn vì độ sinh lời: nó là câu mà câu trả l�
 14. Bước nào hay sai nhất, và khi sai thì chuyện gì xảy ra?
 15. Ai được phép phá luật, và có ai ghi lại khi họ làm vậy không?
 
-**Rồi:** checkpoint vẽ bức tranh tổng thể (Bước 10), xác nhận cuối, rồi đúc kết.
+**Rồi:** checkpoint vẽ bức tranh tổng thể (Bước 11), xác nhận cuối, rồi đúc kết.
 
 Câu trả lời mơ hồ thì chẻ tối đa hai lần (xem thang chẻ ở trên), rồi ghi `VÙNG CHƯA BIẾT THẬT` và sang số kế tiếp. Không thêm câu. Nếu thấy bài toán rõ ràng cần sâu hơn, cứ làm hết 15 câu rồi **đề nghị** nâng cấp — không được tự trôi.

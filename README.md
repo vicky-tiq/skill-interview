@@ -10,7 +10,7 @@ A Claude Code skill that interviews you about your problem before anything gets 
 
 A bilingual (**English / Tiếng Việt**) interview skill. Instead of guessing at your
 intent from a one-line request, Claude interviews you: **one question at a time**,
-across eight layers, until the whole picture can be *drawn* rather than guessed. Then it
+across nine layers, until the whole picture can be *drawn* rather than guessed. Then it
 writes a single self-contained HTML file — overview diagram first — that you can read,
 correct, and share.
 
@@ -20,14 +20,14 @@ The first question settles language and depth together.
 
 | | **Deep** | **Quick** |
 |---|---|---|
-| Questions | 50–85 | ~15, one pass |
+| Questions | 65–100 | ~15, one pass |
 | Per layer | Exhausted | The 1–2 highest-yield questions |
 | Whole-picture diagram | Yes | **Yes** — never cut |
 | Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
-| Synthesis | 15 sections | 9 sections |
+| Synthesis | 18 sections | 10 sections |
 | Open questions | Must not exist | **Are the headline deliverable** |
 
-Both cover all eight layers — quick is shallower, not narrower. It never pretends to
+Both cover all nine layers — quick is shallower, not narrower. It never pretends to
 certainty it didn't earn: everything unresolved lands in a prominent *"what to nail down
 before building"* section, each line saying what breaks if it's guessed wrong. A quick
 interview that hides its gaps is worse than none, because it launders a guess into a
@@ -44,7 +44,7 @@ Ask for it with `/interview` and pick at the prompt, or say *"phỏng vấn nhan
 The point is not documentation. The point is catching the misunderstanding *before*
 it becomes a week of wrong code.
 
-### The eight layers
+### The nine layers
 
 | # | Layer | What it establishes |
 |---|---|---|
@@ -56,10 +56,21 @@ it becomes a week of wrong code.
 | 5 | Relationships | How those things bind together; what flows between them |
 | 6 | Business logic | Every decision point, every branch, exact conditions and thresholds |
 | 7 | Exceptions & edge cases | Failure branches, concurrency, zero/one/many, who may break the rules |
+| 8 | Process contract | Steps with inputs, outputs, validation and acceptance — and whether they chain |
 
 The two fear registers never get merged. Your fear of being blamed and a customer's fear
 of losing money are different inputs: the first shapes what *not* to build, the second
 shapes what to build.
+
+### The last layer: does it actually join up?
+
+Layer 8 turns everything above into something buildable — an ordered list of steps, each with what it takes in, what it hands on, what gets validated, and the observable test that says it was done *correctly* rather than merely done. That last one is where people answer badly: "the refund is approved" restates the output, it is not a test.
+
+It does not re-elicit the steps. Layers 3 and 6 already walked the process and mapped the decisions, so the table is drafted from the transcript, inferred cells are marked, and only those cells get a question. The layer costs what is missing, not what exists.
+
+Then the **chain check**, which is the point of it. Every junction between adjacent steps is compared and marked `MATCH`, `GAP` (the next step needs something nothing produces), `SURPLUS` (something is produced that nothing consumes) or `MISMATCH` (both exist but shape, unit or timing differ). Non-matches are almost never process defects — they are interview gaps, and each becomes a question. A surplus usually means a consumer exists that nobody named, which sends you back to Layer 4.
+
+A first pass where everything reads `MATCH` is a warning, not a success: it means the steps were described too coarsely to disagree.
 
 ### Proving coverage, not assuming it
 
@@ -177,7 +188,7 @@ Optionally with the problem inline: `/interview our refund process is a mess`
 The first question is which language to use — English or Tiếng Việt. Everything after
 that stays in that language: questions, transcript, and the HTML.
 
-A deep interview runs 50–85 questions, a quick one about 15. Output:
+A deep interview runs 65–100 questions, a quick one about 15. Output:
 
 ```
 interview/<problem-slug>/transcript.md     # the full Q&A log, verbatim

@@ -155,10 +155,16 @@ run "Khách gửi yêu cầu qua Facebook, sale nhận rồi chuyển cho kế t
 T="$(find "$WORK/interview" -name transcript.md 2>/dev/null | head -1)"
 if [ -n "$T" ]; then
   L1=$(wc -l <"$T"); ok "T3a transcript.md created mid-interview ($L1 lines)"
+  # Two attempts: rule 7 makes Claude park an off-topic answer and reformulate, and a
+  # parked turn can append less than a full Q&A block. One turn is too thin a signal.
   run "Kế toán kiểm rồi trình giám đốc duyệt, thường mất 3-5 ngày." --resume "$SID" >/dev/null
   L2=$(wc -l <"$T")
+  if [ "$L2" -le "$L1" ]; then
+    run "Tiếng Việt, sâu" --resume "$SID" >/dev/null
+    L2=$(wc -l <"$T")
+  fi
   [ "$L2" -gt "$L1" ] && ok "T3b transcript grew after next answer ($L1 → $L2)" \
-                      || bad "T3b transcript grew after next answer" "still $L2 lines — logging looks batched"
+                      || bad "T3b transcript grew after next answer" "still $L2 lines after two turns — logging looks batched"
 else
   bad "T3a transcript.md created mid-interview" "no transcript.md under $WORK/interview"
 fi

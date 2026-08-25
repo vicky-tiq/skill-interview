@@ -5,7 +5,7 @@
 ## `interview` — hiểu bài toán trước khi xây nó
 
 Skill phỏng vấn bóc tách bài toán, song ngữ (**English / Tiếng Việt**). Thay vì đoán ý
-bạn từ một câu yêu cầu ngắn, Claude phỏng vấn bạn: **hỏi từng câu một**, qua tám tầng,
+bạn từ một câu yêu cầu ngắn, Claude phỏng vấn bạn: **hỏi từng câu một**, qua chín tầng,
 cho đến khi bức tranh tổng thể *vẽ ra được* chứ không phải đoán. Sau đó nó xuất một file
 HTML tự chứa — mở đầu bằng sơ đồ tổng thể — để bạn đọc, soát lỗi và chia sẻ.
 
@@ -15,14 +15,14 @@ Câu hỏi đầu tiên chốt luôn ngôn ngữ và độ sâu.
 
 | | **Sâu** | **Nhanh** |
 |---|---|---|
-| Số câu | 50–85 | ~15, một lượt |
+| Số câu | 65–100 | ~15, một lượt |
 | Mỗi tầng | Đào cạn | 1–2 câu sinh lời nhất |
 | Sơ đồ tổng thể | Có | **Có** — không bao giờ cắt |
 | Kết thúc khi | Không còn điểm mơ hồ | Hết tầng 7, còn mơ hồ cũng xong |
-| Bản đúc kết | 15 mục | 9 mục |
+| Bản đúc kết | 18 mục | 10 mục |
 | Điểm chưa rõ | Không được tồn tại | **Là kết quả chính** |
 
-Cả hai đi hết tám tầng — bản nhanh nông hơn, không phải hẹp hơn. Nó không giả vờ đạt
+Cả hai đi hết chín tầng — bản nhanh nông hơn, không phải hẹp hơn. Nó không giả vờ đạt
 mức chắc chắn mà nó chưa đạt: mọi thứ chưa xác lập được đi vào mục *"cần chốt gì trước
 khi làm"* đặt ở vị trí nổi bật, mỗi dòng ghi rõ đoán sai thì vỡ ở đâu. Một bản nhanh
 che lỗ hổng còn tệ hơn không phỏng vấn, vì nó biến phỏng đoán thành tài liệu.
@@ -34,7 +34,7 @@ giờ tự nâng cấp**: trôi từ 15 câu lên 45 là phá vỡ thoả thuậ
 Gọi bằng `/interview` rồi chọn ở màn hỏi, hoặc nói thẳng *"phỏng vấn nhanh"* để vào
 luôn chế độ nhanh.
 
-### Tám tầng
+### Chín tầng
 
 | # | Tầng | Xác lập điều gì |
 |---|---|---|
@@ -46,10 +46,21 @@ luôn chế độ nhanh.
 | 5 | Quan hệ | Các thứ đó ràng buộc nhau thế nào; cái gì chảy giữa chúng |
 | 6 | Logic nghiệp vụ | Từng điểm quyết định, từng nhánh, điều kiện và ngưỡng chính xác |
 | 7 | Ngoại lệ & trường hợp biên | Nhánh lỗi, đồng thời, zero/một/rất nhiều, ai được phá luật |
+| 8 | Cam kết quy trình | Các bước kèm đầu vào, đầu ra, xác thực và nghiệm thu — và chúng có khớp nối hay không |
 
 Hai sổ nỗi sợ không bao giờ bị trộn. Nỗi sợ bị quy trách nhiệm của bạn và nỗi sợ mất
 tiền của khách hàng là hai đầu vào khác nhau: cái thứ nhất định hình *không nên* làm gì,
 cái thứ hai định hình nên làm gì.
+
+### Tầng cuối: nó có khớp nối được không?
+
+Tầng 8 biến mọi thứ ở trên thành thứ làm được: một danh sách bước có thứ tự, mỗi bước ghi rõ nhận vào gì, trao ra gì, kiểm xác thực gì, và phép kiểm quan sát được nào nói rằng bước đó đã làm **đúng**, không phải chỉ là đã làm. Chỗ cuối là chỗ người ta hay trả lời sai: "đơn đã được duyệt" chỉ là nhắc lại đầu ra, không phải một phép kiểm.
+
+Nó **không hỏi lại các bước từ đầu.** Tầng 3 và Tầng 6 đã đi qua quy trình và đã vẽ các điểm quyết định, nên bảng được dựng từ biên bản, ô nào phải suy ra thì đánh dấu, và chỉ những ô đó mới được hỏi. Tầng này tốn theo phần còn thiếu, không tốn theo số bước.
+
+Rồi tới **phép kiểm khớp nối**, chính là lý do tầng này tồn tại. Mỗi mối nối giữa hai bước liền nhau được so và đánh `KHỚP`, `THIẾU` (bước sau cần thứ không bước nào tạo ra), `THỪA` (có thứ được tạo ra mà không ai dùng), hoặc `LỆCH` (cả hai đều có nhưng khác hình dạng, đơn vị, hoặc thời điểm). Chỗ không khớp gần như không bao giờ là lỗi của quy trình — nó là lỗ hổng của buổi phỏng vấn, và mỗi chỗ thành một câu hỏi. `THỪA` thường lộ ra một bên tiêu thụ chưa ai gọi tên, tức phải quay lại Tầng 4.
+
+Lượt đầu mà mọi mối nối đều `KHỚP` là dấu hiệu đáng lo, không phải thành công: nó nghĩa là các bước được mô tả quá thô nên không thể lệch nhau.
 
 ### Chứng minh độ phủ, không cho là đã phủ
 
@@ -159,7 +170,7 @@ Kèm luôn bài toán cũng được: `/interview quy trình hoàn tiền của 
 Câu hỏi đầu tiên là chọn ngôn ngữ và độ sâu. Sau đó mọi thứ giữ nguyên ngôn ngữ đó:
 câu hỏi, biên bản, và file HTML.
 
-Bản sâu chạy 50–85 câu, bản nhanh tầm 15 câu. Kết quả:
+Bản sâu chạy 65–100 câu, bản nhanh tầm 15 câu. Kết quả:
 
 ```
 interview/<ten-bai-toan>/transcript.md     # toàn bộ hỏi–đáp, nguyên văn

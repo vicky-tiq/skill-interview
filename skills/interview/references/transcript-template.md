@@ -45,7 +45,7 @@ The interview may not end while any row reads `OPEN`.
 
 ## Confirmed whole-picture sketch
 
-The monospace sketch the user confirmed at the whole-picture checkpoint (Step 10). This becomes section 2 of the synthesis, so keep the confirmed version, not the drafts.
+The monospace sketch the user confirmed at the whole-picture checkpoint (Step 11). This becomes section 2 of the synthesis, so keep the confirmed version, not the drafts.
 
 ```
         [ GOAL: refunds settled in < 24h ]
@@ -127,6 +127,29 @@ When a question goes unanswered, log the reformulation chain — not a value you
 
 If a value here has no user utterance behind it, the entry is invalid — delete the value, restore the question, and climb again.
 
+## Process contract (Layer 8)
+
+Drafted from the transcript, then gap-filled. Mark every cell you inferred rather than were told — those become `[I INFERRED]` in the synthesis and must be confirmed before the layer closes.
+
+| # | Step | Input | Output | Acceptance | Owner | Inferred cells |
+|---|---|---|---|---|---|---|
+| S1 | Customer submits request | order id + reason | request record, state `new` | required fields non-empty | customer | — |
+| S2 | Sales triage | request `new` | request `triaged` + amount | amount matches the order total | sales | acceptance |
+| S3 | Accounting check | request `triaged` + amount | request `verified` | amount reconciles against the ledger | accounting | owner |
+
+## Chain check (Layer 8)
+
+One row per junction between adjacent steps. Anything other than `MATCH` becomes an Ambiguity Ledger item.
+
+| Junction | Verdict | Detail |
+|---|---|---|
+| S1 → S2 | MATCH | — |
+| S2 → S3 | MISMATCH | S2 outputs amount in VND, S3 expects it net of fees — A7 |
+| S3 → S4 | GAP | S4 needs the approver's identity; nothing upstream produces it — A8 |
+| S4 → — | SURPLUS | S4 emits a notification nothing consumes; consumer never named — A9 |
+
+If every junction reads `MATCH` on the first pass, the steps are too coarse. Re-cut and re-run.
+
 ## Parked ideas
 
 If a solution occurs to you mid-interview, write it here and **say nothing** — voicing it frames the user's thinking. Use it only at synthesis time.
@@ -174,7 +197,7 @@ Only ever escalate with the user's agreement. Silently turning a 15-question int
 
 ## Duty checklist — verify before synthesizing
 
-The residual sweep (Step 11) must confirm all three collection duties actually fired:
+The residual sweep (Step 12) must confirm all three collection duties actually fired:
 
 - [ ] Every general rule in the log has at least one real case under **Examples**.
 - [ ] Anything the user struggled to describe in words has an entry under **Illustrations**.
@@ -183,5 +206,7 @@ The residual sweep (Step 11) must confirm all three collection duties actually f
 - [ ] Deep mode only: component naming reached two empty rounds.
 - [ ] Deep mode only: every pair in the matrix has a state, and every `SKIPPED` has a reason.
 - [ ] Deep mode only: every decision point in the list is marked covered.
+- [ ] Every step has input, output and acceptance; acceptance is a test, not a restatement of output.
+- [ ] Every junction in the chain check has a verdict, and every non-`MATCH` has a ledger item.
 
 An empty section here is not "nothing to collect" — it usually means the duty never fired. Go back and ask.

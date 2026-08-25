@@ -23,7 +23,7 @@ Every claim in the file carries exactly one of three labels (Vietnamese equivale
 
 Never mix the three within a single statement. The user must be able to spot instantly which words are theirs and which Claude added — that separation is the error-detection mechanism.
 
-## Deep mode — 15 sections, in this order
+## Deep mode — 18 sections, in this order
 
 Heading wording per language: see the "Synthesis HTML section headings" table in `terminology.md`.
 
@@ -44,11 +44,14 @@ Heading wording per language: see the "Synthesis HTML section headings" table in
     - *Contradictions*: two answers that don't line up, quoting both with question numbers.
     - *Unverified assumptions*: every `[I INFERRED]` the user never confirmed.
     - *Genuine unknowns*: the `GENUINELY UNKNOWN` ledger rows, each with "what breaks if we guess wrong".
-15. **Proposed solution** — fully separated, with a visible divider and an opening line: *"Everything below this line is my proposal, not something you told me."* Covers: the approach, why it fits the stated constraints **and answers the fears in section 5**, implementation steps, and what it deliberately does **not** do.
+15. **Process contract** — the buildable part of the document. One row per step: input, output, acceptance criterion, owner, and (where asked) precondition, validation and timing. Cells that were inferred rather than told carry `[I INFERRED]` inline, not just in section 14 — the reader must see *which cell* is soft while looking at the table, not after it. An acceptance criterion that merely restates the output is a defect: flag it in place rather than printing it as if it were a test.
+16. **Chain check** — one row per junction between adjacent steps, each `MATCH` / `GAP` / `SURPLUS` / `MISMATCH`, with the detail and the ledger item id for every non-match. Put the non-matches **first**; a reader scanning this section is looking for what does not line up, not for reassurance. If every junction is `MATCH`, say plainly that this usually means the steps were described too coarsely to disagree — do not present it as a clean bill of health.
+17. **Validation & acceptance** — pulled out of the table into a checkable list, because this is the part someone will actually work from: per step, what is checked on the way in, what happens when the check fails, and the observable test that says the step is done correctly. Anything with no test yet appears here as an explicit hole, not as an omission.
+18. **Proposed solution** — fully separated, with a visible divider and an opening line: *"Everything below this line is my proposal, not something you told me."* Covers: the approach, why it fits the stated constraints **and answers the fears in section 5**, implementation steps, and what it deliberately does **not** do.
 
-Closing appendix: a link to `transcript.md` plus interview stats (total questions, ambiguities resolved, unknowns remaining, examples collected, references captured).
+Closing appendix: a link to `transcript.md` plus interview stats (total questions, ambiguities resolved, unknowns remaining, examples collected, references captured, junctions matched out of total).
 
-## Quick mode — 9 sections
+## Quick mode — 10 sections
 
 A quick interview must not produce a document that *looks* as authoritative as a deep one. Fewer sections, and the unknowns are promoted rather than buried.
 
@@ -60,7 +63,8 @@ A quick interview must not produce a document that *looks* as authoritative as a
 6. **Components & how they relate** — deep mode's sections 7 and 8 merged into one table plus one small diagram.
 7. **The decision point that matters most** — branches, exact conditions, default, reversible?
 8. **What to nail down before building** — *the headline section.* Every open ledger item, every unverified inference, every rule with no example behind it. Each line says what breaks if it is guessed wrong. Style it as the most prominent block on the page after the diagram.
-9. **Suggested next step** — labelled `[I PROPOSE]`, and explicitly scoped: what can safely start now, and what must wait for section 8.
+9. **Process contract, compact** — one table: step, input, output. Main path only, no preconditions or timing. Then the chain check underneath it, non-matches first. This is the whole reason a quick interview is worth running: even a shallow pass shows you where the steps do not join up.
+10. **Suggested next step** — labelled `[I PROPOSE]`, and explicitly scoped: what can safely start now, and what must wait for section 8.
 
 Add a banner at the top of the file, in the interview language: *"Quick interview — 15 questions. This is a shallow pass; section 8 lists what it did not establish."* / *"Phỏng vấn nhanh — 15 câu. Đây là một lượt quét nông; mục 8 liệt kê những gì chưa xác lập được."*
 

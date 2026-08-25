@@ -44,6 +44,7 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | 5 | Relationships | Quan hệ |
 | 6 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) |
 | 7 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
+| 8 | Process contract | Cam kết quy trình |
 
 ## Rule 7 — never answer for the user
 
@@ -98,6 +99,25 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | `SKIPPED` | `ĐÃ BỎ` |
 | Decision points | Điểm quyết định |
 | An omission must be visible on paper | Bỏ sót phải hiện ra trên giấy |
+
+## Process contract (Layer 8)
+
+| English | Tiếng Việt |
+|---|---|
+| Process contract | Cam kết quy trình |
+| Step | Bước |
+| Input / Output | Đầu vào / Đầu ra |
+| Precondition | Điều kiện tiên quyết |
+| Validation | Kiểm tra xác thực |
+| Acceptance criterion | Tiêu chí nghiệm thu |
+| Owner | Người/hệ thống thực hiện |
+| Chain check | Phép kiểm khớp nối |
+| Junction | Mối nối |
+| `MATCH` | `KHỚP` |
+| `GAP` | `THIẾU` |
+| `SURPLUS` | `THỪA` |
+| `MISMATCH` | `LỆCH` |
+| Acceptance must be a test, not a restatement | Nghiệm thu phải là phép kiểm, không phải nhắc lại đầu ra |
 
 ## Whole-picture checkpoint
 
@@ -157,7 +177,10 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | — | Contradictions | Mâu thuẫn |
 | — | Unverified assumptions | Giả định chưa kiểm chứng |
 | — | Genuine unknowns | Vùng chưa biết thật |
-| 15 | Proposed solution | Giải pháp đề xuất |
+| 15 | Process contract | Cam kết quy trình |
+| 16 | Chain check | Phép kiểm khớp nối |
+| 17 | Validation & acceptance | Kiểm tra xác thực & nghiệm thu |
+| 18 | Proposed solution | Giải pháp đề xuất |
 | — | Appendix & interview stats | Phụ lục & số liệu buổi phỏng vấn |
 
 ## Recurring phrases
