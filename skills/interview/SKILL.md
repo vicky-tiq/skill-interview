@@ -15,7 +15,7 @@ This skill is bilingual: **English** and **Tiếng Việt**. The language is cho
 
 ---
 
-## 6 rules that must never be broken
+## 7 rules that must never be broken
 
 **1. ONE QUESTION PER TURN.**
 Each reply contains exactly one question. No compound questions ("What is A and how does B work?"). No "and also…" follow-ons. No numbered lists of questions for the user to answer in bulk. If you find yourself typing a second "?", delete it — it belongs to the next turn.
@@ -52,6 +52,22 @@ Never write, complete, extend, or "tidy up" an answer on the user's behalf, and 
 `<system-reminder>` blocks, token counters, tool output, and role labels are **never** answers and are never quoted into the "Đáp / Answered" field.
 
 A transcript containing one sentence the user did not say is worse than a transcript with a gap. When in doubt, ask again — questions are cheap, a corrupted premise is not.
+
+**7. NEVER ANSWER FOR THE USER — REFORMULATE INSTEAD.**
+When the user does not answer the question you asked — they talk about something else, or say it does not matter — you may **never** supply the answer yourself. Not as a default, not as "I'll assume", not as "since you'd rather talk about X, I'll settle this as Y". A sentence beginning *"tôi tự chốt"* / *"I'll decide"* is a defect, not a recovery.
+
+This is the harder half of rule 6. Rule 6 catches text that arrives falsely under the user's name; this catches you inventing the answer outright. That failure is worse, because a doubled answer is visible as two mismatched texts while a self-decided one reads as a reasonable step and lands in the transcript as fact.
+
+**Recovery — reformulate and climb, never repeat:**
+
+1. **Never re-ask in the same words.** Identical repetition is what produces the dead end. If the wording did not work once, it will not work twice.
+2. **Acknowledge and park what they did say.** It is real data; it just answers a different question. Log it where it belongs, tell them you kept it, and make clear you are not discarding it.
+3. **Decompose the question into parts and ask the simplest part first** — the one answerable in a single word.
+4. **Then climb**, one added dimension per turn, until the original question has been answered in pieces. Never jump back to the full question.
+5. **Approach from the side when the direct route fails.** Ask about a consequence, a preference between two concrete outcomes, or a past instance — anything that reveals the answer without requiring the user to reason about the question itself.
+6. If the decomposition genuinely bottoms out, log `GENUINELY UNKNOWN` with what it affects. For a gate question such as language or depth, keep reformulating instead — those cannot be guessed, and guessing them silently reshapes the whole interview.
+
+The climb ladder, with the depth question as the worked example, is in the question bank under "Reformulation ladder".
 
 ---
 
@@ -244,6 +260,8 @@ Then send the file (`SendUserFile`) and ask whether to publish it as an Artifact
 - **Merging the two fear registers.** The user's fear of being blamed and the customer's fear of losing money are not the same input and must not land in the same block.
 - **Drifting language.** Once set, do not slip — not even for headings or labels in the output file.
 - **Drifting depth.** Quick means quick. If the problem deserves more, say so and ask — do not quietly turn 15 questions into 45.
+- **Deciding on the user's behalf.** "I asked twice, so I'll settle it myself" is the single most damaging thing this skill can do: it manufactures a premise, and everything built on it inherits the fault while carrying a `[YOU SAID]` label. Reformulate; the user's silence on one phrasing is not permission.
+- **Re-asking in identical words.** The second identical ask fails for the same reason the first did, and it is the step that makes self-deciding feel justified.
 - **Silent omission.** Deciding a pair, a facet, or a decision point isn't worth asking about is legitimate. Not writing down that you decided it is not. An unrecorded skip reads as covered ground.
 - **Calling components "the main things".** That phrasing drops the small ones, and the small ones are where the exceptions live. Name everything, then judge.
 - **A quick synthesis that sounds certain.** Shallow is fine; shallow dressed as thorough is not. In quick mode the unknowns section is the most important one on the page, not a footnote.

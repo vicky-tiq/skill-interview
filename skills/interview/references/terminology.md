@@ -45,6 +45,18 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | 6 | Business logic (decision tree) | Logic nghiệp vụ (cây quyết định) |
 | 7 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
 
+## Rule 7 — never answer for the user
+
+| English | Tiếng Việt |
+|---|---|
+| Reformulation ladder | Thang hỏi lại |
+| Acknowledge and park | Ghi nhận và gác lại |
+| Climb, one dimension per turn | Leo thang, mỗi lượt thêm một chiều |
+| Come from the side | Đánh từ bên cạnh |
+| Gate question | Câu cổng chặn |
+| Unanswered | `CHƯA ĐÁP` |
+| Never re-ask in the same words | Không hỏi lại nguyên văn |
+
 ## Depth modes
 
 | English | Tiếng Việt |

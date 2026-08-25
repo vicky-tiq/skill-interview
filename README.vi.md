@@ -96,6 +96,11 @@ bản vẽ liền mạch chính là một lỗ hổng, và bị đánh dấu là
   bạn. Nếu một câu trả lời hiện ra hai lần với nội dung khác nhau — lỗi tầng ứng dụng, có
   xảy ra — cả hai bản bị huỷ và câu hỏi được hỏi lại. Một biên bản chứa một câu bạn không
   nói còn tệ hơn một biên bản bị thiếu.
+- **Nó cũng không được quyết thay bạn.** Nếu bạn không trả lời một câu — vì muốn kể chuyện
+  khác, hoặc thấy câu đó không quan trọng — nó không được tự điền câu trả lời, kể cả dưới
+  dạng "mặc định". Nó phải hỏi lại cách khác: ghi nhận và gác lại phần bạn đã kể, rồi chẻ
+  câu hỏi thành phần và hỏi phần đơn giản nhất trước, sau đó leo dần lên. Hỏi lại nguyên
+  văn bị cấm, vì lần hỏi lại y hệt chính là bước làm cho việc tự quyết trông có lý.
 - **Có sổ mơ hồ.** Buổi phỏng vấn chỉ kết thúc khi sổ sạch, hoặc khi bạn nói "đủ rồi".
 - **Ghi biên bản sau từng câu**, nên dừng giữa buổi không mất gì. Chạy lại là nối tiếp
   đúng câu, đúng ngôn ngữ, đúng độ sâu.

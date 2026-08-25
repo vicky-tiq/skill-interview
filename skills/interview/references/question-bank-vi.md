@@ -20,6 +20,34 @@ Nếu chẻ tới bậc 7 vẫn không ra: ghi vào Sổ mơ hồ là **VÙNG CH
 
 ---
 
+## Thang hỏi lại (dùng khi câu hỏi không được trả lời)
+
+Khác thang chẻ câu ở trên. Chẻ câu là cho **câu trả lời có nhưng mơ hồ**. Thang này là cho **không có câu trả lời nào cho câu đó** — người dùng kể chuyện khác, hoặc nói câu đó không quan trọng.
+
+Luật 7 cấm tự điền câu trả lời. Thay vào đó leo thang này, mỗi lượt một bậc, và không bao giờ lặp lại nguyên văn một bậc đã dùng:
+
+1. **Ghi nhận và gác lại.** "Phần bạn kể về X tôi đã ghi — sẽ dùng ở tầng đúng chỗ của nó. Còn một việc tôi cần trước khi tới đó."
+2. **Phần đơn giản nhất, một từ.** Bóc câu hỏi xuống mảnh nhỏ nhất trả lời được bằng một từ hoặc có/không.
+3. **Thêm một chiều.** Lấy câu trả lời một từ đó rồi mở rộng thêm đúng một mức.
+4. **Thêm chiều kế tiếp.** Cứ vậy cho tới khi câu hỏi gốc coi như đã được trả lời từng phần.
+5. **Đánh từ bên cạnh.** Nếu bậc 2–4 tắc, thôi hỏi về chính cái đó và hỏi về một **hệ quả** của nó, một **lựa chọn giữa hai kết quả cụ thể**, hoặc một **lần đã từng xảy ra**.
+6. **Cạn đáy.** Không ra gì thì ghi `VÙNG CHƯA BIẾT THẬT` kèm nó ảnh hưởng gì — trừ câu cổng chặn (ngôn ngữ, độ sâu) là không được đoán: cứ hỏi lại bằng cách khác.
+
+### Ví dụ thật — câu hỏi độ sâu
+
+Đây là lỗi đã quan sát được: câu hỏi độ sâu được hỏi hai lần, người dùng cứ kể quy trình thay vì chọn, và model tuyên bố nó tự chốt thay. Đây là thang lẽ ra phải dùng.
+
+| Bậc | Câu hỏi |
+|---|---|
+| 1 | "Phần Facebook → sale → kế toán tôi đã ghi rồi, nó thuộc tầng quy trình và tôi sẽ dùng ở đó. Còn một việc trước đã." |
+| 2 | "Cái này bạn sắp làm thật, hay đang cân xem có nên làm không?" |
+| 3 | "Nếu làm thật — bạn muốn tôi kỹ mà chậm, hay nhanh mà liệt kê ra chỗ tôi bỏ?" |
+| 4 | "Bạn ngồi được với tôi khoảng bao lâu — dưới nửa tiếng, hay không quan trọng?" |
+| 5 (bên) | "Lần trước làm việc tương tự, bạn hối vì làm nông quá, hay vì mất quá nhiều thời gian?" |
+| 5 (bên) | "Nếu tôi đưa bạn một tài liệu còn năm câu hỏi mở, cái đó hữu ích hay gây khó chịu?" |
+
+Bất kỳ câu nào trong đó cũng chốt được độ sâu mà không buộc người dùng phải suy nghĩ về chữ "độ sâu". Không câu nào cho phép model tự quyết.
+
 ## Tầng 0 — Mục đích gốc & định nghĩa thành công
 
 - Bài toán bạn muốn tôi hiểu là gì? Cứ kể tự nhiên, chưa cần gọn gàng.

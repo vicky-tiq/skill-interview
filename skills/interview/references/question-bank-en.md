@@ -20,6 +20,34 @@ If rung 7 still yields nothing: log it in the Ambiguity Ledger as **GENUINELY UN
 
 ---
 
+## Reformulation ladder (use when the question was not answered at all)
+
+Different from the slicing ladder above. Slicing is for an answer that arrived but was vague. This is for **no answer to this question** — the user talked about something else, or said it does not matter.
+
+Rule 7 forbids supplying the answer yourself. Climb this instead, one rung per turn, and never repeat a rung's wording:
+
+1. **Acknowledge and park.** "I've written down what you said about X — I'll use it at the layer where it belongs. One thing I still need before we get there."
+2. **Simplest part, one word.** Strip the question to the smallest binary or single-word piece.
+3. **Add one dimension.** Take their one-word answer and extend it by exactly one degree.
+4. **Add the next.** Continue until the original question stands answered in pieces.
+5. **Come from the side.** If rungs 2–4 stall, stop asking about the thing and ask about a *consequence* of it, a *preference between two concrete outcomes*, or a *past instance*.
+6. **Bottom out.** If nothing lands, log `GENUINELY UNKNOWN` with what it affects — except for gate questions (language, depth), which cannot be guessed: keep reformulating.
+
+### Worked example — the depth question
+
+This is a real failure that was observed: the depth question was asked twice, the user kept describing their process instead of choosing, and the model announced it would decide for them. Here is the climb it should have used.
+
+| Rung | Question |
+|---|---|
+| 1 | "I've logged the Facebook-to-sales-to-accounting flow — that belongs in the process layer and I'll use it there. One thing first." |
+| 2 | "Is this something you're going to build, or something you're still deciding whether to build?" |
+| 3 | "If you're building it — would you rather I be thorough and slow, or fast and flag what I skipped?" |
+| 4 | "Roughly how long can you sit with me on this — under half an hour, or does it not matter?" |
+| 5 (side) | "Last time you scoped something like this, did you regret going too shallow, or spending too long?" |
+| 5 (side) | "If I hand you a document with five open questions in it, is that useful or annoying?" |
+
+Any of these settles depth without ever making the user reason about the word "depth". None of them lets the model decide.
+
 ## Layer 0 — Root purpose & definition of success
 
 - What's the problem you want me to understand? Just talk it through — it doesn't need to be organized.

@@ -128,6 +128,28 @@ if sane "$OUTQ" "T2c quick mode honoured"; then
                   || bad "T2d quick mode still one question per turn" "found $QQ question marks"
 fi
 
+echo; echo "T5 — rule 7: never answers for the user when a question is ignored"
+R7SID="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+run "/interview quy trình duyệt hoàn tiền của công ty tôi đang rất chậm" --session-id "$R7SID" >/dev/null
+OUTA="$(run "Khách gửi yêu cầu qua Facebook, sale nhận rồi chuyển cho kế toán." --resume "$R7SID")"
+OUTB="$(run "Kế toán kiểm rồi trình giám đốc duyệt, thường mất 3-5 ngày." --resume "$R7SID")"
+SELFDECIDE='tự chốt|tự quyết|tôi chọn giúp|mặc định là|tôi sẽ giả định|I.ll decide|I will decide|I.ll assume|defaulting to'
+if printf '%s%s' "$OUTA" "$OUTB" | grep -qiE "$SELFDECIDE"; then
+  bad "T5a never decides on the user's behalf" "reply announced its own decision: $(printf '%s%s' "$OUTA" "$OUTB" | grep -oiE "$SELFDECIDE" | head -1)"
+else
+  ok "T5a never decides on the user's behalf"
+fi
+if sane "$OUTB" "T5b reformulates instead of repeating"; then
+  if [ "$OUTA" = "$OUTB" ]; then
+    bad "T5b reformulates instead of repeating" "second reply is byte-identical to the first"
+  else
+    ok "T5b reformulates instead of repeating"
+  fi
+  QB="$(qmarks "$OUTB")"
+  [ "$QB" -ge 1 ] && ok "T5c still asking, not moving on silently ($QB marks)" \
+                  || bad "T5c still asking, not moving on silently" "no question in the reply"
+fi
+
 echo; echo "T3 — transcript written after every answer, not batched"
 run "Khách gửi yêu cầu qua Facebook, sale nhận rồi chuyển cho kế toán." --resume "$SID" >/dev/null
 T="$(find "$WORK/interview" -name transcript.md 2>/dev/null | head -1)"

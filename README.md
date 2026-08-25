@@ -108,6 +108,12 @@ to make the drawing work is a gap, and gets marked as one.
   reply arrives twice with different wording — a client-layer fault that happens — both
   copies are voided and the question is simply asked again. A transcript containing one
   sentence you didn't say is worse than one with a gap.
+- **It never decides for you either.** If you don't answer a question — you'd rather talk
+  about something else, or it seems unimportant — it may not supply the answer itself, not
+  even as a default. It reformulates instead: parks what you did say, then breaks the
+  question into parts and asks the simplest one first, climbing back up a rung at a time.
+  Repeating the same wording is banned, because the second identical ask is what makes
+  self-deciding feel justified.
 - **It keeps an ambiguity ledger.** The interview only ends when the ledger is clear,
   or you say "that's enough".
 - **It logs after every single answer,** so quitting mid-interview loses nothing.

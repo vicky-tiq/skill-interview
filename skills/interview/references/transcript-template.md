@@ -116,6 +116,17 @@ Enumerated to exhaustion before any are worked through, same two-empty-rounds ru
 | D2 | whether to notify the customer | covered Q55–Q60 |
 | D3 | who absorbs the fee | not yet covered |
 
+## Unanswered questions and the climb (rule 7)
+
+When a question goes unanswered, log the reformulation chain — not a value you supplied. There must never be a row here whose answer came from Claude.
+
+| Question | Rungs used | Settled at | Value |
+|---|---|---|---|
+| Depth (Step 0) | 2, 3 | Q4 | quick — user said "fast, just flag what you skip" |
+| Who absorbs the fee | 2, 3, 4, 5-side | — | `GENUINELY UNKNOWN`, affects decision point D3 |
+
+If a value here has no user utterance behind it, the entry is invalid — delete the value, restore the question, and climb again.
+
 ## Parked ideas
 
 If a solution occurs to you mid-interview, write it here and **say nothing** — voicing it frames the user's thinking. Use it only at synthesis time.
