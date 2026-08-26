@@ -119,6 +119,13 @@ to make the drawing work is a gap, and gets marked as one.
   reply arrives twice with different wording — a client-layer fault that happens — both
   copies are voided and the question is simply asked again. A transcript containing one
   sentence you didn't say is worse than one with a gap.
+- **Documents you send are checked with you, not used behind you.** Paste a spec or attach
+  a policy and it will read it — you handed it over, so that isn't research. But finding
+  your answer in there doesn't settle it. It quotes the exact passage back and asks two
+  things at once: is this the answer, and is it still true? Documents describe what was
+  intended when they were written, and you're the only one who knows whether practice has
+  moved. Where the document and you disagree, that gap is recorded as a finding — whoever
+  reads that document next will be misled the same way.
 - **It never decides for you either.** If you don't answer a question — you'd rather talk
   about something else, or it seems unimportant — it may not supply the answer itself, not
   even as a default. It reformulates instead: parks what you did say, then breaks the

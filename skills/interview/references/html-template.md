@@ -17,7 +17,7 @@ Every claim in the file carries exactly one of three labels (Vietnamese equivale
 
 | Label | Meaning | When to use |
 |---|---|---|
-| `[YOU SAID]` | The user said it; quotable from the transcript | The default. Most of the file must be this. |
+| `[YOU SAID]` | The user said it; quotable from the transcript — including answers found in their own material **after they confirmed them**, with the source named inline | The default. Most of the file must be this. |
 | `[I INFERRED]` | Claude reasoned it from what was said; not directly confirmed | When you had to connect pieces |
 | `[I PROPOSE]` | Claude's own idea, never stated by the user | Only in the closing solution section |
 
@@ -44,6 +44,7 @@ Heading wording per language: see the "Synthesis HTML section headings" table in
     - *Contradictions*: two answers that don't line up, quoting both with question numbers.
     - *Unverified assumptions*: every `[I INFERRED]` the user never confirmed.
     - *Genuine unknowns*: the `GENUINELY UNKNOWN` ledger rows, each with "what breaks if we guess wrong".
+    - *Stale documents*: every place the user's own material said one thing and the user said another, quoting both. This matters beyond the interview — whoever reads that document next will be misled the same way. Name the document and who else works from it.
 15. **Process contract** — the buildable part of the document. One row per step: input, output, acceptance criterion, owner, and (where asked) precondition, validation and timing. Cells that were inferred rather than told carry `[I INFERRED]` inline, not just in section 14 — the reader must see *which cell* is soft while looking at the table, not after it. An acceptance criterion that merely restates the output is a defect: flag it in place rather than printing it as if it were a test.
 16. **Chain check** — one row per junction between adjacent steps, each `MATCH` / `GAP` / `SURPLUS` / `MISMATCH`, with the detail and the ledger item id for every non-match. Put the non-matches **first**; a reader scanning this section is looking for what does not line up, not for reassurance. If every junction is `MATCH`, say plainly that this usually means the steps were described too coarsely to disagree — do not present it as a clean bill of health.
 17. **Validation & acceptance** — pulled out of the table into a checkable list, because this is the part someone will actually work from: per step, what is checked on the way in, what happens when the check fails, and the observable test that says the step is done correctly. Anything with no test yet appears here as an explicit hole, not as an omission.

@@ -69,6 +69,24 @@ The user's own metaphors, verbatim — they often carry structure the prose does
 
 - (Q18) "It's like a kitchen ticket rail — everything visible, oldest on the left."
 
+## Material received (rule 8)
+
+Anything the user delivered into the conversation. Distinct from References, which are recorded but never opened.
+
+| # | Material | Received at | Answers which questions | Discrepancies found |
+|---|---|---|---|---|
+| M1 | pasted refund policy extract | Q12 | approval threshold, who signs off | threshold in doc is 50m, user says 68m in practice — A11 |
+
+Every answer sourced from material carries its state until confirmed:
+
+| State | Meaning |
+|---|---|
+| `CANDIDATE (M1)` | Found in material, quoted to the user, not yet confirmed |
+| `CONFIRMED (M1, Q14)` | User confirmed it and it becomes a normal `[YOU SAID]` answer |
+| `SUPERSEDED (M1, Q14)` | User corrected it; the correction wins and the document is stale |
+
+A `CANDIDATE` may never appear in a layer read-back as though it were settled, and may never reach the synthesis unlabelled.
+
 ## References (duty C)
 
 **Recorded, not read.** Never open these during the interview.

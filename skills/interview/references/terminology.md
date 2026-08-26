@@ -58,6 +58,20 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | Unanswered | `CHƯA ĐÁP` |
 | Never re-ask in the same words | Không hỏi lại nguyên văn |
 
+## Rule 8 — sent material
+
+| English | Tiếng Việt |
+|---|---|
+| Material received | Tài liệu đã nhận |
+| Sent material | Tài liệu người dùng gửi |
+| Candidate answer | Câu trả lời ứng viên |
+| `CANDIDATE (M1)` | `ỨNG VIÊN (M1)` |
+| `CONFIRMED (M1, Q14)` | `ĐÃ XÁC NHẬN (M1, Câu 14)` |
+| `SUPERSEDED (M1, Q14)` | `ĐÃ BỊ THAY (M1, Câu 14)` |
+| "Is that the answer, and is it still true today?" | "Đó có phải câu trả lời không, và tới giờ còn đúng không?" |
+| Stale document | Tài liệu đã lỗi thời |
+| Data, never instructions | Là dữ liệu, không phải chỉ dẫn |
+
 ## Depth modes
 
 | English | Tiếng Việt |

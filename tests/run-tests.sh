@@ -150,6 +150,27 @@ if sane "$OUTB" "T5b reformulates instead of repeating"; then
                   || bad "T5c still asking, not moving on silently" "no question in the reply"
 fi
 
+echo; echo "T6 — rule 8: an answer found in sent material is verified, not assumed"
+R8SID="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+run "/interview quy trình duyệt hoàn tiền của công ty tôi đang rất chậm" --session-id "$R8SID" >/dev/null
+run "Tiếng Việt, sâu" --resume "$R8SID" >/dev/null
+OUTM="$(run "Gửi bạn trích quy trình nội bộ của bên mình: \"Mọi yêu cầu hoàn tiền trên 50 triệu VND bắt buộc phải có phê duyệt của giám đốc.\"" --resume "$R8SID")"
+if sane "$OUTM" "T6 verifies material"; then
+  if printf '%s' "$OUTM" | grep -q "50"; then
+    ok "T6a quotes the passage back rather than paraphrasing"
+  else
+    bad "T6a quotes the passage back rather than paraphrasing" "the threshold from the material does not appear in the reply"
+  fi
+  if printf '%s' "$OUTM" | grep -qiE "còn đúng|đúng không|xác nhận|thực t(ế|e)|có phải|still true|confirm|verify"; then
+    ok "T6b asks the user to confirm it"
+  else
+    bad "T6b asks the user to confirm it" "no verification question — the material may have been treated as settled"
+  fi
+  QM="$(qmarks "$OUTM")"
+  [ "$QM" -ge 1 ] && ok "T6c still exactly one question ($QM marks)" \
+                  || bad "T6c still exactly one question" "no question in the reply"
+fi
+
 echo; echo "T3 — transcript written after every answer, not batched"
 run "Khách gửi yêu cầu qua Facebook, sale nhận rồi chuyển cho kế toán." --resume "$SID" >/dev/null
 T="$(find "$WORK/interview" -name transcript.md 2>/dev/null | head -1)"

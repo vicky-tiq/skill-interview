@@ -107,6 +107,13 @@ bản vẽ liền mạch chính là một lỗ hổng, và bị đánh dấu là
   bạn. Nếu một câu trả lời hiện ra hai lần với nội dung khác nhau — lỗi tầng ứng dụng, có
   xảy ra — cả hai bản bị huỷ và câu hỏi được hỏi lại. Một biên bản chứa một câu bạn không
   nói còn tệ hơn một biên bản bị thiếu.
+- **Tài liệu bạn gửi được kiểm cùng bạn, không phải dùng sau lưng bạn.** Bạn dán một bản
+  đặc tả hay đính kèm một quy định thì nó đọc — bạn đưa cho nó, nên đó không phải là tự
+  nghiên cứu. Nhưng tìm thấy câu trả lời trong đó không có nghĩa là câu hỏi đã xong. Nó
+  trích nguyên văn đoạn đó ra và hỏi hai vế cùng lúc: đây có phải câu trả lời không, và
+  tới giờ còn đúng không? Tài liệu mô tả điều được dự định lúc viết ra, còn bạn mới là
+  người biết thực tế đã đi khác chưa. Chỗ nào tài liệu và bạn nói lệch nhau thì được ghi
+  lại thành một phát hiện — người đọc tài liệu đó kế tiếp sẽ bị dẫn sai y hệt.
 - **Nó cũng không được quyết thay bạn.** Nếu bạn không trả lời một câu — vì muốn kể chuyện
   khác, hoặc thấy câu đó không quan trọng — nó không được tự điền câu trả lời, kể cả dưới
   dạng "mặc định". Nó phải hỏi lại cách khác: ghi nhận và gác lại phần bạn đã kể, rồi chẻ
