@@ -250,6 +250,19 @@ Rồi đi cạn từng điểm — hết mọi nhánh của điểm này mới s
 - Nếu khối lượng tăng 10 lần, chỗ nào **vỡ trước**?
 - Nếu người đang gánh việc này nghỉ đột ngột, cái gì tắc lại?
 
+### Đầu vào không tin cậy
+
+Hỏi những câu này cho mọi bước nhận đầu vào từ người ngoài tầm kiểm soát của người dùng — khách hàng, người bình luận, nhà cung cấp, form công khai. Với bước đã tự động hoá thì đây không phải giả định.
+
+- Bước nào nhận đầu vào từ người bạn không kiểm soát được?
+- Người đó có thể gửi thứ **cố ý gây hại**, chứ không chỉ là sai, không?
+- Nếu bước này chạy tự động, đầu vào của nó có thể chứa **chỉ dẫn nhắm vào chính hệ thống tự động** không — kiểu văn bản bảo nó bỏ qua luật, tiết lộ thứ gì đó, hoặc hành động thay người gửi?
+- Hành động **nặng nhất** mà bước này có khả năng làm là gì? Ai có thể kích nó?
+- Ở đây hành động nào là **không đảo lại được** — xoá, đăng công khai, thanh toán, gửi đi?
+- Có chỗ nào để đầu vào của người ngoài chạm tới một hành động không đảo lại được mà **không có người ở giữa** không?
+- Nếu nó làm sai, bao lâu mới có người phát hiện, và phát hiện bằng cách nào?
+- Phần nào bắt buộc phải có người duyệt, dù hệ thống tự tin tới đâu?
+
 ## Tầng 8 — Cam kết quy trình
 
 **Dựng bảng từ biên bản trước.** Tầng 3 và Tầng 6 đã cho bạn các bước. Dựng bảng, đánh dấu ô nào phải suy ra, rồi chỉ hỏi vào những ô đó. Không bao giờ hỏi lại một bước đã có trong biên bản.

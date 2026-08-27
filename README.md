@@ -24,7 +24,7 @@ The first question settles language and depth together.
 | Per layer | Exhausted | The 1–2 highest-yield questions |
 | Whole-picture diagram | Yes | **Yes** — never cut |
 | Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
-| Synthesis | 18 sections | 10 sections |
+| Synthesis | 19 sections | 11 sections |
 | Open questions | Must not exist | **Are the headline deliverable** |
 
 Both cover all nine layers — quick is shallower, not narrower. It never pretends to
@@ -71,6 +71,17 @@ It does not re-elicit the steps. Layers 3 and 6 already walked the process and m
 Then the **chain check**, which is the point of it. Every junction between adjacent steps is compared and marked `MATCH`, `GAP` (the next step needs something nothing produces), `SURPLUS` (something is produced that nothing consumes) or `MISMATCH` (both exist but shape, unit or timing differ). Non-matches are almost never process defects — they are interview gaps, and each becomes a question. A surplus usually means a consumer exists that nobody named, which sends you back to Layer 4.
 
 A first pass where everything reads `MATCH` is a warning, not a success: it means the steps were described too coarsely to disagree.
+
+### Nothing gets built
+
+Not during, and not at the end. The deliverable is understanding; building is a separate decision you make afterwards with the synthesis in hand. This holds hardest when the interview has gone well, because a shared picture creates the urge to act on it, and acting early is how the picture stops getting checked.
+
+The synthesis closes with a proposal, and a proposal is not a build.
+
+Two of its sections exist to make the proposal checkable rather than merely reassuring:
+
+- **Fear → countermeasure map.** One row per fear you named, in your words: what addresses it, how, and **what residual risk is left**. A fear with nothing against it gets a row saying so — an absent row would let it disappear. "The solution addresses your concerns" buried in a paragraph is unverifiable; a table you can run a finger down is not.
+- **Untrusted input.** Any step fed by someone outside your control — a customer, a commenter, a public form — is asked about directly: what is the worst action this step can take, who could provoke it, what here is irreversible, and does an outsider's input ever reach an irreversible action with no human in between. For an automated step that is not hypothetical.
 
 ### Proving coverage, not assuming it
 

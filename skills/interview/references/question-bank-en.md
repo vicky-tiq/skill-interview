@@ -250,6 +250,19 @@ Then exhaust them one at a time — every branch of this one before moving to th
 - If volume grew 10×, what **breaks first**?
 - If the person carrying this work quit tomorrow, what grinds to a halt?
 
+### Untrusted input
+
+Ask these for every step fed by someone outside the user's control — a customer, a commenter, a supplier, an inbound form. For an automated step they are not hypothetical.
+
+- Which steps take input from someone you don't control?
+- Could that person send something deliberately harmful rather than merely wrong?
+- If this step is automated, could its input contain instructions aimed at the automation itself — text telling it to ignore its rules, reveal something, or take an action on the sender's behalf?
+- What is the worst single action this step is capable of taking? Who could provoke it?
+- Which actions here are irreversible — deleting, publishing, paying, sending?
+- Does anything let an outsider's input reach an irreversible action without a human in between?
+- If it acts wrongly, how long before anyone notices, and how?
+- Which parts must a human always approve, no matter how confident the automation is?
+
 ## Layer 8 — Process contract
 
 **Draft from the transcript first.** Layers 3 and 6 already gave you the steps. Build the table, mark inferred cells, then ask only about those. Never re-elicit a step that is already logged.

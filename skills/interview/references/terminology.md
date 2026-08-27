@@ -194,7 +194,12 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | 15 | Process contract | Cam kết quy trình |
 | 16 | Chain check | Phép kiểm khớp nối |
 | 17 | Validation & acceptance | Kiểm tra xác thực & nghiệm thu |
-| 18 | Proposed solution | Giải pháp đề xuất |
+| 18 | Fear → countermeasure map | Ánh xạ nỗi sợ → phương án |
+| 19 | Proposed solution | Giải pháp đề xuất |
+| — | Residual risk | Rủi ro còn lại |
+| — | Component split | Tách thành phần để xây |
+| — | Untrusted input | Đầu vào không tin cậy |
+| — | Nothing gets built during the interview | Không triển khai gì trong lúc phỏng vấn |
 | — | Appendix & interview stats | Phụ lục & số liệu buổi phỏng vấn |
 
 ## Recurring phrases

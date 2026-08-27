@@ -19,7 +19,7 @@ Câu hỏi đầu tiên chốt luôn ngôn ngữ và độ sâu.
 | Mỗi tầng | Đào cạn | 1–2 câu sinh lời nhất |
 | Sơ đồ tổng thể | Có | **Có** — không bao giờ cắt |
 | Kết thúc khi | Không còn điểm mơ hồ | Hết tầng 7, còn mơ hồ cũng xong |
-| Bản đúc kết | 18 mục | 10 mục |
+| Bản đúc kết | 19 mục | 11 mục |
 | Điểm chưa rõ | Không được tồn tại | **Là kết quả chính** |
 
 Cả hai đi hết chín tầng — bản nhanh nông hơn, không phải hẹp hơn. Nó không giả vờ đạt
@@ -61,6 +61,17 @@ Nó **không hỏi lại các bước từ đầu.** Tầng 3 và Tầng 6 đã 
 Rồi tới **phép kiểm khớp nối**, chính là lý do tầng này tồn tại. Mỗi mối nối giữa hai bước liền nhau được so và đánh `KHỚP`, `THIẾU` (bước sau cần thứ không bước nào tạo ra), `THỪA` (có thứ được tạo ra mà không ai dùng), hoặc `LỆCH` (cả hai đều có nhưng khác hình dạng, đơn vị, hoặc thời điểm). Chỗ không khớp gần như không bao giờ là lỗi của quy trình — nó là lỗ hổng của buổi phỏng vấn, và mỗi chỗ thành một câu hỏi. `THỪA` thường lộ ra một bên tiêu thụ chưa ai gọi tên, tức phải quay lại Tầng 4.
 
 Lượt đầu mà mọi mối nối đều `KHỚP` là dấu hiệu đáng lo, không phải thành công: nó nghĩa là các bước được mô tả quá thô nên không thể lệch nhau.
+
+### Không triển khai gì cả
+
+Không trong lúc phỏng vấn, và cũng không ở cuối. Thứ được giao là **sự hiểu**; xây là một quyết định riêng bạn đưa ra sau đó, với bản đúc kết trong tay. Luật này đúng nhất ở đúng lúc buổi phỏng vấn diễn ra tốt — vì có chung một bức tranh thì sinh ra thôi thúc bắt tay làm ngay, mà làm sớm chính là lúc bức tranh thôi được kiểm.
+
+Bản đúc kết kết thúc bằng một đề xuất, và đề xuất không phải là đã xây.
+
+Hai mục trong đó tồn tại để đề xuất **kiểm được**, chứ không chỉ nghe cho yên tâm:
+
+- **Ánh xạ nỗi sợ → phương án.** Mỗi nỗi sợ bạn nêu một dòng, bằng đúng lời bạn: cái gì xử lý nó, xử lý bằng cách nào, và **còn lại rủi ro gì**. Nỗi sợ nào không có gì chống lại thì vẫn có một dòng ghi rõ như vậy — thiếu dòng đó là để nó biến mất. Câu "giải pháp có xử lý các lo ngại của bạn" nằm lẫn trong một đoạn văn thì không kiểm được; một bảng bạn rà ngón tay xuống thì kiểm được.
+- **Đầu vào không tin cậy.** Mọi bước nhận đầu vào từ người ngoài tầm kiểm soát của bạn — khách hàng, người bình luận, form công khai — đều bị hỏi thẳng: hành động nặng nhất bước này làm được là gì, ai kích được nó, ở đây cái gì không đảo lại được, và có chỗ nào để đầu vào của người ngoài chạm tới hành động không đảo lại được mà không có người ở giữa không. Với bước đã tự động hoá thì đây không phải giả định.
 
 ### Chứng minh độ phủ, không cho là đã phủ
 
