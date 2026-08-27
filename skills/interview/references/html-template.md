@@ -23,61 +23,84 @@ Every claim in the file carries exactly one of three labels (Vietnamese equivale
 
 Never mix the three within a single statement. The user must be able to spot instantly which words are theirs and which Claude added — that separation is the error-detection mechanism.
 
-## Deep mode — 19 sections, in this order
+## Deep mode — three deliverables, then the evidence behind them
 
 Heading wording per language: see the "Synthesis HTML section headings" table in `terminology.md`.
 
-1. **The problem in one sentence** — hero, large type. If the user produced such a sentence, quote it verbatim.
-2. **The whole picture** — the overview diagram, **twice**: the confirmed ASCII sketch from the checkpoint in a `<pre>` block, then the same picture drawn properly as inline SVG. The SVG is for reading; the ASCII is for *using* — it can be pasted into a prompt, a ticket, or a chat message, which an SVG cannot. Keep them identical in content; if drawing the SVG revealed something the sketch got wrong, fix the sketch too rather than letting the two disagree. Both come from the sketch the user confirmed at the whole-picture checkpoint. Drawn properly, that means: the goal at the top, actors at the edges, components as boxes, labelled arrows between them. One screen, no scrolling, readable without the rest of the document. A reader who sees only this section should be able to describe the problem back. Everything after it is detail.
-3. **Root purpose & definition of success** — why this matters, the observable done-signal, the target number.
-4. **Context & constraints** — table of stakeholders / role / what they care about. Constraints table separating **hard rules** from **habits**.
-5. **Fears & stakes** — **two clearly separate blocks, never merged**: the user's own fears, and the end users' fears. For each fear, note what it implies for the design. Include the unspoken objections — they are usually the load-bearing ones.
-6. **Current → Desired** — two parallel columns. Include an "Already tried and ruled out" block so nothing rejected gets re-proposed.
-7. **Component map** — one card per component: one-sentence definition, owner, states, mandatory attributes, unit of measure.
-8. **Relationship diagram** — SVG: boxes are components, arrows carry verb labels, note cardinality (1–1 / 1–n / n–n) and mandatory vs optional (solid vs dashed line). This is the zoomed-in version of section 2.
-9. **Decision trees** — one SVG per decision point: diamonds for conditions, branch labels with **concrete conditions including numbers**, default branch shaded differently. Plus a table: decision point / decider / inputs / branches / resulting state / reversible?
-10. **Exceptions & edge cases** — table: scenario / how it's handled today / who handles it / settled or still open.
-11. **Worked examples** — the real cases collected under duty A. Each one: what happened, when, the actual numbers, and which rule or branch above it demonstrates. A rule with no example here is a rule to distrust — say so explicitly.
-12. **Illustrations & analogies** — the user's own metaphors quoted verbatim, plus any screenshot, file, or product they pointed to. If they said "it's like a kitchen ticket rail", that sentence goes here in quotes, because it carries structure their prose did not.
-13. **References** — table: what it is / where it lives / who owns it / why it matters. Mark each as **recorded, not read** — the interview does not open sources, and the reader must not assume the content was verified.
-14. **Risks, contradictions & unknowns** — three separate blocks:
-    - *Contradictions*: two answers that don't line up, quoting both with question numbers.
-    - *Unverified assumptions*: every `[I INFERRED]` the user never confirmed.
-    - *Genuine unknowns*: the `GENUINELY UNKNOWN` ledger rows, each with "what breaks if we guess wrong".
-    - *Stale documents*: every place the user's own material said one thing and the user said another, quoting both. This matters beyond the interview — whoever reads that document next will be misled the same way. Name the document and who else works from it.
-15. **Process contract** — the buildable part of the document. One row per step: input, output, acceptance criterion, owner, and (where asked) precondition, validation and timing. Cells that were inferred rather than told carry `[I INFERRED]` inline, not just in section 14 — the reader must see *which cell* is soft while looking at the table, not after it. An acceptance criterion that merely restates the output is a defect: flag it in place rather than printing it as if it were a test.
-16. **Chain check** — one row per junction between adjacent steps, each `MATCH` / `GAP` / `SURPLUS` / `MISMATCH`, with the detail and the ledger item id for every non-match. Put the non-matches **first**; a reader scanning this section is looking for what does not line up, not for reassurance. If every junction is `MATCH`, say plainly that this usually means the steps were described too coarsely to disagree — do not present it as a clean bill of health.
-17. **Validation & acceptance** — pulled out of the table into a checkable list, because this is the part someone will actually work from: per step, what is checked on the way in, what happens when the check fails, and the observable test that says the step is done correctly. Anything with no test yet appears here as an explicit hole, not as an omission.
-18. **Fear → countermeasure map** — one row per fear from section 5, both registers, in the user's own words. For each: which specific measure in the proposal addresses it, how it addresses it, and **what residual risk is left over**. A fear with no countermeasure gets a row saying so plainly — that is more useful than an absent row, because it tells the reader which anxiety the plan does not answer. Never merge a user's fear with an end user's fear into one row; they are answered by different things.
+The file is in three parts, and the order matters. **Part A is the result of the interview**: the diagram, the contract, and the acceptance criteria. Someone who reads only Part A should be able to act. Parts B and C exist to let them check Part A rather than take it on trust — evidence first, then what is still open.
 
-    This section exists because "the solution addresses the fears" buried in a paragraph is unverifiable. A reader must be able to run a finger down their own list of fears and see, for each one, whether it was handled. Residual risk is mandatory: a countermeasure that claims to eliminate a fear entirely is almost always hiding the leftover.
-19. **Proposed solution** — fully separated, with a visible divider and an opening line: *"Everything below this line is my proposal, not something you told me."* Covers: the approach, why it fits the stated constraints **and answers the fears mapped in section 18**, implementation steps, and what it deliberately does **not** do.
+Flat section lists bury the deliverable. A reader looking for what to build should not have to pass through fears, worked examples and references to reach it.
 
-**Conditional appendix — component split (only when the problem is building an automation or agent system).** The process contract already contains what is needed to answer it, so it costs little: a step whose input and output contract is clean is a candidate boundary, and a junction marked `GAP` or `MISMATCH` is a boundary that is *not* yet clean. Propose how many separate units to build, where the seams fall, and the reason for each seam — citing the specific contract row that justifies it. Label the whole appendix `[I PROPOSE]`. Where the chain check found unresolved junctions, say plainly that those seams cannot be settled yet, and why. Omit this appendix entirely for problems that are not about building a system.
+### Part A — the three deliverables
+
+**A1. The whole picture.** The overview diagram, **twice**: the confirmed ASCII sketch in a `<pre>` block, then the same picture as inline SVG. SVG to read, ASCII to *use* — it pastes into a prompt, a ticket or a chat message, which SVG does not. Keep them identical; if drawing the SVG exposed something the sketch got wrong, fix the sketch too. Layout: goal at the top, actors at the edges, components as boxes, every arrow carrying a verb. Solid box for a component the user named, dashed for one you inferred. Anything invented to make the drawing connect is a gap, not a drawing detail — dash it and list it in C1. Under twelve boxes; more means the problem has sub-problems.
+
+**A2. The contract.** One row per step: input, output, acceptance criterion, owner, plus precondition, validation and timing where they were asked. Inferred cells carry `[I INFERRED]` **inline in the cell**, not only in C1 — the reader must see which cell is soft while looking at the table.
+
+Immediately below it, the **chain check**: every junction between adjacent steps as `MATCH` / `GAP` / `SURPLUS` / `MISMATCH`, with the detail and the ledger id for each non-match. **Non-matches first** — a reader scanning this is looking for what does not line up. If every junction is `MATCH`, say plainly that this usually means the steps were cut too coarsely to disagree; do not present it as a clean bill of health.
+
+**A3. Acceptance.** Per step: what is checked on the way in, what happens when that check fails, and the observable test that says the step was done *correctly*. An acceptance criterion that restates the output is a defect — flag it in place rather than printing it as though it were a test. Steps with no test yet appear here as explicit holes.
+
+**Each of the three ships as a copy-pasteable block.** The diagram already has its ASCII. Give the contract and the acceptance list a plain-text version too, in a `<pre>` a reader can select and paste into a spec, a ticket, or the next prompt. These three are what someone hands to whoever builds it; an artifact you cannot get out of the page is an artifact that gets retyped and mangled.
+
+### Part B — the evidence behind them
+
+Same content as before, now positioned as support rather than as peers of the deliverable.
+
+B1. The problem in one sentence — quoted verbatim if the user produced one.
+B2. Root purpose & definition of success — why it matters, the observable done-signal, the target number.
+B3. Context & constraints — stakeholders table; constraints split into **hard rules** vs **habits**.
+B4. Fears & stakes — **two separate blocks, never merged**: the user's fears and the end users'. Include the unspoken objections; they are usually load-bearing.
+B5. Current → Desired — two columns, plus "already tried and ruled out" so nothing rejected gets re-proposed.
+B6. Component map — one card per component: definition, owner, states, mandatory attributes, unit.
+B7. Relationship diagram — SVG; verbs on arrows, cardinality, solid vs dashed for mandatory vs optional. The zoomed-in version of A1.
+B8. Decision trees — one SVG per decision point; branch labels carry **concrete conditions including numbers**; default branch shaded differently. Plus the decider / inputs / branches / resulting state / reversible table.
+B9. Exceptions & edge cases — scenario / handled how today / by whom / settled or open. Include the untrusted-input findings.
+B10. Worked examples — real cases with real numbers, each naming the rule or branch it demonstrates. A rule with no example here is a rule to distrust; say so.
+B11. Illustrations & analogies — the user's metaphors verbatim, plus anything they pointed at.
+B12. References — what / where / who owns it / why it matters, each marked **recorded, not read**.
+
+### Part C — what is still open, and what I propose
+
+**C1. Risks, contradictions & unknowns** — four blocks: *contradictions* (both answers quoted with question numbers); *unverified assumptions* (every `[I INFERRED]` never confirmed); *genuine unknowns* (each with "what breaks if we guess wrong"); *stale documents* (where the user's own material said one thing and the user another — whoever reads that document next will be misled the same way; name it and who else works from it).
+
+**C2. Fear → countermeasure map** — one row per fear from B4, in the user's words: what addresses it, how, and **what residual risk is left**. A fear with nothing against it gets a row saying so. Residual risk is mandatory: a countermeasure claiming to eliminate a fear entirely is usually hiding the leftover.
+
+**C3. Proposed solution** — fully separated, with a visible divider and an opening line: *"Everything below this line is my proposal, not something you told me."* The approach, why it fits the constraints and answers C2, implementation steps, and what it deliberately does **not** do. A proposal is not a build; rule 9 still holds.
+
+**Conditional appendix — component split**, only when the problem is building an automation or agent system. The contract already answers it: a step with a clean input/output contract is a candidate boundary, and a `GAP` or `MISMATCH` junction is a boundary that is not clean yet. Propose how many units, where the seams fall, and the contract row justifying each seam. Label it `[I PROPOSE]`. Where the chain check left junctions unresolved, say plainly that those seams cannot be settled yet. Omit entirely for problems that are not about building a system.
 
 Closing appendix: a link to `transcript.md` plus interview stats (total questions, ambiguities resolved, unknowns remaining, examples collected, references captured, junctions matched out of total).
 
-## Quick mode — 11 sections
+## Quick mode — the same three, compressed
 
-A quick interview must not produce a document that *looks* as authoritative as a deep one. Fewer sections, and the unknowns are promoted rather than buried.
+A quick interview must not produce a document that *looks* as authoritative as a deep one. Same three-part shape, fewer rows, and the unknowns promoted rather than buried.
 
-1. **The problem in one sentence**
-2. **The whole picture** — the confirmed overview diagram, same drawing standard as deep mode. Never cut this; it is the most information per pixel in the file.
-3. **Purpose & definition of success** — including the number, if there is one.
-4. **Constraints & who decides** — and which constraints are hard rules vs habits.
-5. **Fears** — the two registers, still separate, one or two items each.
-6. **Components & how they relate** — deep mode's sections 7 and 8 merged into one table plus one small diagram.
-7. **The decision point that matters most** — branches, exact conditions, default, reversible?
-8. **What to nail down before building** — *the headline section.* Every open ledger item, every unverified inference, every rule with no example behind it. Each line says what breaks if it is guessed wrong. Style it as the most prominent block on the page after the diagram.
-9. **Process contract, compact** — one table: step, input, output. Main path only, no preconditions or timing. Then the chain check underneath it, non-matches first. This is the whole reason a quick interview is worth running: even a shallow pass shows you where the steps do not join up.
-10. **Fear → countermeasure, compact** — one row per fear, what addresses it, what is left over. Same rule as deep mode: a fear with nothing against it gets a row saying so.
-11. **Suggested next step** — labelled `[I PROPOSE]`, and explicitly scoped: what can safely start now, and what must wait for section 8.
+Banner at the top, in the interview language: *"Quick interview — 15 questions. This is a shallow pass; the open-items section lists what it did not establish."* / *"Phỏng vấn nhanh — 15 câu. Đây là một lượt quét nông; mục các điểm còn treo liệt kê những gì chưa xác lập được."*
 
-Add a banner at the top of the file, in the interview language: *"Quick interview — 15 questions. This is a shallow pass; section 8 lists what it did not establish."* / *"Phỏng vấn nhanh — 15 câu. Đây là một lượt quét nông; mục 8 liệt kê những gì chưa xác lập được."*
+**Part A — the three deliverables**
+- A1. The whole picture — ASCII plus SVG, same drawing standard as deep mode. Never cut; it is the most information per pixel in the file.
+- A2. The contract, compact — step, input, output, main path only. No preconditions or timing. Chain check underneath, non-matches first. This is why a quick interview is worth running at all: even a shallow pass shows where the steps do not join up.
+- A3. Acceptance, compact — one observable test per step, or an explicit blank where there is none.
 
-No worked-examples, illustrations, or references sections unless a duty actually fired — an empty section implies nothing was there, which is a different claim from "we did not look".
+All three still ship as copy-pasteable blocks.
 
-## Drawing the overview diagram (section 2)
+**Part B — the evidence**
+- B1. The problem in one sentence.
+- B2. Purpose & definition of success, including the number if there is one.
+- B3. Constraints & who decides, hard rules vs habits.
+- B4. Fears — both registers, still separate, one or two items each.
+- B5. Components & how they relate — deep mode's component map and relationship diagram merged into one table plus one small diagram.
+- B6. The decision point that matters most — branches, exact conditions, default, reversible?
+
+No worked-examples, illustrations or references sections unless a duty actually fired. An empty section implies nothing was there, which is a different claim from "we did not look".
+
+**Part C — open items**
+- C1. **What to nail down before building** — *the most prominent block on the page after the diagram.* Every open ledger item, every unverified inference, every rule with no example, every unresolved junction. Each line says what breaks if it is guessed wrong.
+- C2. Fear → countermeasure, compact — what addresses each fear, what is left over, and a row saying so where nothing does.
+- C3. Suggested next step — labelled `[I PROPOSE]`, explicitly scoped: what can safely start now, and what must wait for C1.
+
+## Drawing the overview diagram (A1)
 
 This is the section that makes the file worth opening, so give it real effort.
 

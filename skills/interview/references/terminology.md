@@ -170,36 +170,43 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 
 ## Synthesis HTML section headings
 
-| # | English | Tiếng Việt |
+Three parts at both depths. Part A is the deliverable; B is the evidence; C is what remains open.
+
+| Id | English | Tiếng Việt |
 |---|---|---|
-| 1 | The problem in one sentence | Bài toán trong một câu |
-| 2 | The whole picture | Bức tranh tổng thể |
-| 3 | Root purpose & definition of success | Mục đích gốc & định nghĩa thành công |
-| 4 | Context & constraints | Bối cảnh & ràng buộc |
+| — | Part A · the three deliverables | Phần A · ba kết quả |
+| A1 | The whole picture | Bức tranh tổng thể |
+| A2 | The contract | Cam kết quy trình |
+| — | Chain check | Phép kiểm khớp nối |
+| A3 | Acceptance | Nghiệm thu |
+| — | Copy-pasteable version | Bản dán được |
+| — | Part B · the evidence | Phần B · bằng chứng |
+| B1 | The problem in one sentence | Bài toán trong một câu |
+| B2 | Root purpose & definition of success | Mục đích gốc & định nghĩa thành công |
+| B3 | Context & constraints | Bối cảnh & ràng buộc |
 | — | Hard rules vs habits | Ràng buộc cứng vs thói quen |
-| 5 | Fears & stakes | Nỗi sợ & cái đang đặt cược |
-| 6 | Current → Desired | Hiện trạng → Mong muốn |
+| B4 | Fears & stakes | Nỗi sợ & cái đang đặt cược |
+| B5 | Current → Desired | Hiện trạng → Mong muốn |
 | — | Already tried and ruled out | Đã thử và loại |
-| 7 | Component map | Bản đồ thành phần |
-| 8 | Relationship diagram | Sơ đồ quan hệ |
-| 9 | Decision trees | Cây quyết định |
-| 10 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
-| 11 | Worked examples | Ví dụ cụ thể |
-| 12 | Illustrations & analogies | Minh hoạ & ẩn dụ |
-| 13 | References | Nguồn tham khảo |
-| 14 | Risks, contradictions & unknowns | Rủi ro, mâu thuẫn & vùng chưa biết |
+| B6 | Component map | Bản đồ thành phần |
+| B7 | Relationship diagram | Sơ đồ quan hệ |
+| B8 | Decision trees | Cây quyết định |
+| B9 | Exceptions & edge cases | Ngoại lệ & trường hợp biên |
+| B10 | Worked examples | Ví dụ cụ thể |
+| B11 | Illustrations & analogies | Minh hoạ & ẩn dụ |
+| B12 | References | Nguồn tham khảo |
+| — | Part C · still open | Phần C · còn treo |
+| C1 | Risks, contradictions & unknowns | Rủi ro, mâu thuẫn & vùng chưa biết |
 | — | Contradictions | Mâu thuẫn |
 | — | Unverified assumptions | Giả định chưa kiểm chứng |
 | — | Genuine unknowns | Vùng chưa biết thật |
-| 15 | Process contract | Cam kết quy trình |
-| 16 | Chain check | Phép kiểm khớp nối |
-| 17 | Validation & acceptance | Kiểm tra xác thực & nghiệm thu |
-| 18 | Fear → countermeasure map | Ánh xạ nỗi sợ → phương án |
-| 19 | Proposed solution | Giải pháp đề xuất |
+| — | Stale documents | Tài liệu đã lỗi thời |
+| — | What to nail down before building (quick) | Cần chốt gì trước khi làm (bản nhanh) |
+| C2 | Fear → countermeasure map | Ánh xạ nỗi sợ → phương án |
 | — | Residual risk | Rủi ro còn lại |
+| C3 | Proposed solution | Giải pháp đề xuất |
+| — | Suggested next step (quick) | Bước tiếp theo đề xuất (bản nhanh) |
 | — | Component split | Tách thành phần để xây |
-| — | Untrusted input | Đầu vào không tin cậy |
-| — | Nothing gets built during the interview | Không triển khai gì trong lúc phỏng vấn |
 | — | Appendix & interview stats | Phụ lục & số liệu buổi phỏng vấn |
 
 ## Recurring phrases

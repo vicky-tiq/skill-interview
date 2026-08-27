@@ -24,7 +24,7 @@ The first question settles language and depth together.
 | Per layer | Exhausted | The 1–2 highest-yield questions |
 | Whole-picture diagram | Yes | **Yes** — never cut |
 | Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
-| Synthesis | 19 sections | 11 sections |
+| Synthesis | 3 deliverables + full evidence | 3 deliverables + compact evidence |
 | Open questions | Must not exist | **Are the headline deliverable** |
 
 Both cover all nine layers — quick is shallower, not narrower. It never pretends to
@@ -71,6 +71,20 @@ It does not re-elicit the steps. Layers 3 and 6 already walked the process and m
 Then the **chain check**, which is the point of it. Every junction between adjacent steps is compared and marked `MATCH`, `GAP` (the next step needs something nothing produces), `SURPLUS` (something is produced that nothing consumes) or `MISMATCH` (both exist but shape, unit or timing differ). Non-matches are almost never process defects — they are interview gaps, and each becomes a question. A surplus usually means a consumer exists that nobody named, which sends you back to Layer 4.
 
 A first pass where everything reads `MATCH` is a warning, not a success: it means the steps were described too coarsely to disagree.
+
+### What you get out of it
+
+Three things, in this order, and they lead the document rather than sitting among a flat list of sections:
+
+1. **The whole picture** — one diagram, shipped twice: as SVG to read, and as ASCII to *use*. The ASCII pastes into a prompt, a ticket or a chat message; an SVG does not.
+2. **The contract** — one row per step: input, output, acceptance criterion, owner. Underneath it the **chain check**: every junction between adjacent steps marked `MATCH`, `GAP`, `SURPLUS` or `MISMATCH`, non-matches first. Cells that were inferred rather than told say so *in the cell*, not in a footnote.
+3. **Acceptance** — per step, what is checked on the way in, what happens when the check fails, and the observable test that says it was done *correctly* rather than merely done.
+
+All three ship as copy-pasteable plain-text blocks, because they are what you hand to whoever builds the thing, and an artifact you cannot lift off the page gets retyped and mangled.
+
+Everything else — purpose, constraints, fears, components, relationships, decision trees, exceptions, examples, references — sits behind them as **evidence**, so a reader can check the three rather than trust them. Then a final part for what is still open: contradictions, unverified inferences, genuine unknowns, stale documents, the fear-to-countermeasure map, and the proposal.
+
+Someone who reads only the first part should be able to act.
 
 ### Nothing gets built
 

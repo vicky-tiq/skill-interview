@@ -19,7 +19,7 @@ Câu hỏi đầu tiên chốt luôn ngôn ngữ và độ sâu.
 | Mỗi tầng | Đào cạn | 1–2 câu sinh lời nhất |
 | Sơ đồ tổng thể | Có | **Có** — không bao giờ cắt |
 | Kết thúc khi | Không còn điểm mơ hồ | Hết tầng 7, còn mơ hồ cũng xong |
-| Bản đúc kết | 19 mục | 11 mục |
+| Bản đúc kết | 3 kết quả + bằng chứng đầy đủ | 3 kết quả + bằng chứng gọn |
 | Điểm chưa rõ | Không được tồn tại | **Là kết quả chính** |
 
 Cả hai đi hết chín tầng — bản nhanh nông hơn, không phải hẹp hơn. Nó không giả vờ đạt
@@ -61,6 +61,20 @@ Nó **không hỏi lại các bước từ đầu.** Tầng 3 và Tầng 6 đã 
 Rồi tới **phép kiểm khớp nối**, chính là lý do tầng này tồn tại. Mỗi mối nối giữa hai bước liền nhau được so và đánh `KHỚP`, `THIẾU` (bước sau cần thứ không bước nào tạo ra), `THỪA` (có thứ được tạo ra mà không ai dùng), hoặc `LỆCH` (cả hai đều có nhưng khác hình dạng, đơn vị, hoặc thời điểm). Chỗ không khớp gần như không bao giờ là lỗi của quy trình — nó là lỗ hổng của buổi phỏng vấn, và mỗi chỗ thành một câu hỏi. `THỪA` thường lộ ra một bên tiêu thụ chưa ai gọi tên, tức phải quay lại Tầng 4.
 
 Lượt đầu mà mọi mối nối đều `KHỚP` là dấu hiệu đáng lo, không phải thành công: nó nghĩa là các bước được mô tả quá thô nên không thể lệch nhau.
+
+### Bạn nhận được gì
+
+Ba thứ, theo đúng thứ tự này, và chúng **dẫn đầu tài liệu** chứ không nằm lẫn trong một danh sách mục ngang hàng nhau:
+
+1. **Bức tranh tổng thể** — một sơ đồ, xuất hai lần: bản SVG để đọc, bản ASCII để **dùng**. Bản ASCII dán được vào một prompt, một ticket, một tin nhắn; SVG thì không.
+2. **Cam kết quy trình** — mỗi bước một dòng: đầu vào, đầu ra, tiêu chí nghiệm thu, người thực hiện. Ngay dưới đó là **phép kiểm khớp nối**: mỗi mối nối giữa hai bước liền nhau được đánh `KHỚP`, `THIẾU`, `THỪA` hoặc `LỆCH`, chỗ không khớp xếp lên trước. Ô nào do suy ra chứ không phải được nói thì ghi rõ **ngay trong ô**, không phải ở chú thích cuối.
+3. **Nghiệm thu** — mỗi bước: kiểm gì ở đầu vào, kiểm không đạt thì sao, và phép kiểm quan sát được nào nói rằng bước đó đã làm **đúng**, không phải chỉ là đã làm.
+
+Cả ba đều xuất kèm một khối văn bản thuần **dán được**, vì đó là thứ bạn đưa cho người sẽ xây, mà một sản phẩm không bóc ra khỏi trang được thì sẽ bị gõ lại và gõ sai.
+
+Mọi thứ còn lại — mục đích, ràng buộc, nỗi sợ, thành phần, quan hệ, cây quyết định, ngoại lệ, ví dụ, nguồn tham khảo — nằm phía sau với vai trò **bằng chứng**, để người đọc **kiểm** được ba thứ kia thay vì phải tin. Rồi tới phần cuối cho những gì còn treo: mâu thuẫn, suy luận chưa xác nhận, vùng chưa biết thật, tài liệu đã lỗi thời, ánh xạ nỗi sợ → phương án, và đề xuất.
+
+Ai chỉ đọc phần đầu cũng phải hành động được.
 
 ### Không triển khai gì cả
 

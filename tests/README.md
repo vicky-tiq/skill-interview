@@ -38,6 +38,51 @@ Each run costs ~5 API turns and takes a few minutes. Everything happens in a
   `claude -p` authenticates from the real config and an isolated one returns
   nothing. Same files, one less layer of fidelity.
 
+## This suite is flaky by nature — read this before trusting a red
+
+The thing under test is a language model, so a single turn's wording is not deterministic.
+Across four consecutive runs on identical code the suite scored 15–17 of 17, failing a
+*different* assertion nearly every time: T2b, then T3b, then T5a, then T2b and T6a. That
+pattern is the signature of non-determinism, not of a regression — a real regression fails
+the same assertion every run.
+
+Two causes were found and fixed, and one remains:
+
+1. **Fixed — shared working directory.** Every test wrote its interview into one `$WORK`,
+   so a transcript from one test was found by the next. The skill correctly flagged the
+   foreign content as something the user never said and voided it, which failed whichever
+   assertion happened to depend on it. Each test now gets its own directory.
+2. **Fixed — negation-blind grep.** T5a matched `tự quyết` anywhere, so "tôi sẽ **không**
+   tự quyết thay bạn" — the rule being obeyed — was scored as the rule being broken.
+   Negated matches are now stripped before the check.
+3. **Remaining — turn-level assertions on model output.** T2b and T6a still flake: a turn
+   sometimes announces what it is about to do without asking in the same message, and the
+   quote-back sometimes paraphrases the number instead of reproducing it.
+
+**How to read a run:** a single red on a different assertion each time is noise. The same
+assertion red on consecutive runs is a defect. Before concluding anything, run it twice.
+
+If this suite needs to gate anything, run each assertion three times and take the majority
+— roughly triple the cost and the only honest way to gate on a stochastic system.
+
+## Why two assertions are ranges, not equalities
+
+Rules 6 and 7 mean some turns legitimately do not advance the interview. A doubled reply
+is voided and re-asked; a rung of the reformulation climb parks what the user said instead
+of logging a Q&A block. Assertions that demand *every* turn ask exactly one question and
+append to the transcript were measuring determinism the skill does not promise — and they
+failed on different runs for different reasons, which is the signature of a bad test
+rather than a regression.
+
+- **T2b** accepts 1–2 question marks. `?` is a crude proxy for question count: one question
+  can carry a second mark when the turn quotes something back. What must never happen is 0
+  (the turn asked nothing and the interview stalled) or 3+ (it bundled). Strict
+  exactly-one checks remain in T2d and T6c, which run on cleaner fixtures.
+- **T3b** allows up to three answering turns. What it asserts is that logging is not
+  batched to the end, which is the actual rule — not that every individual turn appends.
+
+If you tighten these back up, expect intermittent red on green code.
+
 ## CLI traps this script already works around
 
 Each of these silently produced *wrong test results* rather than an error, so they
