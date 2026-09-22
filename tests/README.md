@@ -38,6 +38,16 @@ Each run costs ~5 API turns and takes a few minutes. Everything happens in a
   `claude -p` authenticates from the real config and an isolated one returns
   nothing. Same files, one less layer of fidelity.
 
+## Infrastructure failures abort, they do not report as defects
+
+An expired CLI session makes every turn return an auth error, and the assertions then read
+that as a dozen skill defects — a run once scored 4 of 16 for this reason alone. The suite
+now checks the CLI before it starts, and aborts with exit code 2 the moment a turn comes
+back with an auth, quota or rate-limit error. Exit 2 means nothing was tested; only exit 0
+and exit 1 say anything about the skill.
+
+If it aborts: `claude auth login`, then re-run.
+
 ## This suite is flaky by nature — read this before trusting a red
 
 The thing under test is a language model, so a single turn's wording is not deterministic.

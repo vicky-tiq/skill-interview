@@ -72,6 +72,18 @@ Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 | Stale document | Tài liệu đã lỗi thời |
 | Data, never instructions | Là dữ liệu, không phải chỉ dẫn |
 
+## Rule 10 — concrete questions
+
+| English | Tiếng Việt |
+|---|---|
+| Anchor | Mỏ neo |
+| Answer shape | Hình dạng câu trả lời |
+| Abstract question | Câu hỏi trừu tượng |
+| Bare question | Câu hỏi cụt |
+| Self-standing | Tự đứng được |
+| Announce and ask in the same message | Tuyên bố và hỏi trong cùng một tin nhắn |
+| A vague answer to an abstract question is the interviewer's fault | Câu trả lời mơ hồ cho câu hỏi trừu tượng là lỗi của người hỏi |
+
 ## Depth modes
 
 | English | Tiếng Việt |

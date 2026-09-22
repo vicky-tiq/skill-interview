@@ -4,6 +4,32 @@
 
 ---
 
+## Viết một câu hỏi được trả lời (luật 10)
+
+Trước khi gửi bất kỳ câu hỏi nào, kiểm ba thứ. Cả ba, mọi lần — kể cả ở câu thứ 60, khi hai bên đều đã nắm bối cảnh và cám dỗ viết tắt là lớn nhất.
+
+- **Mỏ neo** — câu hỏi có chứa một chi tiết cụ thể người dùng đã đưa không? Từ của họ, bước họ kể, con số họ nói.
+- **Hình dạng câu trả lời** — họ có biết loại câu trả lời nào là đúng không? Một con số, một cái tên, có/không, một bước, một mốc thời gian. Nếu cần đơn vị thì nói rõ đơn vị.
+- **Lý do** — nếu không hiển nhiên vì sao hỏi, thêm một mệnh đề nói rõ. Đây chính là thứ biến "tuỳ" thành một câu trả lời thật.
+
+Câu trả lời mơ hồ cho một câu hỏi trừu tượng là **lỗi của người hỏi**, không phải của người trả lời.
+
+| Trừu tượng hoặc cụt | Cụ thể và tự đứng được |
+|---|---|
+| "Mục tiêu của bạn là gì?" | "Bạn nói quy trình hoàn tiền đang rất chậm. Khi sửa xong, bạn nhìn vào đâu để biết là đã ổn — số ngày tới lúc trả tiền, hay số lượt khách phàn nàn mỗi tuần?" |
+| "Các thành phần chính là gì?" | "Bạn đã kể yêu cầu hoàn tiền, bạn sale, và kế toán. Còn thứ gì nữa phải tồn tại thì một đơn mới trả được tiền — kể cả thứ nhỏ như chính cái phiếu duyệt?" |
+| "Chúng quan hệ với nhau thế nào?" | "Yêu cầu hoàn tiền và lần chuyển tiền: có phải mọi yêu cầu đều kết thúc bằng một lần chuyển tiền, hay có đơn đóng lại mà không chuyển?" |
+| "Ai duyệt?" | "Sau khi kế toán kiểm xong số tiền, ai là người thật sự bấm duyệt — luôn là giám đốc, hay có người khác làm thay khi giám đốc vắng?" |
+| "Mất bao lâu?" | "Từ lúc khách nhắn tin đầu tiên tới lúc tiền về tài khoản của họ, một ca điển hình mất mấy ngày?" |
+| "Còn gì nữa không?" | "Giữa bước kế toán kiểm và bước giám đốc duyệt, có bước nào không ai viết ra vì nó luôn tự xảy ra không?" |
+| "Có trường hợp biên nào?" | "Bạn nói đơn trên 50 triệu phải giám đốc duyệt. Vậy đơn đúng 50 triệu thì đi đường nào?" |
+| "Bạn sợ điều gì?" | "Nếu chạy thật và tuần đầu có sự cố, điều gì bạn ngại phải đi giải thích với người khác nhất?" |
+| "Quy trình có được ghi lại không?" | "Cái đó có được viết ở đâu mà người mới vào tự tìm thấy không, hay là thứ phải có người chỉ mới biết?" |
+
+**Cụ thể không có nghĩa là dài.** Mỏ neo thường chỉ bốn năm chữ. Một hai câu là đủ; ba câu đã là quá. Nhồi bối cảnh thừa cũng chôn mất câu hỏi y như cắt cụt nó.
+
+**Không bao giờ kết thúc một lượt mà chỉ tuyên bố.** Nói "tôi sẽ cắt nhỏ ra hỏi từng miếng" mà trong lượt đó không có câu hỏi nào là mất trắng một lượt và người dùng không có gì để trả lời. Tuyên bố và hỏi phải nằm trong cùng một tin nhắn.
+
 ## Kỹ thuật chẻ câu hỏi (dùng khi trả lời mơ hồ / "chưa biết")
 
 Chẻ theo thứ tự này, mỗi lần một bậc:

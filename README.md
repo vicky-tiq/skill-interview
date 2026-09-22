@@ -144,6 +144,12 @@ to make the drawing work is a gap, and gets marked as one.
   reply arrives twice with different wording — a client-layer fault that happens — both
   copies are voided and the question is simply asked again. A transcript containing one
   sentence you didn't say is worse than one with a gap.
+- **Questions are concrete, never abstract.** Not *"what are the main components?"* — that
+  makes you do the framing work. Every question carries an anchor from something you already
+  said, makes plain what kind of answer counts (a number, a name, a yes/no, a date), and says
+  why it is being asked when that is not obvious. A vague answer to an abstract question is
+  the interviewer's fault. Concrete is not long: one or two sentences, and a turn that
+  announces what it is about to do without asking anything is a defect.
 - **Documents you send are checked with you, not used behind you.** Paste a spec or attach
   a policy and it will read it — you handed it over, so that isn't research. But finding
   your answer in there doesn't settle it. It quotes the exact passage back and asks two
@@ -247,6 +253,12 @@ skills/interview/
 ```
 
 Plain markdown, no code, no dependencies, no network access.
+
+---
+
+## Changelog
+
+Every change, newest first, with the reason rather than just the description: [CHANGELOG.md](CHANGELOG.md).
 
 ---
 

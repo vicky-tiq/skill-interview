@@ -31,6 +31,15 @@ SB="$(mktemp -d)"; CFG="$SB/config"; WORK="$SB/work"; mkdir -p "$CFG" "$WORK"
 cleanup(){ if [ "$KEEP" = 1 ]; then echo "sandbox kept: $SB"; else rm -rf "$SB"; fi; }
 trap cleanup EXIT
 
+# Preflight. An expired CLI session makes every single turn return an auth error, which the
+# assertions then report as a dozen skill defects. Catch it here, once, and say what it is.
+PREFLIGHT="$(claude -p "reply with the single word ok" --strict-mcp-config </dev/null 2>&1 | head -3)"
+if printf '%s' "$PREFLIGHT" | grep -qiE "authenticate|oauth|session expired|not logged in|unauthor|invalid api key|rate limit|quota"; then
+  printf '\n\033[31mCannot run: the claude CLI is not usable right now.\033[0m\n  %s\n' "$PREFLIGHT"
+  printf '  Nothing was tested. Fix the session, then re-run:\n    claude auth login\n\n'
+  exit 2
+fi
+
 PASS=0; FAIL=0
 ok(){  printf '  \033[32mPASS\033[0m  %s\n' "$1"; PASS=$((PASS+1)); }
 bad(){ printf '  \033[31mFAIL\033[0m  %s\n     → %s\n' "$1" "$2"; FAIL=$((FAIL+1)); }
@@ -74,6 +83,10 @@ TURN=0
 # An empty or errored reply must never satisfy an assertion.
 sane(){ local out="$1" label="$2"
   if [ -z "$(printf %s "$out" | tr -d "[:space:]")" ]; then bad "$label" "empty reply from claude -p"; return 1; fi
+  if printf '%s' "$out" | grep -qiE "authenticate|oauth|session expired|not logged in|unauthor|rate limit|quota"; then
+    printf '\n\033[31mAborting: the CLI stopped being usable mid-run.\033[0m\n  %s\n' "$(printf '%s' "$out" | head -1)"
+    printf '  Results so far are meaningless — this is infrastructure, not the skill.\n\n'
+    exit 2; fi
   if printf '%s' "$out" | grep -qE '^Error:|Input must be provided'; then
     bad "$label" "claude -p errored: $(printf '%s' "$out" | head -1)"; return 1; fi
   return 0; }
@@ -191,6 +204,25 @@ if sane "$OUTM" "T6 verifies material"; then
   QM="$(qmarks "$OUTM")"
   [ "$QM" -ge 1 ] && ok "T6c still exactly one question ($QM marks)" \
                   || bad "T6c still exactly one question" "no question in the reply"
+fi
+
+newwork
+echo; echo "T7 — rule 10: questions are anchored in the user's own words, not abstract"
+R10SID="$(uuidgen | tr '[:upper:]' '[:lower:]')"
+run "/interview quy trình duyệt hoàn tiền của công ty tôi đang rất chậm" --session-id "$R10SID" >/dev/null
+run "Tiếng Việt, sâu" --resume "$R10SID" >/dev/null
+OUTR="$(run "Khách gửi yêu cầu qua Facebook, sale nhận rồi chuyển cho kế toán kiểm." --resume "$R10SID")"
+if sane "$OUTR" "T7 anchored question"; then
+  if printf '%s' "$OUTR" | grep -qiE "facebook|sale|kế toán|hoàn tiền"; then
+    ok "T7a question is anchored in something the user said"
+  else
+    bad "T7a question is anchored in something the user said" "reply reuses none of the user's own terms — likely an abstract question"
+  fi
+  if printf '%s' "$OUTR" | grep -q "?"; then
+    ok "T7b the turn actually asks, not just announces"
+  else
+    bad "T7b the turn actually asks, not just announces" "no question mark — the turn announced without asking (rule 10)"
+  fi
 fi
 
 newwork

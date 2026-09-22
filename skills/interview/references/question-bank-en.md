@@ -4,6 +4,32 @@ These are **prompts, not a form**. Real questions must grow out of the previous 
 
 ---
 
+## Writing a question that gets answered (rule 10)
+
+Before sending any question, check three things. All three, every time — including question 60, when both of you know the context and the temptation to abbreviate is strongest.
+
+- **Anchor** — does it contain a particular the user already gave you? Their word, their step, their number.
+- **Shape** — can they tell what kind of answer counts? A number, a name, a yes/no, a step, a date. Name the unit if one is expected.
+- **Reason** — if it is not obvious why you are asking, one clause saying so. This is what turns "it depends" into an answer.
+
+A vague answer to an abstract question is the interviewer's fault.
+
+| Abstract or bare | Concrete and self-standing |
+|---|---|
+| "What are your goals?" | "You said refunds are painfully slow. When it's fixed, what are you looking at to know — days to payout, or complaints per week?" |
+| "What are the main components?" | "You've named the request, the salesperson and accounting. What else has to exist before a refund can be paid — even something small, like the approval record itself?" |
+| "How do they relate?" | "A refund request and a payout: does every request end in a payout, or do some close without one?" |
+| "Who approves?" | "After accounting checks the amount, who actually clicks approve — always the director, or does someone cover when he's away?" |
+| "How long does it take?" | "From the customer's first message to the money landing in their account, how many days does a typical one take?" |
+| "Anything else?" | "Is there a step between accounting checking and the director approving that nobody writes down, because it always just happens?" |
+| "What are the edge cases?" | "You said anything over 50 million needs the director. What happens to one that comes in at exactly 50 million?" |
+| "What are your fears?" | "If this goes live and something breaks in the first week, what's the thing you'd least want to have to explain to someone?" |
+| "Is the process documented?" | "Is that written down anywhere a new hire could find, or is it something people learn by being told?" |
+
+**Concrete is not long.** The anchor is usually four or five words. One or two sentences; three is already too many. Padding buries the question as surely as stripping it does.
+
+**Never end a turn having only announced.** "I'll break this into smaller pieces" with no question in it spends a round trip and gives the user nothing to answer. Announce and ask in the same message.
+
 ## Question-slicing ladder (use when an answer is vague or "I don't know")
 
 Slice one rung at a time, in this order:

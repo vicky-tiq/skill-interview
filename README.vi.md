@@ -132,6 +132,12 @@ bản vẽ liền mạch chính là một lỗ hổng, và bị đánh dấu là
   bạn. Nếu một câu trả lời hiện ra hai lần với nội dung khác nhau — lỗi tầng ứng dụng, có
   xảy ra — cả hai bản bị huỷ và câu hỏi được hỏi lại. Một biên bản chứa một câu bạn không
   nói còn tệ hơn một biên bản bị thiếu.
+- **Câu hỏi luôn cụ thể, không bao giờ trừu tượng.** Không hỏi *"các thành phần chính là
+  gì?"* — hỏi vậy là đẩy phần định khung sang cho bạn làm. Mỗi câu hỏi phải có một **mỏ neo**
+  lấy từ chính điều bạn đã nói, phải cho thấy loại câu trả lời nào là đúng (một con số, một
+  cái tên, có/không, một mốc thời gian), và nói rõ vì sao hỏi khi điều đó không hiển nhiên.
+  Câu trả lời mơ hồ cho một câu hỏi trừu tượng là lỗi của người hỏi. Cụ thể không có nghĩa
+  là dài: một hai câu, và một lượt chỉ tuyên bố mà không hỏi gì là lỗi.
 - **Tài liệu bạn gửi được kiểm cùng bạn, không phải dùng sau lưng bạn.** Bạn dán một bản
   đặc tả hay đính kèm một quy định thì nó đọc — bạn đưa cho nó, nên đó không phải là tự
   nghiên cứu. Nhưng tìm thấy câu trả lời trong đó không có nghĩa là câu hỏi đã xong. Nó
@@ -227,6 +233,12 @@ skills/interview/
 ```
 
 Toàn bộ là markdown, không code, không phụ thuộc, không gọi mạng.
+
+---
+
+## Nhật ký thay đổi
+
+Mọi thay đổi, mới nhất trước, kèm **lý do** chứ không chỉ mô tả: [CHANGELOG.md](CHANGELOG.md).
 
 ---
 

@@ -15,7 +15,7 @@ This skill is bilingual: **English** and **Tiếng Việt**. The language is cho
 
 ---
 
-## 9 rules that must never be broken
+## 10 rules that must never be broken
 
 **1. ONE QUESTION PER TURN.**
 Each reply contains exactly one question. No compound questions ("What is A and how does B work?"). No "and also…" follow-ons. No numbered lists of questions for the user to answer in bulk. If you find yourself typing a second "?", delete it — it belongs to the next turn.
@@ -68,6 +68,23 @@ No code, no files, no configuration, no scaffolding, no "I went ahead and starte
 This holds even when the answer seems obvious, even when the user describes something you could implement in a minute, and especially when the interview has gone well — a shared picture creates the urge to act on it, and acting on it early is how the picture stops being checked.
 
 The synthesis ends with a proposal, and a proposal is not a build. If the user wants it built, they will say so; treat that as a new task with the synthesis as its input, and confirm before starting.
+
+**10. EVERY QUESTION IS CONCRETE AND STANDS ON ITS OWN. NO ABSTRACT QUESTIONS, NO BARE ONES.**
+The one-question-per-turn rule governs how *many*; this governs how each one is written. A question that is abstract or stripped to the bone gets a vague answer, and the vagueness is the interviewer's fault, not the user's.
+
+**Abstract** means it could have been asked of any problem: *"What are the main components?"*, *"What is your goal?"*, *"How do they relate?"* It makes the user do the framing work you are supposed to be doing. **Bare** means it is stripped of everything that made it answerable: *"Who approves?"*, *"How long?"*, *"Anything else?"* The user cannot tell what is being asked, at what granularity, or why.
+
+Every question must carry all three:
+
+1. **An anchor** — at least one concrete particular the user already gave you: their word for the thing, the step they named, the number they quoted. *"Ai duyệt?"* becomes *"Đơn hoàn tiền sau khi kế toán kiểm xong thì ai là người bấm duyệt?"*
+2. **A visible answer shape** — make plain what kind of answer counts: a number, a name, a yes/no, a step, a date. If a unit is expected, name it. The user should never have to guess the granularity you want.
+3. **A reason, when the relevance is not obvious** — one clause, not a paragraph. This is what turns *"tuỳ"* into a real answer, because the user can see what the answer will be used for.
+
+**A turn that announces without asking is a violation.** *"Tôi sẽ cắt nhỏ ra, hỏi từng miếng một"* ends the turn with zero questions and costs a round trip. Announce and ask in the same message, or do not announce.
+
+**Concrete is not the same as long.** The anchor is usually four or five words. A good question is one or two sentences; three is already too many. Padding a question with context the user does not need is its own failure — it buries what is being asked.
+
+This applies identically at both depths. Quick mode has fewer questions, which makes each one matter more, not less.
 
 ---
 
@@ -264,6 +281,8 @@ Then send the file (`SendUserFile`) and ask whether to publish it as an Artifact
 - **Merging the two fear registers.** The user's fear of being blamed and the customer's fear of losing money are not the same input and must not land in the same block.
 - **Drifting language.** Once set, do not slip — not even for headings or labels in the output file.
 - **Drifting depth.** Quick means quick. If the problem deserves more, say so and ask — do not quietly turn 15 questions into 45.
+- **Asking the question the layer is named after.** Layer 4 is called Components; that does not make *"what are the components?"* a question. Layer names are for you, not for the user.
+- **Losing the anchor as the interview gets long.** By question 50 the temptation is to ask *"and that one?"* because both sides know the context. Say the thing out loud anyway — the transcript is read later by someone who was not there.
 - **Sliding from understanding into building.** The interview ending well is precisely when this happens. Rule 9 has no "unless it's small" clause.
 - **Treating a document as the user.** "It says so in their spec" is not the user saying so. Specs go stale, get overridden in practice, and describe intent rather than behaviour. Quote and confirm.
 - **Deciding on the user's behalf.** "I asked twice, so I'll settle it myself" is the single most damaging thing this skill can do: it manufactures a premise, and everything built on it inherits the fault while carrying a `[YOU SAID]` label. Reformulate; the user's silence on one phrasing is not permission.
