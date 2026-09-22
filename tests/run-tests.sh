@@ -76,9 +76,14 @@ newwork(){ WORKN=$((WORKN+1)); WORK="$SB/work$WORKN"; mkdir -p "$WORK"; }
 # run <prompt> [session flags...]   — prompt first, variadic last
 # Deliberately does NOT set CLAUDE_CONFIG_DIR: `claude -p` authenticates from the
 # real config, and an isolated one yields a useless reply that zeroes assertions.
-run(){ local p="$1"; shift; local n=$((++TURN))
-       ( cd "$WORK" && claude -p "$p" "$@" "${POST[@]}" </dev/null 2>&1 ) | tee "$SB/turn$n.txt"; }
-TURN=0
+# The counter lives in a file, not a variable. `OUT=$(run ...)` runs in a subshell, so a
+# shell variable incremented inside it is lost to the parent — captured turns then collide
+# on the same turnN.txt and overwrite each other, which makes the failure dump show the
+# wrong reply. That cost a full diagnosis cycle.
+run(){ local p="$1"; shift
+       local n=$(( $(cat "$SB/.turn" 2>/dev/null || echo 0) + 1 )); echo "$n" > "$SB/.turn"
+       ( cd "$WORK" && claude -p "$p" "$@" "${POST[@]}" </dev/null 2>&1 ) | tee "$SB/turn$(printf %02d "$n").txt"; }
+echo 0 > "$SB/.turn"
 
 # An empty or errored reply must never satisfy an assertion.
 sane(){ local out="$1" label="$2"
@@ -91,7 +96,7 @@ sane(){ local out="$1" label="$2"
     bad "$label" "claude -p errored: $(printf '%s' "$out" | head -1)"; return 1; fi
   return 0; }
 # Never debug blind: on any failure, the raw replies are on disk.
-dump(){ echo; echo "raw replies for inspection:"; for f in "$SB"/turn*.txt; do
+dump(){ echo; echo "raw replies for inspection (in order):"; for f in "$SB"/turn[0-9][0-9].txt; do
           [ -f "$f" ] && { echo "--- $(basename "$f") (first 12 lines)"; head -12 "$f"; }; done; }
 qmarks(){ printf '%s' "$1" | tr -cd '?' | wc -c | tr -d ' '; }
 

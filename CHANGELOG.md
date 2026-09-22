@@ -8,6 +8,43 @@ bump; a refactor or doc change that alters no behaviour is a patch.
 
 ---
 
+## 1.10.1 — 2026-09-22
+
+**Rule 8's two actions moved back into always-loaded context.**
+
+T6a failed twice across runs and T6b once — the assertions that check the skill quotes a
+sent document's passage back and asks the user to confirm it. By the suite's own rule, the
+same assertion failing on separate runs is a defect rather than noise.
+
+Cause was the 1.8.1 refactor. That split each rule on *prohibition stays, recovery procedure
+moves*, which was right for rules 6 and 7 — their procedures only run once something has
+gone wrong. Rule 8 was mis-classified: quoting the passage and asking both halves is not a
+recovery procedure, it *is* the rule. What remained in `SKILL.md` was a run-on sentence
+pointing at where the procedure lived, which reads as a reference rather than an
+instruction, and the imperative got lost.
+
+Both actions are now numbered imperatives in `SKILL.md`, with the reason attached to each —
+a paraphrase is already an interpretation, and a document states what was true when it was
+written. Candidate states and the document-disagrees-with-user case stay in the reference,
+since those genuinely are follow-on procedure.
+
+Cost: about 400 bytes back on the per-invocation budget. Worth it for a rule that was
+silently degrading.
+
+**Test harness: the turn counter was losing captured replies.** `OUT=$(run ...)` executes in
+a subshell, so the counter incremented there never reached the parent — captured turns
+collided on the same `turnN.txt` and overwrote one another, while uncaptured ones advanced
+normally. The failure dump therefore showed a reply from a different test, which sent one
+diagnosis cycle entirely down the wrong path. The counter now lives in a file and filenames
+are zero-padded so they sort in order.
+
+Consequence worth stating: any diagnosis made from a dump before this fix is unreliable,
+including the reasoning that T2a and T2b are reporting zero question marks on turns that
+visibly contain them.
+
+**Rule 10 verified.** T7a and T7b both pass — questions carry an anchor from the user's own
+words, and a turn that would only announce now asks in the same message.
+
 ## 1.10.0 — 2026-09-22
 
 **Rule 10: every question is concrete and stands on its own.**

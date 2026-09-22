@@ -98,17 +98,22 @@ If you tighten these back up, expect intermittent red on green code.
 Each of these silently produced *wrong test results* rather than an error, so they
 are worth knowing before you extend the suite:
 
-1. **`--disallowedTools` is variadic** and swallows anything after it, including the
+1. **A shell counter incremented inside `$( )` is lost.** `OUT=$(run ...)` runs in a
+   subshell, so the turn counter never advanced for captured turns while it did for
+   uncaptured ones. Captured replies overwrote each other on the same `turnN.txt`, and the
+   failure dump then showed a reply from a different test entirely — which sent one whole
+   diagnosis down the wrong path. The counter now lives in a file.
+2. **`--disallowedTools` is variadic** and swallows anything after it, including the
    prompt. Put the prompt first and this flag last. Otherwise `claude` exits with
    "Input must be provided" and every assertion reads an empty string — which looked
    like six skill failures.
-2. **`CLAUDE_CONFIG_DIR` breaks `claude -p` auth.** Use it for plugin install checks
+3. **`CLAUDE_CONFIG_DIR` breaks `claude -p` auth.** Use it for plugin install checks
    only, never for the interview turns.
-3. **A fixed `--session-id` resumes the previous run.** Turn 1 then continues an old
+4. **A fixed `--session-id` resumes the previous run.** Turn 1 then continues an old
    conversation and the language question never appears. Generate a fresh UUID per run.
-4. **An empty reply must fail, not pass.** A `grep -v`-style assertion trivially
+5. **An empty reply must fail, not pass.** A `grep -v`-style assertion trivially
    passes on empty input. `sane()` guards every block for this reason.
-5. **`</dev/null`** avoids a 3-second stdin wait on every single turn.
+6. **`</dev/null`** avoids a 3-second stdin wait on every single turn.
 
 When `claude plugin eval` leaves early access, these cases should move to
 `evals/**/case.yaml` with LLM graders, which will judge question quality rather
