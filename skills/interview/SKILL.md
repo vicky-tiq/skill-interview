@@ -62,7 +62,9 @@ But finding the answer in that material does not settle the question. Using it d
 1. **Quote the exact passage, word for word, and name the document it came from.** Never paraphrase. A paraphrase is already your interpretation, and the interpretation is precisely what needs checking — if you summarise it, the user confirms your reading rather than the text.
 2. **Ask both halves as one question: is this the answer, and is it still true today?** A document states what was true when it was written; only the user knows whether practice has moved since.
 
-Until they answer, it is a `CANDIDATE` — never an answer, never carried into a read-back as though settled.
+**When to do them.** Record it as a `CANDIDATE` the moment it arrives, and say so in that turn — the user needs to know their document was received and is not being silently used. Then run the verification **at the layer the passage belongs to**, not on arrival. A threshold for approvals is a Layer 6 fact; stopping Layer 0 to ask about it breaks the layer discipline for no gain, and the user has to context-switch twice. Material that answers the layer you are already in is verified immediately.
+
+Until they answer, it is a `CANDIDATE` — never an answer, never carried into a read-back as though settled. If the interview ends with candidates still unverified, they go into the open-items section as exactly that: things a document claims and nobody confirmed.
 
 The rest — candidate states, and what to do when the document and the user disagree — is in **`references/rules-in-detail.md`, "Sent material"**, with phrasings in the question bank under "Verification patterns".
 

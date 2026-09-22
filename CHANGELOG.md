@@ -8,6 +8,33 @@ bump; a refactor or doc change that alters no behaviour is a patch.
 
 ---
 
+## 1.10.2 — 2026-09-22
+
+**Rule 8 gained the timing it never specified — found because the skill resolved it better
+than the rule did.**
+
+T6a kept failing. With the turn dump finally trustworthy, the actual reply turned out to be
+good behaviour: it logged the pasted policy extract as `tài liệu M1`, status *ứng viên*,
+said plainly it was not treating it as an answer, and stated it would quote it verbatim and
+ask both halves *when the interview reached the approval-logic layer*. Then it carried on
+with the Layer 0 question that was still open.
+
+Rule 8 said what to do with sent material and said nothing about when. The passage was a
+Layer 6 threshold arriving during Layer 0, and stopping to verify it there would have broken
+the layer discipline and made the user context-switch twice for nothing. The skill picked
+the sensible reading of an underspecified rule.
+
+So the rule now specifies it: record as `CANDIDATE` and say so the moment it arrives — the
+user must know their document was received and is not being used silently — then verify at
+the layer the passage belongs to. Material answering the current layer is verified
+immediately. Candidates still unverified when the interview ends go into open items as what
+they are: things a document claims and nobody confirmed.
+
+T6a was asserting immediate quote-back, which would have forced the worse behaviour. It now
+accepts either a quote-back or a candidate marking, since both satisfy the rule.
+
+Worth recording: three of the last four reds were the test being wrong, not the skill.
+
 ## 1.10.1 — 2026-09-22
 
 **Rule 8's two actions moved back into always-loaded context.**

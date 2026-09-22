@@ -196,10 +196,15 @@ run "/interview quy trình duyệt hoàn tiền của công ty tôi đang rất 
 run "Tiếng Việt, sâu" --resume "$R8SID" >/dev/null
 OUTM="$(run "Gửi bạn trích quy trình nội bộ của bên mình: \"Mọi yêu cầu hoàn tiền trên 50 triệu VND bắt buộc phải có phê duyệt của giám đốc.\"" --resume "$R8SID")"
 if sane "$OUTM" "T6 verifies material"; then
-  if printf '%s' "$OUTM" | grep -q "50"; then
-    ok "T6a quotes the passage back rather than paraphrasing"
+  # Rule 8 allows deferring the verification to the layer the passage belongs to — a Layer 6
+  # threshold should not interrupt Layer 0. What must happen on arrival is that the material
+  # is recorded as a candidate and the user is told, so it is never silently used. Either
+  # quoting it now or marking it candidate now satisfies the rule.
+  if printf '%s' "$OUTM" | grep -q "50" \
+  || printf '%s' "$OUTM" | grep -qiE "ứng viên|candidate|chưa coi là câu trả lời|chưa phải câu trả lời|chưa xác nhận|not yet an answer"; then
+    ok "T6a records the material without treating it as settled"
   else
-    bad "T6a quotes the passage back rather than paraphrasing" "the threshold from the material does not appear in the reply"
+    bad "T6a records the material without treating it as settled" "neither quoted nor marked as a candidate — it may have been used silently, or ignored"
   fi
   if printf '%s' "$OUTM" | grep -qiE "còn đúng|đúng không|xác nhận|thực t(ế|e)|có phải|still true|confirm|verify"; then
     ok "T6b asks the user to confirm it"
