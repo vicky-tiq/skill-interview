@@ -74,6 +74,19 @@ Luật 7 cấm tự điền câu trả lời. Thay vào đó leo thang này, m�
 
 Bất kỳ câu nào trong đó cũng chốt được độ sâu mà không buộc người dùng phải suy nghĩ về chữ "độ sâu". Không câu nào cho phép model tự quyết.
 
+### Khi một điểm không thể đóng bằng cách hỏi (luật 3, `HOÃN`)
+
+Có những điểm không phải *chưa biết* mà là *chưa quyết*. Hỏi kỹ hơn cũng không ra, vì câu trả lời chưa tồn tại trong đầu người dùng. Đề nghị hoãn một cách rõ ràng thay vì cày tiếp:
+
+- "Cái này nghe như một quyết định chứ không phải một dữ kiện. Bạn muốn để quyết sau chứ?"
+- "Nếu để treo cái này lại, phía sau sẽ hỏng chỗ nào?"
+- "Phải có gì xảy ra thì bạn mới chốt được — một cuộc họp, một con số về, hay ý kiến của ai đó?"
+- "Người quyết chuyện đó là bạn hay ai khác?"
+
+Chỉ ghi `HOÃN` khi có đủ hai câu trả lời: hệ quả nếu đoán bừa, và chốt khi nào hoặc với điều kiện gì. Thiếu một trong hai thì vẫn là `ĐANG MỞ`.
+
+Không bao giờ dùng hoãn làm đường thoát cho một câu hỏi mà bạn thấy khó hỏi. Chẻ nhỏ trước (thang ở trên); chỉ hoãn khi chẻ xong mới thấy câu trả lời chưa tồn tại.
+
 ## Tầng 0 — Mục đích gốc & định nghĩa thành công
 
 - Bài toán bạn muốn tôi hiểu là gì? Cứ kể tự nhiên, chưa cần gọn gàng.

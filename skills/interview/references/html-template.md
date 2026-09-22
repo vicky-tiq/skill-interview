@@ -62,7 +62,15 @@ B12. References — what / where / who owns it / why it matters, each marked **r
 
 ### Part C — what is still open, and what I propose
 
-**C1. Risks, contradictions & unknowns** — four blocks: *contradictions* (both answers quoted with question numbers); *unverified assumptions* (every `[I INFERRED]` never confirmed); *genuine unknowns* (each with "what breaks if we guess wrong"); *stale documents* (where the user's own material said one thing and the user another — whoever reads that document next will be misled the same way; name it and who else works from it).
+**C1. Risks, contradictions & open items** — five blocks, and the last two must not be merged:
+
+- *Contradictions* — both answers quoted, with question numbers.
+- *Unverified assumptions* — every `[I INFERRED]` the user never confirmed.
+- *Genuine unknowns* — nobody knows the answer yet. Each with "what breaks if we guess wrong". **These need investigating.**
+- *Deferred decisions* — the user could answer but has not decided. Each with what breaks if guessed wrong **and when it gets settled**. **These need a named person to decide, not research.** A row missing either field is not a deferral, it is an omission — put it back among the unknowns and say so.
+- *Stale documents* — where the user's own material said one thing and the user another. Whoever reads that document next is misled the same way; name it and who else works from it.
+
+Rendering the last two as one list is the failure to avoid: the reader cannot tell whether to go find something out or go ask someone to choose. Give each its own heading, and make the deferred block a table with the *settled when* column visible — that column is what turns an open item into something with an owner and a date rather than a worry.
 
 **C2. Fear → countermeasure map** — one row per fear from B4, in the user's words: what addresses it, how, and **what residual risk is left**. A fear with nothing against it gets a row saying so. Residual risk is mandatory: a countermeasure claiming to eliminate a fear entirely is usually hiding the leftover.
 
@@ -96,7 +104,7 @@ All three still ship as copy-pasteable blocks.
 No worked-examples, illustrations or references sections unless a duty actually fired. An empty section implies nothing was there, which is a different claim from "we did not look".
 
 **Part C — open items**
-- C1. **What to nail down before building** — *the most prominent block on the page after the diagram.* Every open ledger item, every unverified inference, every rule with no example, every unresolved junction. Each line says what breaks if it is guessed wrong.
+- C1. **What to nail down before building** — *the most prominent block on the page after the diagram.* Every unresolved ledger item, every unverified inference, every rule with no example, every unresolved junction. Each line says what breaks if it is guessed wrong — and for anything deferred, when it gets settled and by whom. Split *needs investigating* from *needs someone to decide*; they are handed to different people.
 - C2. Fear → countermeasure, compact — what addresses each fear, what is left over, and a row saying so where nothing does.
 - C3. Suggested next step — labelled `[I PROPOSE]`, explicitly scoped: what can safely start now, and what must wait for C1.
 

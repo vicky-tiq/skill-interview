@@ -74,6 +74,19 @@ This is a real failure that was observed: the depth question was asked twice, th
 
 Any of these settles depth without ever making the user reason about the word "depth". None of them lets the model decide.
 
+### When an item cannot be closed by asking (rule 3, `DEFERRED`)
+
+Some items are not unknown — they are undecided. Asking harder produces nothing, because the answer does not exist yet in the user's head. Offer the deferral explicitly rather than grinding:
+
+- "This one sounds like a decision rather than a fact. Is it something you'd rather settle later?"
+- "If we leave this open for now, what would go wrong downstream?"
+- "What has to happen before you can call it — a meeting, a number coming in, someone else's input?"
+- "Who makes that call, you or someone else?"
+
+Record it `DEFERRED` only with both answers in hand: what breaks if guessed wrong, and when or on what condition it gets settled. Missing either, it stays `OPEN`.
+
+Never offer a deferral as a way out of a question you simply found hard to ask. Slice first (the ladder above); defer only when slicing shows the answer does not exist yet.
+
 ## Layer 0 — Root purpose & definition of success
 
 - What's the problem you want me to understand? Just talk it through — it doesn't need to be organized.

@@ -23,7 +23,7 @@ The first question settles language and depth together.
 | Questions | 65–100 | ~15, one pass |
 | Per layer | Exhausted | The 1–2 highest-yield questions |
 | Whole-picture diagram | Yes | **Yes** — never cut |
-| Ends when | Nothing is ambiguous | Layer 7 closes, open items and all |
+| Ends when | Nothing is left open | Layer 7 closes, open items and all |
 | Synthesis | 3 deliverables + full evidence | 3 deliverables + compact evidence |
 | Open questions | Must not exist | **Are the headline deliverable** |
 
@@ -85,6 +85,22 @@ All three ship as copy-pasteable plain-text blocks, because they are what you ha
 Everything else — purpose, constraints, fears, components, relationships, decision trees, exceptions, examples, references — sits behind them as **evidence**, so a reader can check the three rather than trust them. Then a final part for what is still open: contradictions, unverified inferences, genuine unknowns, stale documents, the fear-to-countermeasure map, and the proposal.
 
 Someone who reads only the first part should be able to act.
+
+### Open, unknown, and undecided are three different things
+
+The ambiguity ledger is what lets a deep interview end. An item leaves the open list three ways, and the last two are deliberately kept apart:
+
+| Status | Meaning | Who picks it up |
+|---|---|---|
+| **Resolved** | You answered it | nobody |
+| **Genuinely unknown** | Nobody knows yet | someone has to **go find out** |
+| **Deferred** | You could answer but haven't decided | someone has to **make the call** |
+
+Without the third, an interview that hits a pending decision has only bad exits: keep asking — which produces nothing, since the answer does not exist yet — or file it as unknown, which is untrue and ruins the ledger for everything else.
+
+Deferring is not free. It requires two things written down: **what breaks if it is guessed wrong**, and **when or on what condition it gets settled**. Miss either and the item stays open. That is the brake — you cannot defer something by wishing it away, and the result is an item with an owner and a date rather than a vague worry.
+
+This came out of a real 124-question run whose ledger closed with 22 items that no amount of further questioning would have settled.
 
 ### Nothing gets built
 

@@ -8,6 +8,42 @@ bump; a refactor or doc change that alters no behaviour is a patch.
 
 ---
 
+## 1.11.0 — 2026-09-22
+
+**`DEFERRED`: a fourth ledger status, found by reading a real 124-question run.**
+
+A real deep interview — 124 questions, 9 of 9 layers closed, 24 of 24 decision points —
+synthesized with 22 items still `OPEN`. Rule 3 says deep mode ends only when the ledger is
+clear, and the transcript contains no "đủ rồi", so the skill went ahead against the rule.
+
+Reading what those 22 were shows the rule was wrong, not the skill. They are things like
+*"which of the six development directions is the priority"* — not unknown to the user,
+undecided by them. Question 200 would not have produced an answer, because the answer did
+not exist yet. The rule left only two exits, both bad: grind forever, or file a pending
+decision as `GENUINELY UNKNOWN`, which is untrue and destroys the ledger's meaning for
+everything else in it.
+
+The skill had improvised a third exit — synthesize, and hand the open items to a tracking
+sheet. The user's own derived CSV had columns *hệ quả nếu đoán bừa* and *chốt khi nào*,
+which is exactly the missing safeguard, invented on the spot.
+
+So `DEFERRED` / `HOÃN` now exists as a status, and using it requires both of those fields.
+Miss either and the item stays `OPEN`. That is the brake: an item cannot be deferred by
+wishing it away, and what comes out has an owner and a date instead of being a worry.
+
+It is kept strictly apart from `GENUINELY UNKNOWN` in the synthesis, because the two hand
+work to different people: unknown means *go find out*, deferred means *go ask this person to
+decide*. Rendered as one list, the reader cannot tell which.
+
+Both question banks gained the phrasings for offering a deferral, with the guard that it is
+never an escape from a question that was merely hard to ask — slice first, defer only when
+slicing shows the answer does not exist yet.
+
+**Also fixed: the position line went stale at synthesis.** The same run finished 9 of 9
+layers with its header still reading "Tầng 6 · Câu 91", which would send anyone resuming it
+back into the middle of a finished interview. Step 13 now updates the position and status
+before writing the file.
+
 ## 1.10.2 — 2026-09-22
 
 **Rule 8 gained the timing it never specified — found because the skill resolved it better

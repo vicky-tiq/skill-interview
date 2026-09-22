@@ -18,7 +18,7 @@ Câu hỏi đầu tiên chốt luôn ngôn ngữ và độ sâu.
 | Số câu | 65–100 | ~15, một lượt |
 | Mỗi tầng | Đào cạn | 1–2 câu sinh lời nhất |
 | Sơ đồ tổng thể | Có | **Có** — không bao giờ cắt |
-| Kết thúc khi | Không còn điểm mơ hồ | Hết tầng 7, còn mơ hồ cũng xong |
+| Kết thúc khi | Không còn điểm nào treo | Hết tầng 7, còn mơ hồ cũng xong |
 | Bản đúc kết | 3 kết quả + bằng chứng đầy đủ | 3 kết quả + bằng chứng gọn |
 | Điểm chưa rõ | Không được tồn tại | **Là kết quả chính** |
 
@@ -75,6 +75,22 @@ Cả ba đều xuất kèm một khối văn bản thuần **dán được**, v�
 Mọi thứ còn lại — mục đích, ràng buộc, nỗi sợ, thành phần, quan hệ, cây quyết định, ngoại lệ, ví dụ, nguồn tham khảo — nằm phía sau với vai trò **bằng chứng**, để người đọc **kiểm** được ba thứ kia thay vì phải tin. Rồi tới phần cuối cho những gì còn treo: mâu thuẫn, suy luận chưa xác nhận, vùng chưa biết thật, tài liệu đã lỗi thời, ánh xạ nỗi sợ → phương án, và đề xuất.
 
 Ai chỉ đọc phần đầu cũng phải hành động được.
+
+### Đang mở, chưa ai biết, và chưa quyết — là ba thứ khác nhau
+
+Sổ mơ hồ là thứ cho phép một buổi phỏng vấn sâu kết thúc. Một điểm rời khỏi danh sách treo bằng ba cách, và hai cách cuối được cố ý tách riêng:
+
+| Trạng thái | Nghĩa | Ai phải xử lý |
+|---|---|---|
+| **Đã rõ** | Bạn đã trả lời | không ai |
+| **Vùng chưa biết thật** | Chưa ai biết | phải có người **đi tìm hiểu** |
+| **Hoãn** | Bạn trả lời được nhưng chưa quyết | phải có người **ra quyết định** |
+
+Thiếu cách thứ ba, một buổi phỏng vấn gặp phải quyết định chưa chín chỉ còn hai đường tệ: hỏi tiếp — mà hỏi mãi cũng không ra, vì câu trả lời chưa tồn tại — hoặc ghi là chưa ai biết, vốn là nói sai và làm hỏng ý nghĩa của cả cuốn sổ.
+
+Hoãn không miễn phí. Nó đòi viết ra hai thứ: **hệ quả nếu đoán bừa**, và **chốt khi nào hoặc với điều kiện gì**. Thiếu một trong hai thì điểm đó vẫn treo. Đó là cái phanh — không thể hoãn một thứ bằng cách ước nó biến mất — và kết quả là một mục có người chịu trách nhiệm và có mốc thời gian, thay vì một nỗi lo chung chung.
+
+Điều này rút ra từ một buổi thật 124 câu, kết thúc với 22 điểm mà hỏi thêm bao nhiêu cũng không giải quyết được.
 
 ### Không triển khai gì cả
 

@@ -33,7 +33,25 @@ Append **immediately after each answer**, before asking the next question. Appen
 | A2 | Auto-approval threshold has no number | Q19 | RESOLVED (Q24) | ≥ $2k needs manual approval |
 | A3 | Who can reverse a refund decision | Q31 | GENUINELY UNKNOWN | user has never hit this case |
 
-Status uses exactly three values — `OPEN` · `RESOLVED (Q<n>)` · `GENUINELY UNKNOWN`, or in Vietnamese `ĐANG MỞ` · `ĐÃ RÕ (Câu <n>)` · `VÙNG CHƯA BIẾT THẬT`. Item prefix is `A` in English, `M` in Vietnamese.
+Status uses exactly four values:
+
+| Status | Tiếng Việt | Meaning | Blocks the end? |
+|---|---|---|---|
+| `OPEN` | `ĐANG MỞ` | Not finished asking | **yes** |
+| `RESOLVED (Q7)` | `ĐÃ RÕ (Câu 7)` | Answered | no |
+| `GENUINELY UNKNOWN` | `VÙNG CHƯA BIẾT THẬT` | **Nobody knows** — needs investigation | no |
+| `DEFERRED` | `HOÃN` | **The user could know but has not decided** — needs a person, not research | no |
+
+Item prefix is `A` in English, `M` in Vietnamese.
+
+**`DEFERRED` requires both extra columns filled.** An empty one makes the row invalid — restore it to `OPEN` and either ask again or fill them in:
+
+| # | Ambiguity | Raised at | Status | If guessed wrong | Settled when |
+|---|---|---|---|---|---|
+| A7 | Which of the six directions is the priority | Q34 | `DEFERRED` | Roadmap order is arbitrary; the first two quarters may build the wrong thing first | After the Q1 planning session |
+| A8 | Who may reverse a refund | Q31 | `GENUINELY UNKNOWN` | An irreversible payout has no owner | — investigation, nobody has hit this case |
+
+Keeping these two apart matters to whoever reads the synthesis: `GENUINELY UNKNOWN` means *go find out*, `DEFERRED` means *go ask this person to decide*. Merged, the reader cannot tell which.
 The interview may not end while any row reads `OPEN`.
 
 ## Layer closures
@@ -193,7 +211,7 @@ If a solution occurs to you mid-interview, write it here and **say nothing** —
 1. **"Answered" is verbatim.** No summarizing, no cleaning up the phrasing, no "tightening". The synthesis has to be able to quote the user exactly.
 2. **"Learned" contains only what was said.** If it's your inference, prefix it `[inferred]`.
 3. **Every ambiguity gets an A-number.** Numbered items are the only ones that survive the residual sweep.
-4. **Update the "Position" line** on every write, so a later session resumes at the right place.
+4. **Update the "Position" line** on every write, so a later session resumes at the right place — including at synthesis, where it must be set to where the interview actually ended. A transcript marked synthesized while its position still reads a middle layer sends the next reader back into a finished interview.
 5. **A doubled answer is void, not a choice.** If the same question came back twice with *different* wording, quote both under the question, mark the entry `KHÔNG HỢP LỆ — nhân đôi` / `VOID — doubled`, draw no conclusions from it, and re-ask the question. Never merge the versions, and never pick one. Identical duplicates are fine — log once.
 6. **Never delete anything.** If the user changes their mind, log the new answer and mark the old one `[superseded by Q<n>]` — the history of changed minds is itself important evidence.
 

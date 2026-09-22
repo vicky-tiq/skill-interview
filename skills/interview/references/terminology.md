@@ -21,6 +21,12 @@ Read once, after the language is chosen in Step 0. Use **one column only** for t
 | `OPEN` | `ĐANG MỞ` |
 | `RESOLVED (Q7)` | `ĐÃ RÕ (Câu 7)` |
 | `GENUINELY UNKNOWN` | `VÙNG CHƯA BIẾT THẬT` |
+| `DEFERRED` | `HOÃN` |
+| If guessed wrong | Hệ quả nếu đoán bừa |
+| Settled when | Chốt khi nào |
+| Needs investigating | Cần đi tìm hiểu |
+| Needs someone to decide | Cần người quyết |
+| Deferred decisions | Quyết định còn hoãn |
 
 Item numbering: `A1, A2, A3…` in English; `M1, M2, M3…` in Vietnamese.
 

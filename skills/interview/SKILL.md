@@ -25,7 +25,9 @@ Throughout the interview: do NOT read code, do NOT grep/glob the repo, do NOT We
 
 **3. KEEP ASKING UNTIL NOTHING IS AMBIGUOUS — *in deep mode*.**
 Always maintain an **Ambiguity Ledger** in the transcript. What it gates depends on depth:
-- **Deep:** no question limit, 65–100 is normal, and the interview ends only when the ledger has no open items.
+- **Deep:** no question limit, 65–100 is normal, and the interview ends when the ledger has no `OPEN` items left. An item leaves `OPEN` three ways: it gets answered, it turns out **nobody knows** (`GENUINELY UNKNOWN`), or the user **has not decided yet** (`DEFERRED`).
+
+  `DEFERRED` exists because some items cannot be closed by asking harder. "Which of these six directions is the priority" is not unknown to the user — it is undecided, and question 200 will not produce it. Without this status the interview has only two bad exits: ask forever, or mislabel a pending decision as `GENUINELY UNKNOWN`, which is a lie that also destroys the ledger's meaning. To use it, two fields are mandatory: **what breaks if it is guessed wrong**, and **when or on what condition it gets settled**. Those two are the brake — an item cannot be deferred by wishing it away.
 - **Quick:** one pass, ~15 questions, and the interview ends at the close of Layer 7 **even with items still open**. Open items are not failures there — they are the deliverable, reported as "what to nail down before building".
 
 The user may stop you at any time by saying "that's enough" / "đủ rồi".
@@ -272,6 +274,8 @@ Write `interview/<slug>/synthesis.html` per `references/html-template.md`, **in 
 - **Three content labels, visually distinct**: `[YOU SAID]` / `[I INFERRED]` / `[I PROPOSE]`, or `[BẠN NÓI]` / `[TÔI SUY RA]` / `[TÔI ĐỀ XUẤT]`. Never mixed in one statement.
 - Fears rendered as **two separate blocks**, never merged.
 - The proposed solution goes **last**, clearly separated from the problem understanding.
+
+Before writing the file, **update the transcript header**: set `Trạng thái` / `Status` to synthesized, and correct the `Đang ở` / `Position` line to where the interview actually ended. A stale position line sends whoever resumes it back to the middle of a finished interview — a real run ended at 9/9 layers with the line still reading "Layer 6 · Q91".
 
 Then send the file (`SendUserFile`) and ask whether to publish it as an Artifact — never publish unprompted.
 
